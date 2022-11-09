@@ -142,6 +142,10 @@ ul {
 
 /* setup */
 /* end: setup */
+html {
+  scroll-padding-top: 15.4rem;
+}
+
 /* header */
 .header__container {
   position: fixed;
@@ -191,6 +195,7 @@ ul {
   position: absolute;
   top: calc(100% + 1.4rem);
   left: 0;
+  z-index: 2;
   background-color: #fff;
   border-radius: 0.2rem;
   -webkit-border-radius: 0.2rem;
@@ -302,6 +307,9 @@ ul {
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__top-menu-link {
   margin-right: 0;
+}
+.header__container .header__navbar .header__top-menu-list.cart .header__top-menu-link i {
+  font-size: 2.4rem;
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu {
   right: 0;
@@ -425,6 +433,51 @@ ul {
 }
 
 /* footer */
+.footer__container {
+  margin-top: 15.4rem;
+  /* footer brands */
+  /* footer info */
+}
+.footer__container .footer__brands {
+  height: 6.8rem;
+  padding: 1rem 0;
+  margin: 4rem 0;
+  background-color: #fff;
+}
+.footer__container .footer__brands-item {
+  height: 100%;
+  text-align: center;
+}
+.footer__container .footer__brand-img {
+  height: 100%;
+}
+.footer__container .footer__info {
+  background-color: #f8f8f8;
+  padding: 8rem 3.2rem;
+}
+.footer__container .footer__info-info {
+  margin-bottom: 1.6rem;
+}
+.footer__container .footer__info-list {
+  margin-top: 2.2rem;
+}
+.footer__container .footer__info-img {
+  width: 8.4rem;
+}
+.footer__container .footer__info-title {
+  font-weight: 500;
+  color: #303030;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.footer__container .footer__info-title.info {
+  font-size: 1.4rem;
+}
+.footer__container .footer__info-desc {
+  font-size: 1.4rem;
+  color: #303030;
+}
+
 /* code css phần index */
 /* code css phần product (phần danh sách sản phẩm) */
 /* code css phần details(sản phẩm chi tiết) */

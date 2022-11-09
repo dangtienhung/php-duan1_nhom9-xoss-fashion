@@ -162,8 +162,13 @@ $width-header-submenu: 12.5rem;
 $width-login-submenu: 15rem;
 $width-cart-submenu: 23rem;
 $height-header-bottom: 10.6rem;
+$height-header-top: 4.8rem;
 
 /* end: setup */
+
+html {
+    scroll-padding-top: calc($height-header-bottom + $height-header-top);
+}
 
 /* header */
 .header__container {
@@ -177,7 +182,7 @@ $height-header-bottom: 10.6rem;
     // header-top
     .header__navbar {
         @include flexbox(flex-start, center);
-        height: 4.8rem;
+        height: $height-header-top;
         background-color: $black-color;
 
         .header__top-lanuage-cur {
@@ -208,6 +213,7 @@ $height-header-bottom: 10.6rem;
             position: absolute;
             top: calc(100% + 1.4rem);
             left: 0;
+            z-index: 2;
             background-color: $white-color;
             border-radius: 0.2rem;
             -webkit-border-radius: 0.2rem;
@@ -330,6 +336,10 @@ $height-header-bottom: 10.6rem;
 
             .header__top-menu-link {
                 margin-right: 0;
+
+                i {
+                    font-size: 2.4rem;
+                }
             }
 
             .header__sub-menu {
@@ -453,6 +463,62 @@ $height-header-bottom: 10.6rem;
 }
 
 /* footer */
+.footer__container {
+    margin-top: calc($height-header-bottom + $height-header-top);
+
+    /* footer brands */
+    .footer__brands {
+        height: 6.8rem;
+        padding: 1rem 0;
+        margin: 4rem 0;
+        background-color: $white-color;
+    }
+
+    .footer__brands-item {
+        height: 100%;
+        text-align: center;
+    }
+
+    .footer__brand-img {
+        height: 100%;
+    }
+
+    /* footer info */
+    .footer__info {
+        background-color: #f8f8f8;
+        padding: 8rem 3.2rem;
+
+        &-info {
+            // display: flex;
+            margin-bottom: 1.6rem;
+            // align-items: flex-start;
+        }
+
+        &-list {
+            margin-top: 2.2rem;
+        }
+
+        &-img {
+            width: 8.4rem;
+        }
+
+        &-title {
+            font-weight: 500;
+            color: $black-color;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        &-title.info {
+            font-size: 1.4rem;
+        }
+
+        &-desc {
+            font-size: 1.4rem;
+            color: $black-color;
+        }
+    }
+}
 
 /* code css phần index */
 
