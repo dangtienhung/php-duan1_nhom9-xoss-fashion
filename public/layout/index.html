@@ -36,6 +36,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reponsive.css">
 </head>
 
 <body>
@@ -158,18 +159,17 @@
                         <a class="col-sm-2 col-xs-4 logo__shop">
                             <img src="./images/logo-3.png" alt="" class="logo__shop-img">
                         </a>
-                        <ul class="col-sm-8 col-xs-4 header__menu-bottom-list">
+                        <ul class="col-lg-8 header__menu-bottom-list">
                             <li><a class="header__menu-bottom-link" href="#">Home</a></li>
                             <li>
                                 <a class="header__menu-bottom-link" href="#">
                                     Shop
-                                    <i class="icon fa-solid fa-angle-down"></i>
                                 </a>
                             </li>
                             <li><a class="header__menu-bottom-link" href="#">contact</a></li>
                         </ul>
                         <!-- search -->
-                        <div class="col-sm-2 col-xs-4 header__search">
+                        <div class="col-sm-10 col-lg-2 header__search">
                             <form action="" method="post" class="header__search-form">
                                 <input type="search" name="search__products" class="header__search-input"
                                     placeholder="Search ....">
@@ -177,6 +177,22 @@
                                     <i class="icon fa-solid fa-search"></i>
                                 </button>
                             </form>
+                        </div>
+
+                        <!-- menu mobile tablet -->
+                        <div class="col-sm-2 col-lg-0 header__menu-responsive">
+                            <div class="header__menu-responsive-btn">
+                                <i class="icon fa-solid fa-bars"></i>
+                            </div>
+                            <ul class="header__menu-responsive-list">
+                                <li><a class="header__menu-responsive-link" href="#">Home</a></li>
+                                <li>
+                                    <a class="header__menu-responsive-link" href="#">
+                                        Shop
+                                    </a>
+                                </li>
+                                <li><a class="header__menu-responsive-link" href="#">contact</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

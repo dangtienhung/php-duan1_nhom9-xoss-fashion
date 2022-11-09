@@ -1,0 +1,9 @@
+/* tablet nomal destop: 992px */
+/* tablet && mobile */
+@media (max-width: 991px) {
+  .header__container .header__bottom .header__menu-bottom .header__menu-bottom-list {
+    display: none;
+  }
+}
+/* tablet desktop: 768px */
+/* mobile *//*# sourceMappingURL=reponsive.css.map */

@@ -1,0 +1,24 @@
+/* tablet nomal destop: 992px */
+@media (min-width: 992px) and (max-width: 1169px) {
+}
+
+/* tablet && mobile */
+@media (max-width: 991px) {
+    .header__container {
+        .header__bottom {
+            .header__menu-bottom {
+                .header__menu-bottom-list {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* tablet desktop: 768px */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* mobile */
+@media (max-width: 767px) {
+}
