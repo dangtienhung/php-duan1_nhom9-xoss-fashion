@@ -1,0 +1,24 @@
+/* tablet nomal destop: 992px */
+/* tablet && mobile */
+@media (max-width: 991px) {
+    .header__container .header__bottom .header__menu-bottom .header__menu-bottom-list {
+        display: none;
+    }
+}
+/* tablet desktop: 768px */
+@media (max-width: 768px) {
+    .detail__product-image, .detail__product-content {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .detail__comment-form-action {
+      gap: 0;
+    }
+  
+    .detail__comment-form-action .input-name-box, .detail__comment-form-action .input-email-box {
+      width: 100%;
+      flex: unset;
+    }
+}
+/* mobile *//*# sourceMappingURL=reponsive.css.map */
