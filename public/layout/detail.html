@@ -36,6 +36,7 @@
     
         <!-- css -->
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/responsive.css">
     </head>
     
 <body class="detail__body">
@@ -250,7 +251,7 @@
                     </div>
                     <!-- Product Action -->
                     <div class="detail__product-action">
-                        <button class="details__product-action-btn btn-text">ADD TO BAG</button>
+                        <button class="detail__product-action-btn btn-text">ADD TO BAG</button>
                     </div>
                 </div>
             </div>
@@ -320,21 +321,26 @@
                             </p>
                         </div>
                     </div>
+                    <!-- Form Comment -->
                     <div class="detail__comment-form-wrap-box">
                         <h3>ADD YOUR COMMENTS</h3>
                         <form action="#" class="detail__comment-form-action">
+                            <!-- Imput Name -->
                             <div class="input-name-box">
                                 <label for="name">Name:</label>
                                 <input type="text" name="name" value="" placeholder="Type your name">
                             </div>
+                            <!-- Input Email -->
                             <div class="input-email-box">
                                 <label for="email">Email:</label>
                                 <input type="email" name="email" value="" placeholder="Type your email address">
                             </div>
+                            <!-- Textarea Comment -->
                             <div class="input-comment-box">
                                 <label for="comment">Your comment:</label>
                                 <textarea name="" id="" cols="30" rows="10" placeholder="White a comment"></textarea>
                             </div>
+                            <!-- Button Submit -->
                             <div class="input-btnsubmit-box">
                                 <button type="submit" name="btn_submit">ADD COMMENT</button>
                             </div>
@@ -344,6 +350,7 @@
 
                 <!-- Description -->
                 <div class="detail__description">
+                    <!-- Title -->
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         <br><br>
@@ -352,6 +359,238 @@
                 </div>
             </div>
         </div>
+        <!-- Suggested Products -->
+        <div class="detail__suggested-products">
+            <div class="detail__wrap-box">
+                <h1>SUGGESTED PODUCTS</h1>
+                <!-- Slider Product -->
+                <div class="detail__product-slider">
+                    <!-- Item -->
+                    <div class="detail__product-item">
+                        <!-- Item Image + Action -->
+                        <div class="detail__wrap-item">
+                            <!-- Item Image -->
+                            <div class="detail__item-image">
+                                <a href="#">
+                                    <img src="./images/mini-cart/1.jpg" alt="">
+                                </a>
+                            </div>
+                            <!-- Item new -->
+                            <!-- <span>new</span> -->
+                            <!-- View Detail -->
+                            <a href="#" class="detail__view-detail">
+                                <i class="fa-regular fa-square-plus"></i>
+                            </a>
+                            <!-- Action -->
+                            <div class="detail__item-action">
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                    add to bag
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button></a>
+                            </div>
+                        </div>
+                        <!-- Detail Item -->
+                        <div class="detail__item-detail">
+                            <!-- Item title -->
+                            <a href="#" class="detail__item-title">
+                                Women’s winter dress
+                            </a>
+                            <!-- Price New -->
+                            <span class="detail__item-price new">
+                                $ 85.00
+                            </span>
+                            <!-- Price Old -->
+                            <span class="detail__item-price old">
+                                145.00
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="detail__product-item">
+                        <!-- Item Image + Action -->
+                        <div class="detail__wrap-item">
+                            <!-- Item Image -->
+                            <div class="detail__item-image">
+                                <a href="#">
+                                    <img src="./images/mini-cart/2.jpg" alt="">
+                                </a>
+                            </div>
+                            <!-- Item new -->
+                            <span>new</span>
+                            <!-- View Detail -->
+                            <a href="#" class="detail__view-detail">
+                                <i class="fa-regular fa-square-plus"></i>
+                            </a>
+                            <!-- Action -->
+                            <div class="detail__item-action">
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                    add to bag
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button></a>
+                            </div>
+                        </div>
+                        <!-- Detail Item -->
+                        <div class="detail__item-detail">
+                            <!-- Item title -->
+                            <a href="#" class="detail__item-title">
+                                Full sleev women shirt
+                            </a>
+                            <!-- Price New -->
+                            <span class="detail__item-price new">
+                                $ 85.00
+                            </span>
+                            <!-- Price Old -->
+                            <span class="detail__item-price old">
+                                145.00
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="detail__product-item">
+                        <!-- Item Image + Action -->
+                        <div class="detail__wrap-item">
+                            <!-- Item Image -->
+                            <div class="detail__item-image">
+                                <a href="#">
+                                    <img src="./images/mini-cart/3.jpg" alt="">
+                                </a>
+                            </div>
+                            <!-- Item new -->
+                            <!-- <span>new</span> -->
+                            <!-- View Detail -->
+                            <a href="#" class="detail__view-detail">
+                                <i class="fa-regular fa-square-plus"></i>
+                            </a>
+                            <!-- Action -->
+                            <div class="detail__item-action">
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                    add to bag
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button></a>
+                            </div>
+                        </div>
+                        <!-- Detail Item -->
+                        <div class="detail__item-detail">
+                            <!-- Item title -->
+                            <a href="#" class="detail__item-title">
+                                Loafers Men's shoes
+                            </a>
+                            <!-- Price New -->
+                            <span class="detail__item-price new">
+                                $ 45.00
+                            </span>
+                            <!-- Price Old -->
+                            <!-- <span class="detail__item-price old">
+                            </span> -->
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="detail__product-item">
+                        <!-- Item Image + Action -->
+                        <div class="detail__wrap-item">
+                            <!-- Item Image -->
+                            <div class="detail__item-image">
+                                <a href="#">
+                                    <img src="./images/mini-cart/4.jpg" alt="">
+                                </a>
+                            </div>
+                            <!-- Item new -->
+                            <span>new</span>
+                            <!-- View Detail -->
+                            <a href="#" class="detail__view-detail">
+                                <i class="fa-regular fa-square-plus"></i>
+                            </a>
+                            <!-- Action -->
+                            <div class="detail__item-action">
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                    add to bag
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button></a>
+                            </div>
+                        </div>
+                        <!-- Detail Item -->
+                        <div class="detail__item-detail">
+                            <!-- Item title -->
+                            <a href="#" class="detail__item-title">
+                                Full sleev women shirt
+                            </a>
+                            <!-- Price New -->
+                            <span class="detail__item-price new">
+                                $ 85.00
+                            </span>
+                            <!-- Price Old -->
+                            <!-- <span class="detail__item-price old">
+                            </span> -->
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="detail__product-item">
+                        <!-- Item Image + Action -->
+                        <div class="detail__wrap-item">
+                            <!-- Item Image -->
+                            <div class="detail__item-image">
+                                <a href="#">
+                                    <img src="./images/mini-cart/1.jpg" alt="">
+                                </a>
+                            </div>
+                            <!-- Item new -->
+                            <!-- <span>new</span> -->
+                            <!-- View Detail -->
+                            <a href="#" class="detail__view-detail">
+                                <i class="fa-regular fa-square-plus"></i>
+                            </a>
+                            <!-- Action -->
+                            <div class="detail__item-action">
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                    add to bag
+                                </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button></a>
+                            </div>
+                        </div>
+                        <!-- Detail Item -->
+                        <div class="detail__item-detail">
+                            <!-- Item title -->
+                            <a href="#" class="detail__item-title">
+                                Full sleev women shirt
+                            </a>
+                            <!-- Price New -->
+                            <span class="detail__item-price new">
+                                $ 85.00
+                            </span>
+                            <!-- Price Old -->
+                            <span class="detail__item-price old">
+                                145.00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div>
     <!-- =========== footer =========== -->
     <div class="footer__container">
