@@ -1,8 +1,55 @@
-$(".footer__brands").slick({
+(function () {
+   $(".footer__brands").slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+         {
+            breakpoint: 1024,
+            settings: {
+               slidesToShow: 3,
+               slidesToScroll: 3,
+               infinite: true,
+               dots: false,
+               autoplay: true,
+               autoplaySpeed: 2000,
+            },
+         },
+         {
+            breakpoint: 600,
+            settings: {
+               slidesToShow: 2,
+               slidesToScroll: 2,
+               autoplay: true,
+               autoplaySpeed: 2000,
+            },
+         },
+         {
+            breakpoint: 480,
+            settings: {
+               slidesToShow: 2,
+               slidesToScroll: 2,
+               autoplay: true,
+               autoplaySpeed: 2000,
+            },
+         },
+         // You can unslick at a given breakpoint now by adding:
+         // settings: "unslick"
+         // instead of a settings object
+      ],
+   });
+})();
+
+$(".index__banner-list").slick({
    dots: false,
+   rtl: true,
    infinite: true,
    speed: 300,
-   slidesToShow: 5,
+   slidesToShow: 1,
    slidesToScroll: 1,
    autoplay: true,
    autoplaySpeed: 2000,

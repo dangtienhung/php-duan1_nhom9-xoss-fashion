@@ -10,3 +10,19 @@ const $$ = document.querySelectorAll.bind(document);
       };
    }
 })();
+
+(function () {
+   const headerContainer = $(".header__container");
+   if (headerContainer) {
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = () => {
+         let currentScroll = window.pageYOffset;
+         if (prevScrollpos > currentScroll) {
+            headerContainer.style.top = "0";
+         } else {
+            headerContainer.style.top = "-200px";
+         }
+         prevScrollpos = currentScroll;
+      };
+   }
+});
