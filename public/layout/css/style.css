@@ -13,6 +13,8 @@
 /*  
     1rem = 10px
 */
+/* setup */
+/* end: setup */
 * {
   margin: 0;
   padding: 0;
@@ -78,11 +80,6 @@ button {
   cursor: pointer;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -140,8 +137,6 @@ ul {
   padding: 0;
 }
 
-/* setup */
-/* end: setup */
 html {
   scroll-padding-top: 15.4rem;
 }
@@ -431,6 +426,20 @@ html {
 .header__container .header__bottom .header__menu-bottom .header__search .header__search-input:focus {
   border-bottom: 0.1rem solid #c0392b;
 }
+.header__container .header__bottom .header__menu-bottom .header__menu-responsive {
+  display: none;
+  position: relative;
+}
+.header__container .header__bottom .header__menu-bottom .header__menu-responsive .header__menu-responsive-btn {
+  text-align: center;
+}
+.header__container .header__bottom .header__menu-bottom .header__menu-responsive .header__menu-responsive-list {
+  position: absolute;
+  top: calc(100% + 4.4rem);
+  right: 0;
+  left: 0;
+  background-color: #303030;
+}
 
 /* footer */
 .footer__container {
@@ -661,122 +670,4 @@ html {
 }
 
 /* code css phần register */
-
-.regis__container {
-  width: 100%;
-  height: 100vh;
-  padding: 7rem;
-  background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
-}
-
-.regis__main {
-  width: 45rem;
-  height: 40rem;
-  margin: 0 auto;
-  padding: 5rem;
-  background: var(--blue5-color);
-  box-shadow: 0.2rem 0.7rem 1rem var(--pink2-color);
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -o-border-radius: 2rem;
-  border-radius: 2rem;
-}
-
-.regis__box {
-  width: 100%;
-  height: 6rem;
-  margin: 0.5rem 0;
-}
-
-.regis__title {
-  color: var(--aqua2-color);
-  font-size: 1.4rem;
-  /* padding: 0.2rem 0; */
-  width:100%;
-}
-
-.regis__title:hover {
-  color: var(--yellow2-color);
-}
-
-.regis__input {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0.5rem;
-  background: var(--blue5-color);
-  border: none;
-  border-bottom: 0.15rem solid var(--aqua1-color);
-  color: var(--aqua1-color);
-}
-
-.regis__sub {
-  background: var(--blue5-color);
-  border: 0.2rem solid var(--green1-color);
-  border-radius: 1.5rem;
-  padding: 0.6rem 2.5rem;
-  color: var(--aqua1-color);
-  margin-top: 1rem;
-  margin-bottom:0.8rem;
-}
-
-.regis__sub:hover {
-  background: var(--aqua1-color);
-  color: var(--blue5-color);
-}
-
-/*reponsive tablet*/
-@media all and (max-width:76.8rem)  {
-  .regis__container {
-    width: 100%;
-    height: 100vh;
-    padding: 7rem 3rem;
-    background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
-  }
-  .regis__main {
-    width: 45rem;
-    height: 40rem;
-    padding: 1rem;
-    background: var(--blue5-color);
-    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
-    -webkit-border-radius: 1.7rem;
-    -moz-border-radius: 1.7rem;
-    -o-border-radius: 1.7rem;
-    border-radius: 1.7rem;
-  }
-}
-
-/*reponsive phoneX*/
-@media all and (max-width:38rem) {
-  .regis__container {
-    width: 100%;
-    height: 100vh;
-    padding: 10rem 3rem;
-    background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
-  }
-  .regis__main {
-    width: 29rem;
-    height: 36rem;
-    margin: 0 auto;
-    padding: 1rem;
-    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
-    -webkit-border-radius: 1.7rem;
-    -moz-border-radius: 1.7rem;
-    -o-border-radius: 1.7rem;
-    border-radius: 1.7rem;
-  }
-  .regis__input {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0.4rem 1rem;
-    background: var(--blue5-color);
-    border: none;
-    border-bottom: 0.1rem solid var(--aqua1-color);
-    color: var(--aqua1-color);
-  }
-  .regis__sub {
-    padding: 0.5rem;
-    width: 100%;
-  }
-}
-
 /* ---- end ---- *//*# sourceMappingURL=style.css.map */
