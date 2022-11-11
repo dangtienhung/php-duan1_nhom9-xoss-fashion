@@ -1094,6 +1094,21 @@ html {
 .slick-next {
   right: -10px;
 }
+@media (max-width: 768px) {
+  .detail__product-image, .detail__product-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .detail__comment-form-action {
+    gap: 0;
+  }
+
+  .detail__comment-form-action .input-name-box, .detail__comment-form-action .input-email-box {
+    width: 100%;
+    flex: unset;
+  }
+}
 /* code css phần cart */
 /* code css phần login */
 /* code css phần register */
