@@ -115,12 +115,12 @@
                             </ul>
                             <ul class="header__top-menu-list cart">
                                 <li class="header__top-menu-item">
-                                    <a href="#" class="header__top-menu-link">
+                                    <a href="./cart.html" class="header__top-menu-link">
                                         <i class="fa-brands fa-opencart"></i>
                                     </a>
                                     <ul class="header__sub-menu">
                                         <li>
-                                            <a href="./cart.html" class="cart__item-menu-link">
+                                            <a href="" class="cart__item-menu-link">
                                                 <img src="./images/mini-cart/1.jpg" class="cart__mini" alt="">
                                                 <div class="cart__item-menu-list">
                                                     <h5 class="">Women’s winter dress</h5>
@@ -132,7 +132,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="./cart.html" class="cart__item-menu-link">
+                                            <a href="" class="cart__item-menu-link">
                                                 <img src="./images/mini-cart/2.jpg" class="cart__mini" alt="">
                                                 <div class="cart__item-menu-list">
                                                     <h5 class="">Full sleev women shirt</h5>
@@ -199,7 +199,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="header__menu-responsive-item">
-                        <a class="header__menu-responsive-link" href="#">Home</a>
+                        <a class="header__menu-responsive-link" href="./index.html">Home</a>
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -222,69 +222,117 @@
             </div>
         </div>
 
-        <!-- =========== index =========== -->
-        <div class="index__container">
-            <div class="index__banner-list">
-                <div class="index__banner-item" id="banner1">
-                    <div class="index__banner-body">
-                        <h1 class="index__banner-title">XOSS SHOP</h1>
-                        <h1 class="index__banner-desc">
-                            <p>WOMEN’S NEW FASHION</p>
-                            <span>SEE OUR FULL COLLECTION.S SUMMER 2016 LOOKBOOK</span>
-                        </h1>
-                        <a href="#" class="index__banner-btn">Shop now</a>
+
+        <!-- ======= cart__container ======= -->
+        <div class="cart__container">
+            <div class="cart__menu cart__page-breadcrumb bg-off-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="cart__breadcrumbs">
+                                <li><a href="./index.html">home</a></li>
+                                <li><span>shopping cart</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid index__shipping">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="index__shipping-item">
-                            <div class="icon">
-                                <i class="fa-solid fa-car"></i>
+            <!-- Cart__Page -->
+            <div class="cart__page bg-off-white padding-bottom-90">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table cart__table text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="number">#</th>
+                                            <th class="image">image</th>
+                                            <th class="name">product name</th>
+                                            <th class="qty">quantity</th>
+                                            <th class="price">price</th>
+                                            <th class="total">totle</th>
+                                            <th class="remove">remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="cart__number">1</span></td>
+                                            <td><a href="#" class="cart__pro-image"><img src="./images/product/4.jpg"
+                                                        alt="" /></a></td>
+                                            <td><a href="#" class="cart__pro-title">Women’s winter dress</a></td>
+                                            <td>
+                                                <div class="cart__pro-qua">
+                                                    <select>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="cart__pro-price">$104.99</p>
+                                            </td>
+                                            <td>
+                                                <p class="cart__price-total">$104.99</p>
+                                            </td>
+                                            <td><button class="cart__pro-remove">Xóa</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="cart__number">2</span></td>
+                                            <td><a href="#" class="cart__pro-image"><img src="./images/product/1.jpg"
+                                                        alt="" /></a></td>
+                                            <td><a href="#" class="cart__pro-title">Full sleev women shirt</a></td>
+                                            <td>
+                                                <div class="cart__pro-qua">
+                                                    <select>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="cart__pro-price">$85.99</p>
+                                            </td>
+                                            <td>
+                                                <p class="cart__price-total">$85.99</p>
+                                            </td>
+                                            <td><button class="cart__pro-remove">Xóa</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="index__shipping-body">
-                                <h2>Free shipping</h2>
-                                <p>Lorem ipsum dummy text goes here</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="index__shipping-item">
-                            <div class="icon">
-                                <i class="fa-solid fa-car"></i>
-                            </div>
-                            <div class="index__shipping-body">
-                                <h2>WALLET</h2>
-                                <p>Lorem ipsum dummy text goes here</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="index__shipping-item">
-                            <div class="icon">
-                                <i class="fa-solid fa-car"></i>
-                            </div>
-                            <div class="index__shipping-body">
-                                <h2>SAFE SHOPPING</h2>
-                                <p>Lorem ipsum dummy text goes here</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="index__shipping-item">
-                            <div class="icon">
-                                <i class="fa-solid fa-car"></i>
-                            </div>
-                            <div class="index__shipping-body">
-                                <h2>ONLINE SUPPORT</h2>
-                                <p>Lorem ipsum dummy text goes here</p>
+                            <div class="row">
+                                <div class="col-md-8 col-xs-12 cart__actions cart__button-cuppon">
+                                    <div class="cart__action float-left">
+                                        <a href="#" class="button color-hover">continiue shopping</a>
+                                    </div>
+                                    <div class="cart__cuppon-wrap float-right">
+                                        <h4>DISCOUNT CODES</h4>
+                                        <p>Enter your coupon code if you have</p>
+                                        <form action="#" class="cart__cuppon-form ">
+                                            <input type="text" />
+                                            <button class="button color-hover">apply coupon</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-12 cart__checkout-process text-right">
+                                    <div class="wrap">
+                                        <p><span>Subtotal</span><span>$190.98</span></p>
+                                        <h4><span>Grand total</span><span>$190.98</span></h4>
+                                        <button class="button color-hover">process to checkout</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- =========== footer =========== -->
         <div class="footer__container">
@@ -331,8 +379,7 @@
                                 <li class="footer__info-info">
                                     <span class="footer__info-title info">address:
                                     </span>
-                                    <span class="footer__info-desc">Trường Cao đẳng FPT Polytechnic, Tòa
-                                        nhà FPT
+                                    <span class="footer__info-desc">Trường Cao đẳng FPT Polytechnic, Tòa nhà FPT
                                         Polytechnic,
                                         P.
                                         Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà Nội, Việt Nam</span>
