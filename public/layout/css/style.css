@@ -503,13 +503,12 @@ html {
   font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
-  font-weight: 400;
   line-height: 24px;
   visibility: visible;
 }
 
 .detail__container {
-  margin-top: 154px;
+  margin-top: 85px;
   background: #f8f8f8;
   padding: 74px 0;
   width: 100%;
@@ -587,7 +586,7 @@ html {
   height: 1px;
   left: 0;
   position: absolute;
-  top: 7px;
+  top: 9px;
   width: 100%;
 }
 
@@ -596,8 +595,9 @@ html {
 }
 
 .detail__product-overview p{
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 14px;
+  font-size: 1.5rem;
 }
 
 .detail__product-size {
@@ -616,7 +616,7 @@ html {
   text-align: center;
   text-transform: uppercase;
   width: 36px;
-
+  font-size: 1.5rem;
 }
 
 .detail__product-size a:hover {
@@ -677,6 +677,7 @@ html {
   padding: 0;
   text-align: center;
   width: 54px;
+  font-size: 1.4rem;
 }
 
 .detail__product-wrap-quantity .btnqty {
@@ -705,10 +706,11 @@ html {
 
 .detail__product-action-btn.btn-text {
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 0 20px;
+  font-size: 1.3rem;
 }
 
 .detail__product-action-btn.btn-text:hover {
@@ -753,7 +755,8 @@ html {
 .detail__tablist-container li a {
   color: #303030;
   display: block;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.2rem;
   line-height: 1.2rem;
   text-transform: uppercase;
 }
@@ -764,7 +767,7 @@ html {
 .detail__product-avg-ratting > span {
   color: #909090;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 300;
   line-height: 10px;
 }
@@ -799,7 +802,8 @@ html {
 
 .detail__product-comment-author span{
   color: #303030;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .detail__product-comment-time {
@@ -813,6 +817,10 @@ html {
   font-weight: 300;
   line-height: 13px;
   margin-left: 15px;
+}
+
+.detail__product-comment-view-title {
+  font-size: 1.3rem;
 }
 
 .detail__comment-form-wrap-box h3{
@@ -833,10 +841,11 @@ html {
 .detail__comment-form-action label {
   color: #303030;
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 12px;
   margin-bottom: 10px;
   text-align: left;
+  font-size: 1.4rem;
 }
 
 .detail__comment-form-action input, .detail__comment-form-action textarea{
@@ -844,7 +853,7 @@ html {
   border: 1px solid #eee;
   color: #909090;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 500;
   height: 44px;
   padding: 5px 12px;
   text-align: left;
@@ -872,11 +881,22 @@ html {
   float: left;
   height: 37px;
   min-width: 40px;
+  font-size: 1.3rem;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 0 20px;
+}
+
+.detail__comment-form-action .input-btnsubmit-box button:hover {
+  background: transparent;
+  color: #f05a66;
+  border-color: #f05a66;
+}
+
+.detail__description > p {
+  font-size: 1.4rem;
 }
 
 .detail__suggested-products {
@@ -959,13 +979,15 @@ html {
   object-fit: cover;
 }
 
-.detail__wrap-item span {
+.detail__wrap-item > span {
   position: absolute;
   top: 13px;
   left: 13px;
   color: #f05a66;
   text-transform: uppercase;
   line-height: 11px;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .detail__view-detail {
@@ -1036,18 +1058,18 @@ html {
 
 .detail__item-title {
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2rem;
   text-transform: uppercase;
   margin: 20px 0 15px;
-
+  font-size: 1.4rem;
 }
 
 .detail__item-title:hover {
   color: #f05a66;
 }
 
-.detail__item-price span {
+.detail__item-price{
   color: #f05a66;
   line-height: 16px;
   display: block;
@@ -1071,7 +1093,7 @@ html {
   width: 100%;
   height: 1px;
   background: #606060;
-  top: 6px;
+  top: 7px;
   left: 0;
   position: absolute;
 }
@@ -1106,7 +1128,298 @@ html {
 
 /* code css phần cart */
 /* code css phần login */
+
+/* code giao diện phần login*/
+
+/*khai báo biến*/
+:root {
+  /* khai báo màu*/
+  --pink1-color : #ffccff;
+  --pink2-color : #ff66ff;
+  --pink3-color : #ff1aff;
+
+  --red1-color : #ffcccc;
+  --red2-color : #ff6666;
+  --red3-color : #e65235;
+  --red4-color : #ff3333;
+
+  --yellow1-color: #ffffcc;
+  --yellow2-color: #ffff66;
+  --yellow3-color: #cc9900;
+
+  --green1-color : #ccffcc;
+  --green2-color : #66ff66;
+  --green3-color : #009933;
+
+  --white-color : white;
+
+  --aqua1-color : #ccffff;
+  --aqua2-color : #00ffff;
+  --aqua3-color : #0088cc;
+
+  --violet1-color : #ccccff;
+  --violet2-color : #9999ff;
+  --violet3-color : #9933ff;
+
+  --blue1-color : #33ccff;
+  --blue2-color : #0099cc;
+  --blue3-color : #003566;
+  --blue4-color : #241f40;
+  --blue5-color : #0b0624;
+
+  /*khai báo font*/
+  --font-size : 400;
+
+}
+.log__container {
+  width: 100%;
+  height: 100vh;
+  padding: 15rem;
+  background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
+}
+
+.log__main {
+  width: 35rem;
+  height: 30rem;
+  margin: 0 auto;
+  padding: 5rem;
+  background: var(--blue5-color);
+  box-shadow: 0.2rem 0.7rem 1rem var(--pink2-color);
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  border-radius: 2rem;
+}
+
+.log__box {
+  width: 100%;
+  height: 6rem;
+  margin: 0.7rem 0;
+}
+
+.log__title {
+  color: var(--aqua2-color);
+  font-size: 1.4rem;
+  /* padding: 0.2rem 0; */
+  width:100%;
+}
+
+.log__title:hover {
+  color: var(--yellow2-color);
+}
+
+.log__input {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background: var(--blue5-color);
+  border: none;
+  border-bottom: 0.15rem solid var(--aqua1-color);
+  color: var(--aqua1-color);
+}
+
+.log__sub {
+  background: var(--blue5-color);
+  border: 0.2rem solid var(--green1-color);
+  border-radius: 1.5rem;
+  padding: 0.6rem 2.5rem;
+  color: var(--aqua1-color);
+  margin-top: 1rem;
+  margin-bottom:0.8rem;
+}
+
+.log__sub:hover {
+  background: var(--aqua1-color);
+  color: var(--blue5-color);
+}
+
+.log__a {
+  font-size: 1.4rem;
+  color: var(--aqua1-color);
+}
+
+.log__a:hover {
+  color:var(--red3-color);
+  text-decoration: underline;
+}
+
+/*reponsive tablet*/
+@media all and (max-width:76.8rem)  {
+  .log__container {
+    width: 100%;
+    height: 100vh;
+    padding: 15rem 3rem;
+    background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
+  }
+  .log__main {
+    width: 35rem;
+    height: 30rem;
+    padding: 1rem;
+    background: var(--blue5-color);
+    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
+    -webkit-border-radius: 1.7rem;
+    -moz-border-radius: 1.7rem;
+    -o-border-radius: 1.7rem;
+    border-radius: 1.7rem;
+  }
+}
+
+/*reponsive phoneX*/
+@media all and (max-width:38rem) {
+  .log__container {
+    width: 100%;
+    height: 100vh;
+    padding: 15rem 3rem;
+    background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
+  }
+  .log__main {
+    width: 22rem;
+    height: 24rem;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
+    -webkit-border-radius: 1.7rem;
+    -moz-border-radius: 1.7rem;
+    -o-border-radius: 1.7rem;
+    border-radius: 1.7rem;
+  }
+  .log__input {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+    background: var(--blue5-color);
+    border: none;
+    border-bottom: 0.1rem solid var(--aqua1-color);
+    color: var(--aqua1-color);
+  }
+  .log__sub {
+    padding: 0.5rem;
+    width: 100%;
+  }
+  .log__a {
+    text-align: center;
+  }
+}
+
 /* code css phần register */
+
+.regis__container {
+  width: 100%;
+  height: 100vh;
+  padding: 7rem;
+  background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
+}
+
+.regis__main {
+  width: 45rem;
+  height: 40rem;
+  margin: 0 auto;
+  padding: 5rem;
+  background: var(--blue5-color);
+  box-shadow: 0.2rem 0.7rem 1rem var(--pink2-color);
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  border-radius: 2rem;
+}
+
+.regis__box {
+  width: 100%;
+  height: 6rem;
+  margin: 0.5rem 0;
+}
+
+.regis__title {
+  color: var(--aqua2-color);
+  font-size: 1.4rem;
+  /* padding: 0.2rem 0; */
+  width:100%;
+}
+
+.regis__title:hover {
+  color: var(--yellow2-color);
+}
+
+.regis__input {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background: var(--blue5-color);
+  border: none;
+  border-bottom: 0.15rem solid var(--aqua1-color);
+  color: var(--aqua1-color);
+}
+
+.regis__sub {
+  background: var(--blue5-color);
+  border: 0.2rem solid var(--green1-color);
+  border-radius: 1.5rem;
+  padding: 0.6rem 2.5rem;
+  color: var(--aqua1-color);
+  margin-top: 1rem;
+  margin-bottom:0.8rem;
+}
+
+.regis__sub:hover {
+  background: var(--aqua1-color);
+  color: var(--blue5-color);
+}
+
+/*reponsive tablet*/
+@media all and (max-width:76.8rem)  {
+  .regis__container {
+    width: 100%;
+    height: 100vh;
+    padding: 7rem 3rem;
+    background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
+  }
+  .regis__main {
+    width: 45rem;
+    height: 40rem;
+    padding: 1rem;
+    background: var(--blue5-color);
+    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
+    -webkit-border-radius: 1.7rem;
+    -moz-border-radius: 1.7rem;
+    -o-border-radius: 1.7rem;
+    border-radius: 1.7rem;
+  }
+}
+
+/*reponsive phoneX*/
+@media all and (max-width:38rem) {
+  .regis__container {
+    width: 100%;
+    height: 100vh;
+    padding: 10rem 3rem;
+    background: linear-gradient(to top , var(--green2-color),var(--aqua2-color));
+  }
+  .regis__main {
+    width: 29rem;
+    height: 36rem;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
+    -webkit-border-radius: 1.7rem;
+    -moz-border-radius: 1.7rem;
+    -o-border-radius: 1.7rem;
+    border-radius: 1.7rem;
+  }
+  .regis__input {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+    background: var(--blue5-color);
+    border: none;
+    border-bottom: 0.1rem solid var(--aqua1-color);
+    color: var(--aqua1-color);
+  }
+  .regis__sub {
+    padding: 0.5rem;
+    width: 100%;
+  }
+}
+
 /* ---- end ---- */
 /* responsive */
 /* tablet nomal destop: 992px */
