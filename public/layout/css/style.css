@@ -1501,9 +1501,7 @@ html {
   .header__menu-responsive-item-cart {
     display: block;
   }
-}
-
-@media (max-width: 768px) {
+  
   .detail__product-image, .detail__product-content {
     width: 100%;
     margin-bottom: 20px;
@@ -1518,6 +1516,7 @@ html {
     flex: unset;
   }
 }
+
 /* @keyframe */
 @-webkit-keyframes hideShowMenu {
   0% {
