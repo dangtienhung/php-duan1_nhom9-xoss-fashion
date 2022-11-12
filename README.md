@@ -32,9 +32,8 @@
     login/resgister -> class`log__`
     products -> class`products__`
     details -> class`details__`
-
+    
     1rem = 10px
 */
+<!-- git push origin NguyenQuangDang -->
 
-/*
-git push origin daoan  ( đẩy code lên git theo nhánh)
