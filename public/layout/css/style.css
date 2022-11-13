@@ -1130,8 +1130,8 @@ html {
 .cart__container {
   width: 100%;
   height: 90rem;
-  margin-top: 20rem;
-  background:#eeeeee;
+  margin-top: 10rem;
+  background: #eeeeee;
 }
 .table-responsive {
   margin-bottom: 30px;
@@ -1363,7 +1363,8 @@ html {
 
 /*------ Breadcrumb ------*/
 .cart__page-breadcrumb {
-  padding: 8rem 0 6rem 0;
+  margin: 6rem 0 3rem 0;
+  padding: 3rem 0;
 }
 .cart__breadcrumbs li {
   display: block;
@@ -1714,7 +1715,7 @@ html {
     display: none;
   }
   .cart__page-breadcrumb {
-    padding: 5rem 0;
+    padding: 3rem 0;
   }
 
   .cart__actions {
@@ -1795,7 +1796,8 @@ html {
     display: block;
   }
   .cart__page-breadcrumb {
-    padding: 5rem 0;
+    padding: 1rem;
+    margin: 2rem 0;
   }
 
   .cart__actions {
