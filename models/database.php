@@ -86,4 +86,5 @@ class database
         $this->sta = NULL;
         $this->pdo = NULL;
     }
+    //
 }
