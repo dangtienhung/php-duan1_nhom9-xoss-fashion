@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 04, 2022 lúc 05:47 PM
--- Phiên bản máy phục vụ: 10.4.25-MariaDB
--- Phiên bản PHP: 8.1.10
+-- Thời gian đã tạo: Th10 13, 2022 lúc 05:10 PM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `duan1`
+-- Cơ sở dữ liệu: `du_an_1`
 --
 
 -- --------------------------------------------------------
@@ -50,6 +50,22 @@ CREATE TABLE `comment` (
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mã đăng nhập',
+  `name` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Họ và tên',
+  `passWord` varchar(60) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mật khẩu',
+  `email` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Địa chỉ email',
+  `picture` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Tên hình ảnh',
+  `active` bit(1) NOT NULL COMMENT 'Trạng thái kích hoạt',
+  `role` int(1) NOT NULL COMMENT 'Vai trò'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `orders`
 --
 
@@ -58,22 +74,6 @@ CREATE TABLE `orders` (
   `id_product` int(11) NOT NULL COMMENT 'mã sản phẩm',
   `id_person` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'mã người dùng',
   `oder_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'ngày đặt'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `person`
---
-
-CREATE TABLE `person` (
-  `id` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mã đăng nhập',
-  `name` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Họ và tên',
-  `passWord` varchar(60) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mật khẩu',
-  `email` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Địa chỉ email',
-  `picture` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Tên hình ảnh',
-  `active` bit(1) NOT NULL COMMENT 'Trạng thái kích hoạt',
-  `role` bit(1) NOT NULL COMMENT 'Vai trò'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 -- --------------------------------------------------------
@@ -94,6 +94,17 @@ CREATE TABLE `product` (
   `id_category` int(11) NOT NULL COMMENT 'Mã loại'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `role`
+--
+
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL,
+  `role_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -113,6 +124,13 @@ ALTER TABLE `comment`
   ADD KEY `idPerson` (`idPerson`);
 
 --
+-- Chỉ mục cho bảng `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `role` (`role`);
+
+--
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
@@ -121,17 +139,17 @@ ALTER TABLE `orders`
   ADD KEY `id_person` (`id_person`);
 
 --
--- Chỉ mục cho bảng `person`
---
-ALTER TABLE `person`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idLoai` (`id_category`);
+
+--
+-- Chỉ mục cho bảng `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -162,6 +180,12 @@ ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã hàng hóa', AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT cho bảng `role`
+--
+ALTER TABLE `role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Các ràng buộc cho các bảng đã đổ
 --
 
@@ -170,14 +194,20 @@ ALTER TABLE `product`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`idItem`) REFERENCES `product` (`id`) ON DELETE NO ACTION,
-  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`idPerson`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`idPerson`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`role`) REFERENCES `role` (`id`);
 
 --
 -- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `person` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Các ràng buộc cho bảng `product`
