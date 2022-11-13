@@ -562,7 +562,7 @@ html {
 .index__container {
   overflow: hidden;
   background-color: #f8f8f8;
-  margin-top: 9.5rem;
+  /* margin-top: 9.5rem; */
   /* index shipping */
 }
 
@@ -2127,6 +2127,10 @@ html {
 .regis__sub:hover {
   background: var(--aqua1-color);
   color: var(--blue5-color);
+}
+
+.header__menu-responsive-list.active {
+  display: none;
 }
 
 
