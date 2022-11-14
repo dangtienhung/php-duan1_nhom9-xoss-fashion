@@ -31,6 +31,12 @@
             <li>
                 <a href="./product.html" class="sidebar__menu-link">
                     <i class="fa-solid fa-list-check"></i>
+                    Quản lý danh mục sản phẩm
+                </a>
+            </li>
+            <li>
+                <a href="./product.html" class="sidebar__menu-link">
+                    <i class="fa-solid fa-list-check"></i>
                     Quản lý sản phẩm
                 </a>
             </li>

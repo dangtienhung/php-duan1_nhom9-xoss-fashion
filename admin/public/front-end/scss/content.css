@@ -383,4 +383,8 @@
   color: #000;
 }
 
+.form-control:focus {
+  box-shadow: unset;
+}
+
 /*# sourceMappingURL=content.css.map */
