@@ -257,6 +257,7 @@
                         <a href="#">XXL</a>
                     </div>
                     <!-- Product Color + Quantity -->
+                    <form action="">
                     <div class="detail__product-color-quantity">
                         <!-- Color -->
                         <div class="detail__product-color">
@@ -267,29 +268,30 @@
                                 <a style="background-color: rgb(0, 0, 0);"" href="#">color 3</a>
                             </div>
                         </div>
-                        <!-- Product Quantity -->
-                        <div class="detail__product-quantity">
-                            <h5>QUANTITY:</h5>
-                            <div class="detail__product-wrap-quantity">
-                                <!-- Input Quantity -->
-                                <input type="text" value="0" class="detail_product-input-plus-minus">
-    
-                                <!-- Increase -->
-                                <span class="detail__product-inc btnqty">
-                                    <i class="fa-solid fa-chevron-up"></i>
-                                </span>
-    
-                                <!-- Decrease -->
-                                <span class="detail__product-dec btnqty">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </span>
-                            </div>
-                        </div>    
-                    </div>
-                    <!-- Product Action -->
-                    <div class="detail__product-action">
-                        <button class="detail__product-action-btn btn-text">ADD TO BAG</button>
-                    </div>
+                            <!-- Product Quantity -->
+                            <div class="detail__product-quantity">
+                                <h5>QUANTITY:</h5>
+                                <div class="detail__product-wrap-quantity">
+                                    <!-- Input Quantity -->
+                                    <input type="text" value="0" name="quantity" class="detail_product-input-plus-minus">
+                                    
+                                    <!-- Increase -->
+                                    <span class="detail__product-inc btnqty">
+                                        <i class="fa-solid fa-chevron-up"></i>
+                                    </span>
+        
+                                    <!-- Decrease -->
+                                    <span class="detail__product-dec btnqty">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                            </div>    
+                        </div>
+                        <!-- Product Action -->
+                        <div class="detail__product-action">
+                            <button name="btn_add" class="detail__product-action-btn btn-text">ADD TO BAG</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- Reviews + Description -->
