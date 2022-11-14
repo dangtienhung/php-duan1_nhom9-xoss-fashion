@@ -1,6 +1,6 @@
 <?php
 
-require_once('confin.php');
+require_once('config.php');
 
 class database
 {

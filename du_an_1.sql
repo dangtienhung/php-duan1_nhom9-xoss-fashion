@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 13, 2022 lúc 05:10 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 7.4.29
+-- Thời gian đã tạo: Th10 14, 2022 lúc 10:54 AM
+-- Phiên bản máy phục vụ: 10.4.25-MariaDB
+-- Phiên bản PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `comment` (
   `id` int(11) NOT NULL COMMENT 'Mã bình luận',
   `comment_content` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Nội dung bình luận',
   `idItem` int(11) NOT NULL COMMENT 'Mã hàng hóa được bình luận',
-  `idPerson` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mã người bình luận',
+  `idPerson` int(11) NOT NULL COMMENT 'Mã người bình luận',
   `timeComment` date NOT NULL COMMENT 'Thời gian bình luận'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -54,7 +54,7 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `customer` (
-  `id` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mã đăng nhập',
+  `id` int(11) NOT NULL COMMENT 'Mã đăng nhập',
   `name` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Họ và tên',
   `passWord` varchar(60) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mật khẩu',
   `email` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Địa chỉ email',
@@ -72,7 +72,7 @@ CREATE TABLE `customer` (
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL COMMENT 'mã đơn hàng',
   `id_product` int(11) NOT NULL COMMENT 'mã sản phẩm',
-  `id_person` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'mã người dùng',
+  `id_person` int(11) NOT NULL COMMENT 'mã người dùng',
   `oder_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'ngày đặt'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -166,6 +166,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã bình luận', AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT cho bảng `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã đăng nhập';
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
