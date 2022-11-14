@@ -17,10 +17,6 @@
                     <i class="fa-solid fa-plus"></i>
                     Tạo sản phẩm mới
                 </a>
-                <a href="#">
-                    <i class="fa-solid fa-trash-can"></i>
-                    Xóa sản phẩm
-                </a>
             </div>
             <div class="container__main-search">
                 <form action="">
@@ -31,21 +27,12 @@
         <div class="container__table">
             <table>
                 <tr>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Country</th>
-                    <th>Country</th>
-                    <th>Description</th>
+                    <th>Tên loại sản phẩm</th>
+                    <th>Miêu tả</th>
                     <th>Tính năng</th>
                 </tr>
                 <tr>
                     <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>
-                        <img src="https://icdn.dantri.com.vn/thumb_w/640/2020/08/30/diem-danh-nhung-guong-mat-hot-girl-noi-bat-trong-thang-8-docx-1598788426579.jpeg"
-                            alt="" class="img_item">
-                    </td>
                     <td class="container__table-desc-parent">
                         <div class="container__table-desc">
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit eos recusandae unde
@@ -82,3 +69,34 @@
         </div>
     </main>
 </main>
+
+<!-- Modal -->
+<div class="modal fade modal-xl" id="openModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-3" id="exampleModalLabel">Thêm danh mục sản phẩm</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="action-product-category.php" method="post">
+                    <div class="mb-3">
+                        <label for="" class="form-label fs-3">Tên danh mục</label>
+                        <input type="text" class="form-control fs-3" name="name-product-category"
+                            placeholder="Tên danh mục">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label fs-3">Mô tả danh mục</label>
+                        <textarea class="form-control fs-3" id="" rows="3" name="desc-product-category"></textarea>
+                    </div>
+                    <!-- <button id="btnSubmit" class="btn btn-primary">oke</button> -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger fs-4" data-bs-target="submit-form">Save
+                            changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
