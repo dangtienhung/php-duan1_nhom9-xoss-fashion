@@ -18,6 +18,10 @@
             $product = new c_product();
             $product->index();
             break;
+        case 'add_comment.php':
+            $add_comment = new c_detail();
+            $add_comment->insertComment();
+            break;
         default:
         //In ra layout ko tìm thấy trang chủ
     }
