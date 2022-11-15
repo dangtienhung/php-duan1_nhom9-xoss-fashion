@@ -23,19 +23,19 @@
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
             <li>
-                <a href="" class="sidebar__menu-link">
+                <a href="home.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-microsoft"></i>
                     Bảng điều khiển
                 </a>
             </li>
             <li>
-                <a href="./product.html" class="sidebar__menu-link">
+                <a href="product-categories.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-list-check"></i>
                     Quản lý danh mục sản phẩm
                 </a>
             </li>
             <li>
-                <a href="./product.html" class="sidebar__menu-link">
+                <a href="products.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-list-check"></i>
                     Quản lý sản phẩm
                 </a>

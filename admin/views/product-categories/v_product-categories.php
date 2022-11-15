@@ -1,3 +1,15 @@
+<?php
+
+if (isset($_GET['success'])) {
+    $abc = $_GET['success'];
+    // echo '<script>alert("{$abc}")</script>';
+}
+if (isset($_GET['error'])) {
+    echo '<script>alert("Thêm sản phẩm thất bại!")</script>';
+}
+
+?>
+
 <!-- container -->
 <main class="content-wrapper">
     <div class="row">
@@ -20,7 +32,9 @@
             </div>
             <div class="container__main-search">
                 <form action="">
-                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm">
+                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
+                                                                                                        echo $_GET['search'];
+                                                                                                    } ?>">
                 </form>
             </div>
         </div>
@@ -29,44 +43,45 @@
                 <tr>
                     <th>Tên loại sản phẩm</th>
                     <th>Miêu tả</th>
+                    <th>Loại danh mục</th>
                     <th>Tính năng</th>
                 </tr>
+                <!-- render danh sách sản phẩm -->
+                <?php foreach ($category as $each) { ?>
                 <tr>
-                    <td>Alfreds Futterkiste</td>
+                    <td><?= $each->title_category; ?></td>
                     <td class="container__table-desc-parent">
                         <div class="container__table-desc">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit eos recusandae unde
-                                itaque laborum laboriosam voluptatibus assumenda! Unde sint provident earum,
-                                repellendus placeat saepe maiores commodi nisi temporibus tempora quo natus? Neque
-                                perferendis quia mollitia at facere est soluta autem! Voluptatem eum porro esse
-                                necessitatibus architecto? Reiciendis facilis nisi laborum inventore! Dolore aliquid
-                                ullam cum odit labore officiis expedita quo soluta dicta, vitae consequatur ratione
-                                eveniet, quod itaque, minus dolores magnam. Repudiandae magnam voluptatibus sed
-                                debitis culpa, nesciunt est soluta dolor explicabo inventore dolorum neque nobis
-                                pariatur quae totam, sequi laboriosam quidem. Neque totam, exercitationem incidunt
-                                architecto quos inventore nemo autem quo dicta doloremque odit facilis! Ea, facilis
-                                quam officiis minus eum itaque porro iste, libero vitae odio quaerat corrupti.
-                                Distinctio ut aliquam illum at itaque porro, expedita laboriosam quas sequi dolorum
-                                fugit molestiae, atque iusto eaque iste fugiat qui magnam similique minus a?
-                                Deserunt ipsam ad praesentium quisquam minus reiciendis reprehenderit minima
-                                accusamus, consequuntur a dolore perspiciatis fugit aperiam? Impedit tempore
-                                recusandae laudantium maxime magnam! Vero, at officia unde consequuntur, fugit
-                                blanditiis cupiditate dolore qui eligendi deleniti vitae incidunt accusantium animi
-                                rerum soluta doloremque veniam laboriosam exercitationem earum, reprehenderit error
-                                maxime ad aliquid. Rem, quis. Ex quia nostrum harum?</p>
+                            <p><?= $each->description; ?></p>
                         </div>
                     </td>
+                    <td><?= $each->category_type_name; ?></td>
                     <td>
-                        <a href="edit.html">
+                        <a href="edit-product-category.php?id=<?= $each->id; ?>">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a href="">
+                        <a href="delete-product-category.php?id=<?= $each->id; ?>">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                     </td>
                 </tr>
+                <?php } ?>
             </table>
         </div>
+
+        <!-- pagination -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination pb-3 d-flex justify-content-center">
+                <?php for ($i = 1; $i <= $number_page; $i++) { ?>
+                <li class="page-item">
+                    <a class="page-link fs-3 px-3 text-danger mx-1"
+                        href="?page=<?php echo $i; ?>&search=<?php echo $search; ?>">
+                        <?php echo $i ?>
+                    </a>
+                </li>
+                <?php } ?>
+            </ul>
+        </nav>
     </main>
 </main>
 
@@ -83,17 +98,26 @@
                     <div class="mb-3">
                         <label for="" class="form-label fs-3">Tên danh mục</label>
                         <input type="text" class="form-control fs-3" name="name-product-category"
-                            placeholder="Tên danh mục">
+                            placeholder="Tên danh mục" required>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label fs-3">Mô tả danh mục</label>
-                        <textarea class="form-control fs-3" id="" rows="3" name="desc-product-category"></textarea>
+                        <textarea class="form-control fs-3" id="" rows="3" name="desc-product-category"
+                            placeholder="Mô tả danh mục" required></textarea>
                     </div>
-                    <!-- <button id="btnSubmit" class="btn btn-primary">oke</button> -->
+                    <select class="form-select fs-3" aria-label="Default select example" name="id_product_type">
+                        <!-- render ra loại sản phẩm -->
+                        <?php foreach ($category_type as $each) { ?>
+                        <option value="<?= $each->id; ?>"><?= $each->type; ?></option>
+                        <?php } ?>
+                        <!-- end -->
+                    </select>
+                    <!-- <button id="btnSubmit" name="submit" class="btn btn-primary">oke</button> -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-danger fs-4" data-bs-target="submit-form">Save
-                            changes</button>
+                        <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-danger fs-4" data-bs-target="submit-form"
+                            name="submit">Thêm sản
+                            phẩm</button>
                     </div>
                 </form>
             </div>
