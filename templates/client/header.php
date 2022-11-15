@@ -57,20 +57,29 @@
                                         <li><a href="#">infomation</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__top-menu-item">
-                                    <a href="#" class="header__top-menu-link">
-                                        login
-                                        <i class="icon fa-solid fa-angle-down"></i>
-                                    </a>
-                                    <div class="header__sub-menu login">
-                                        <h5>login or register</h5>
-                                        <div class="header__log">
-                                            <a href="#" class="header__log-btn btn-login">Login</a>
-                                            <h3>OR</h3>
-                                            <a href="#" class="header__log-btn btn-register">register</a>
+                                <?php if(!isset($_SESSION['user_id'])) { ?>
+                                    <li class="header__top-menu-item">
+                                        <a href="#" class="header__top-menu-link">
+                                            login
+                                            <i class="icon fa-solid fa-angle-down"></i>
+                                        </a>
+                                        <div class="header__sub-menu login">
+                                            <h5>login or register</h5>
+                                            <div class="header__log">
+                                                <a href="?url=login.php" class="header__log-btn btn-login">Login</a>
+                                                <h3>OR</h3>
+                                                <a href="#" class="header__log-btn btn-register">register</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                <?php } else { ?>
+                                    <li class="header__top-menu-item">
+                                        <a href="?url=logout.php" class="header__top-menu-link">
+                                            logout
+                                            <i class="icon fa-solid fa-sign-out"></i>
+                                        </a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                             <ul class="header__top-menu-list cart">
                                 <li class="header__top-menu-item">

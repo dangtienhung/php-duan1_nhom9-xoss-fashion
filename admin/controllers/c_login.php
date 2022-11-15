@@ -11,7 +11,7 @@ class c_login
             $email = $_POST['email'];
             $password = $_POST['current-password'];
             $this->save_login_session($email, $password);
-            if (isset($_SESSION['admin_id'])) {
+            if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] != 3) {
                 header('location: home.php');
             } else {
                 $_SESSION['error_login'] = "Sai thông tin đăng nhập";

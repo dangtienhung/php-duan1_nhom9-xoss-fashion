@@ -124,7 +124,7 @@
                 </div>
                 <!-- Form Comment -->
                 <div class="detail__comment-form-wrap-box">
-                    <?php if(isset($_SESSION['users'])) { ?>
+                    <?php if(isset($_SESSION['user_id'])) { ?>
                         <h3>ADD YOUR COMMENTS</h3>
                         <form action="?url=add_comment.php" method="POST" class="detail__comment-form-action">
                             <!-- id product -->
@@ -151,7 +151,7 @@
                         </form>
                     <?php } else { ?>
                         <h3>Vui Lòng Đăng Nhập Để Có Thể Đánh Giá Sản Phẩm</h3>
-                        <a href="#">LOGIN</a>
+                        <a href="?url=login.php">LOGIN</a>
                     <?php } ?>
                 </div>
             </div>

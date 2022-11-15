@@ -22,11 +22,10 @@ class c_detail
 
         include('models/m_customer.php');
         $m_customer= new m_customer();
-        
-        // -> cho lưu id user tạm để kiểm tra khi đăng nhập  $_SESSION["users"] = 1;
+
         //Lấy ra người dùng đăng nhập hiện tại
-        if(isset($_SESSION["users"])) {
-            $user = $m_customer-> getCustomerById($_SESSION["users"]);
+        if(isset($_SESSION["user_id"])) {
+            $user = $m_customer-> getCustomerById($_SESSION["user_id"]);
         }
 
         $view = 'views/detail_product/v_detail.php';

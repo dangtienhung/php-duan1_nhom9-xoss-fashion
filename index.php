@@ -3,6 +3,8 @@
     include 'controllers/c_home.php';
     include 'controllers/c_detail_product.php';
     include 'controllers/c_product.php';
+    include 'controllers/c_login.php';
+    include 'controllers/c_register.php';
 
     switch($url) {
         case '/':
@@ -22,6 +24,26 @@
             $add_comment = new c_detail();
             $add_comment->insertComment();
             break;
+        case 'login.php':
+            $login = new c_login();
+            $login-> index();
+            break;
+        case 'check_login.php':
+            $check_login = new c_login();
+            $check_login -> check_login();
+            break;
+        case 'logout.php':
+            $logout = new c_login();
+            $logout -> logOut();
+            break;
+        case 'register.php':
+            $register = new c_register();
+            $register -> index();
+            break;
+        case 'check_register.php':
+            $register = new c_register();
+            $register -> check_register();
+            break;
         default:
-        //In ra layout ko tìm thấy trang chủ
+        //In ra layout trang chủ không tồn tại (404)
     }

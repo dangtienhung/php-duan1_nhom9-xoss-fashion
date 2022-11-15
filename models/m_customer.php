@@ -3,11 +3,11 @@ require_once ("database.php");
 
 class m_customer extends database{
    
-    public function getCustomer(){
-    $sql = "select * FROM customer"; 
-    $this ->setQuery($sql);
-    // lấy dữ liệu 
-    return $this -> loadAllRow();
+    public function getAllCustomer(){
+        $sql = "select * FROM customer"; 
+        $this ->setQuery($sql);
+        // lấy dữ liệu 
+        return $this -> loadAllRows();
     }
 
 
