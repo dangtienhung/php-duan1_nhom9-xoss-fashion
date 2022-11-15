@@ -5,6 +5,7 @@
                 <div class="col-md-12 col-sm-6 col-xs-12">
                     <div class="products__sin_sidebar category-sidebar">
                         <h3 class="sidebar-title">categories</h3>
+                        <h5 align="center"><a href="?url=product.php">> Click Here To See All Products <</a></h5>
                         <div class="sidebar-wrapper fix">
                             <!-- dropdown -->
                             <div class="products__dropdown">
@@ -14,7 +15,7 @@
                                     <ul class="dropdown-menu">
                                         <?php foreach($categories as $value): ?>
                                             <?php if($values->id == $value->id_category_type) { ?>
-                                                <li><a class="dropdown-item" href="#"><?php echo $value->title_category?></a></li>
+                                                <li><a class="dropdown-item" href="?url=product.php&id_category=<?php echo $value->id?>"><?php echo $value->title_category?></a></li>
                                             <?php } ?>
                                         <?php endforeach ?>
                                     </ul>
