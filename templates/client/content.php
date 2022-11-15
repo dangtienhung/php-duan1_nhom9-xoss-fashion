@@ -1,5 +1,5 @@
 <?php
 
 if($view) {
-    include_once "$view";
+    include($view);
 }

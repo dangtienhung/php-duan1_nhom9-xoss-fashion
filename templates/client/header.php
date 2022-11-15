@@ -65,9 +65,9 @@
                                     <div class="header__sub-menu login">
                                         <h5>login or register</h5>
                                         <div class="header__log">
-                                            <a href="./login.html" class="header__log-btn btn-login">Login</a>
+                                            <a href="#" class="header__log-btn btn-login">Login</a>
                                             <h3>OR</h3>
-                                            <a href="./register.html" class="header__log-btn btn-register">register</a>
+                                            <a href="#" class="header__log-btn btn-register">register</a>
                                         </div>
                                     </div>
                                 </li>
@@ -80,7 +80,7 @@
                                     <ul class="header__sub-menu">
                                         <li>
                                             <a href="./cart.html" class="cart__item-menu-link">
-                                                <img src="./images/mini-cart/1.jpg" class="cart__mini" alt="">
+                                                <img src="public/layout/images/mini-cart/1.jpg" class="cart__mini" alt="">
                                                 <div class="cart__item-menu-list">
                                                     <h5 class="">Women’s winter dress</h5>
                                                     <span class="">1x$45.00</span>
@@ -119,12 +119,12 @@
                         <div class="header__menu-bottom">
                             <!-- logo -->
                             <a class="col-sm-2 logo__shop">
-                                <img src="./images/logo-3.png" alt="" class="logo__shop-img">
+                                <img src="public/layout/images/logo-3.png" alt="" class="logo__shop-img">
                             </a>
                             <ul class="col-lg-8 header__menu-bottom-list">
-                                <li><a class="header__menu-bottom-link" href="./index.html">Home</a></li>
+                                <li><a class="header__menu-bottom-link" href="?url=home">Home</a></li>
                                 <li>
-                                    <a class="header__menu-bottom-link" href="#">
+                                    <a class="header__menu-bottom-link" href="?url=product.php">
                                         Shop
                                     </a>
                                 </li>
