@@ -1,21 +1,18 @@
 <?php
-
-require_once('config.php');
-
+require_once("config.php");
 class database
 {
-    protected $pdo = null;
-    protected $sta = null;
+    protected $pdo = NULL;
     protected $sql = '';
+    protected $sta = NULL;
 
-    /* constructer */
     public function __construct()
     {
         try {
-            $this->pdo = new PDO('mysql:host=' . DB_HOST . '; dbname=' . DB_NAME, DB_USER, DB_PWD);
+            $this->pdo = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_NAME, DB_USER, DB_PWD);
             $this->pdo->query('set names "utf8"');
-        } catch (PDOException $e) {
-            die('Kết nối thất bại: ' . $e->getMessage());
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
         }
     }
 
@@ -24,7 +21,8 @@ class database
         $this->sql = $sql;
     }
 
-    // lấy ra dữ liệu có điều kiện
+    //Function execute the query
+    // hàm này sẽ làm hàm chạy câu truy vấn
     public function execute($options = array())
     {
         $this->sta = $this->pdo->prepare($this->sql);
@@ -37,7 +35,8 @@ class database
         return $this->sta;
     }
 
-    // lấy ra tất cả dữ liệu
+    //Funtion load datas on table
+    // lấy nhiều dữ liệu ở trong bảng
     public function loadAllRows($options = array())
     {
         if (!$options) {
@@ -50,7 +49,8 @@ class database
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
 
-    // lấy ra 1 hàng từ trong cơ sở dữ liệu
+    //Funtion load 1 data on the table
+    //lay 1 du lieu thoi
     public function loadRow($option = array())
     {
         if (!$option) {
@@ -63,7 +63,7 @@ class database
         return $result->fetch(PDO::FETCH_OBJ);
     }
 
-    // câu lệnh đếm dữ liệu
+    //Function count the record on the table
     public function loadRecord($option = array())
     {
         if (!$option) {
