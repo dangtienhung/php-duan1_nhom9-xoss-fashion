@@ -103,7 +103,7 @@
                     <span>Based on <?php echo count($comments)?> Comments</span>
                 </div>
                 <!-- View Comment -->
-                <div class="detail__product-comment-box">
+                <div class="detail__product-comment-box" style='<?php if(count($comments) > 6){ echo "overflow: scroll; max-height: 350px;"; }?>'>
                     <?php foreach($comments as $value): ?>
                     <!-- Item -->
                     <div class="detail__product-comment-view">
@@ -124,28 +124,35 @@
                 </div>
                 <!-- Form Comment -->
                 <div class="detail__comment-form-wrap-box">
-                    <h3>ADD YOUR COMMENTS</h3>
-                    <form action="" method="POST" class="detail__comment-form-action">
-                        <!-- Imput Name -->
-                        <div class="input-name-box">
-                            <label for="name">Name:</label>
-                            <input type="text" name="name" value="" placeholder="Type your name">
-                        </div>
-                        <!-- Input Email -->
-                        <div class="input-email-box">
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" value="" placeholder="Type your email address">
-                        </div>
-                        <!-- Textarea Comment -->
-                        <div class="input-comment-box">
-                            <label for="comment">Your comment:</label>
-                            <textarea name="comment" id="" cols="30" rows="10" placeholder="White a comment"></textarea>
-                        </div>
-                        <!-- Button Submit -->
-                        <div class="input-btnsubmit-box">
-                            <button type="submit" name="btn_submit">ADD COMMENT</button>
-                        </div>
-                    </form>
+                    <?php if(isset($_SESSION['users'])) { ?>
+                        <h3>ADD YOUR COMMENTS</h3>
+                        <form action="?url=add_comment.php" method="POST" class="detail__comment-form-action">
+                            <!-- id product -->
+                            <input type="text" name="id_product" value="<?php echo $detail_product->id?>" hidden>
+                            <!-- Imput Name -->
+                            <div class="input-name-box">
+                                <label for="name">Name:</label>
+                                <input type="text" name="name" value="<?php echo $user->name_customer?>" placeholder="Type your name" disabled>
+                            </div>
+                            <!-- Input Email -->
+                            <div class="input-email-box">
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" value="<?php echo $user->email?>" placeholder="Type your email address" disabled>
+                            </div>
+                            <!-- Textarea Comment -->
+                            <div class="input-comment-box">
+                                <label for="comment">Your comment:</label>
+                                <textarea name="comment" id="" cols="30" rows="10" placeholder="White a comment"></textarea>
+                            </div>
+                            <!-- Button Submit -->
+                            <div class="input-btnsubmit-box">
+                                <button type="submit" name="btn_submit">ADD COMMENT</button>
+                            </div>
+                        </form>
+                    <?php } else { ?>
+                        <h3>Vui Lòng Đăng Nhập Để Có Thể Đánh Giá Sản Phẩm</h3>
+                        <a href="#">LOGIN</a>
+                    <?php } ?>
                 </div>
             </div>
 

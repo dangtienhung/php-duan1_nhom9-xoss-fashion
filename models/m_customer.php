@@ -18,10 +18,4 @@ class m_customer extends database{
         return $this -> loadRow();
     }
 
-    public function getCustomerByEmailAndName($email, $name){
-        $sql = "select * FROM customer where email like '%$email%' and name_customer like '%$name%'"; 
-        $this ->setQuery($sql);
-        // lấy dữ liệu 
-        return $this -> loadRow();
-    }
 }

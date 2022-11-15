@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
 class c_detail
 {
     public function index()
@@ -16,25 +16,35 @@ class c_detail
 
         include('models/m_comment.php');
         $m_comment = new m_comment();
-        
-        include('models/m_customer.php');
-        $m_customer= new m_customer();
-        
-        //Insert comment
-        if(isset($_POST["btn_submit"])) {
-            $email = $_POST["email"];
-            $name = $_POST["name"];
-            $content = $_POST["comment"];
-            $customer = $m_customer -> getCustomerByEmailAndName($email, $name);
-            $id_person = $customer->id;
-            $m_comment -> insertComment($id_person,$detail_product->id,$content);
-        }
-
 
         //Lấy ra comment
         $comments = $m_comment -> getComment();
 
+        include('models/m_customer.php');
+        $m_customer= new m_customer();
+        
+        // -> cho lưu id user tạm để kiểm tra khi đăng nhập  $_SESSION["users"] = 1;
+        //Lấy ra người dùng đăng nhập hiện tại
+        if(isset($_SESSION["users"])) {
+            $user = $m_customer-> getCustomerById($_SESSION["users"]);
+        }
+
         $view = 'views/detail_product/v_detail.php';
         include('templates/client/layout.php');
+    }
+
+    public function insertComment() {
+        //Insert comment
+        if(isset($_POST["btn_submit"])) {
+            include('models/m_comment.php');
+            $m_comment = new m_comment();
+            $id_product = $_POST["id_product"];
+            $id_person = $_SESSION["users"];
+            $content = $_POST["comment"];
+
+            $m_comment -> insertComment($id_person,$id_product,$content);
+
+            header("location:?url=detail.php&id_product=$id_product");
+        }
     }
 }

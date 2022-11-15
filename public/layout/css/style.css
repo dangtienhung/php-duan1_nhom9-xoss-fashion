@@ -1592,6 +1592,28 @@ html {
   line-height: 12px;
 }
 
+.detail__comment-form-wrap-box a {
+  display: inline-flex;
+  background-color: #f05a66;
+  border: 1px solid #eee;
+  color: #606060;
+  height: 37px;
+  min-width: 40px;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.detail__comment-form-wrap-box a:hover {
+  background: transparent;
+  color: #f05a66;
+  border-color: #f05a66;
+}
+
 .detail__comment-form-action {
   display: flex;
   flex-wrap: wrap;
