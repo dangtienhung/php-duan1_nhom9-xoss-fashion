@@ -35,6 +35,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reponsive.css">
+    <link rel="stylesheet" href="public/layout/css/style.css">
+    <link rel="stylesheet" href="public/layout/css/reponsive.css">
 </head>

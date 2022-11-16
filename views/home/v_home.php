@@ -70,9 +70,9 @@
             <?php foreach($featured_products as $value):?>
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="item__product">
-                        <a href="#">
+                        <a href="?url=detail.php&id_product=<?php echo $value->id?>">
                             <div class="item__product-head">
-                                <img src="./images/product/<?php echo $value->picture?>" alt="">
+                                <img src="public/layout/images/product/<?php echo $value->picture?>" alt="">
                                 <div class="item__controll-btn">
                                     <a href="#" class="item__btn-buy">Mua ngay</a>
                                     <a href="#" class="item__btn-cart">Giỏ hàng</a>
@@ -93,20 +93,20 @@
 <!-- banner -->
 <div class="banner__wrapper featured__container">
     <div class="banner__item">
-        <img src="./images/banner/promo-1.jpg" alt="">
+        <img src="public/layout/images/banner/promo-1.jpg" alt="">
         <div class="banner__item-desc">
             <h2>Lastest<br />Backpack</h2>
         </div>
     </div>
     <div class="banner__primary">
-        <img src="./images/banner/promo-2.jpg" alt="">
+        <img src="public/layout/images/banner/promo-2.jpg" alt="">
         <div class="banner__primary-desc">
             <h2>Giảm giá 40%</h2>
             <h3>Phong cách mới</h3>
         </div>
     </div>
     <div class="banner__item">
-        <img src="./images/banner/promo-3.jpg" alt="">
+        <img src="public/layout/images/banner/promo-3.jpg" alt="">
         <div class="banner__item-desc">
             <h2>Lastest<br />Backpack</h2>
         </div>
@@ -118,20 +118,20 @@
     <h1 class="title">Sản phẩm mới nhất</h1>
     <div class="container">
         <div class="row">
-            <?php foreach($new_products as $value):?>
+            <?php foreach($new_products as $value): ?>
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="item__product">
-                        <a href="#">
+                        <a href="?url=detail.php&id_product=<?php echo $value->id?>">
                             <div class="item__product-head">
-                                <img src="./images/product<?php echo $value["picture"]?>" alt="">
+                                <img src="public/layout/images/product/<?php echo $value->picture?>" alt="">
                                 <div class="item__controll-btn">
                                     <a href="#" class="item__btn-buy">Mua ngay</a>
                                     <a href="#" class="item__btn-cart">Giỏi hàng</a>
                                 </div>
                             </div>
                             <div class="item__product-body">
-                                <h2><?php echo $value->name?></h2>
-                                <h3><?php echo number_format($value->price)?></h3>
+                                <h3><?php echo $value->name?></h3>
+                                <h3>$ <?php echo number_format($value->price)?></h3>
                             </div>
                         </a>
                     </div>
