@@ -5,6 +5,9 @@
     include 'controllers/c_product.php';
     include 'controllers/c_login.php';
     include 'controllers/c_register.php';
+    include 'controllers/c_info.php';
+    include 'controllers/c_404.php';
+    include 'controllers/c_cart.php';
 
     switch($url) {
         case '/':
@@ -44,6 +47,20 @@
             $register = new c_register();
             $register -> check_register();
             break;
+        case 'info.php':
+            $info = new c_info();
+            $info -> index();
+            break;
+        case 'change_info.php':
+            $info = new c_info();
+            $info -> change_info();
+            break;
+        case 'cart.php':
+            $cart = new c_cart();
+            $cart -> index();
+            break;
         default:
-        //In ra layout trang chủ không tồn tại (404)
+            $error404 = new c_404();
+            $error404 -> index();
+            break;
     }

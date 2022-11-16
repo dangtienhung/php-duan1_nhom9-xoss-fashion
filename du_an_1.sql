@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2022 lúc 07:43 PM
+-- Thời gian đã tạo: Th10 16, 2022 lúc 05:50 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -39,7 +39,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `title_category`, `description`, `id_category_type`) VALUES
-(3, 'Quần áo mùa đông', 'Ấm vc', 3);
+(1, 'Quần áo mùa đông', 'Ấm vc', 3),
+(2, 'áo polo ', 'Chất liệu vải cá sấu Cotton xuất xịn, chuẩn form cao cấp không xù lông, bề mặt vải mượt và bóng, thoáng mát, mang vận động vẫn thích hợp. ', 1);
 
 -- --------------------------------------------------------
 
@@ -80,8 +81,7 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `comment_content`, `idItem`, `idPerson`, `timeComment`) VALUES
-(25, 'HIHIHIHI', 8, 2, '2022-11-14 18:37:21'),
-(29, 'Okay', 8, 3, '2022-11-14 18:41:42');
+(25, 'TEST', 8, 18, '2022-11-16 04:48:56');
 
 -- --------------------------------------------------------
 
@@ -104,9 +104,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `name_customer`, `passWord`, `email`, `picture`, `active`, `role`) VALUES
-(1, 'admin', '', 'admin@fpt.edu.vn', NULL, b'0', 1),
+(1, 'admin', '123456', 'admin@fpt.edu.vn', NULL, b'0', 1),
 (2, 'đặng tiến hưng', '123456', 'hungdtph23624@fpt.edu.vn', NULL, b'0', 2),
-(3, 'người dùng 1', '123456', 'nguoidung@gmail.com', NULL, b'0', 3);
+(3, 'người dùng 1', '123456', 'nguoidung@gmail.com', NULL, b'0', 3),
+(18, 'Nguyễn Quang Đăng222', '123456', 'mrbat905@gmail.com', NULL, b'0', 3),
+(20, 'Nguyễn Quang Đăng2', '123456', 'mrbat92205@gmail.com', NULL, b'0', 3);
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `saleOff`, `picture`, `date_added`, `description`, `view_number`, `id_category`) VALUES
-(8, 'FULL SLEEV WOMEN SHIRT', 145, 20, '1.jpg', '2022-11-14 18:42:29', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem portul indunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 23, 3);
+(8, 'FULL SLEEV WOMEN SHIRT', 145, 20, '1.jpg', '2022-11-16 04:48:57', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem portul indunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 30, 1);
 
 -- --------------------------------------------------------
 
@@ -227,7 +229,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã loại hàng', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã loại hàng', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `category_type`
@@ -239,13 +241,13 @@ ALTER TABLE `category_type`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã bình luận', AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã bình luận', AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã đăng nhập', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã đăng nhập', AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`

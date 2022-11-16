@@ -47,49 +47,51 @@
                         <!-- menu -->
                         <div class="col-sm-6 col-xs-4 header__top-controll">
                             <ul class="header__top-menu-list">
+                                <?php if(!isset($_SESSION['user_id'])) { ?>
+                                <li class="header__top-menu-item">
+                                    <a href="#" class="header__top-menu-link">
+                                        login
+                                        <i class="icon fa-solid fa-angle-down"></i>
+                                    </a>
+                                    <div class="header__sub-menu login">
+                                        <h5>login or register</h5>
+                                        <div class="header__log">
+                                            <a href="?url=login.php" class="header__log-btn btn-login">Login</a>
+                                            <h3>OR</h3>
+                                            <a href="?url=register.php"
+                                                class="header__log-btn btn-register">register</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <?php } else { ?>
                                 <li class="header__top-menu-item">
                                     <a href="#" class="header__top-menu-link">
                                         my account
                                         <i class="icon fa-solid fa-angle-down"></i>
                                     </a>
                                     <ul class="header__sub-menu">
-                                        <li><a href="#">my cart</a></li>
-                                        <li><a href="#">infomation</a></li>
+                                        <li><a href="?url=cart.php">my cart</a></li>
+                                        <li><a href="?url=info.php">infomation</a></li>
                                     </ul>
                                 </li>
-                                <?php if(!isset($_SESSION['user_id'])) { ?>
-                                    <li class="header__top-menu-item">
-                                        <a href="#" class="header__top-menu-link">
-                                            login
-                                            <i class="icon fa-solid fa-angle-down"></i>
-                                        </a>
-                                        <div class="header__sub-menu login">
-                                            <h5>login or register</h5>
-                                            <div class="header__log">
-                                                <a href="?url=login.php" class="header__log-btn btn-login">Login</a>
-                                                <h3>OR</h3>
-                                                <a href="#" class="header__log-btn btn-register">register</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                <?php } else { ?>
-                                    <li class="header__top-menu-item">
-                                        <a href="?url=logout.php" class="header__top-menu-link">
-                                            logout
-                                            <i class="icon fa-solid fa-sign-out"></i>
-                                        </a>
-                                    </li>
+                                <li class="header__top-menu-item">
+                                    <a href="?url=logout.php" class="header__top-menu-link">
+                                        logout
+                                        <i class="icon fa-solid fa-sign-out"></i>
+                                    </a>
+                                </li>
                                 <?php } ?>
                             </ul>
                             <ul class="header__top-menu-list cart">
                                 <li class="header__top-menu-item">
-                                    <a href="#" class="header__top-menu-link">
+                                    <a href="?url=cart.php" class="header__top-menu-link">
                                         <i class="fa-brands fa-opencart"></i>
                                     </a>
                                     <ul class="header__sub-menu">
                                         <li>
-                                            <a href="./cart.html" class="cart__item-menu-link">
-                                                <img src="public/layout/images/mini-cart/1.jpg" class="cart__mini" alt="">
+                                            <a href="?url=cart.php" class="cart__item-menu-link">
+                                                <img src="public/layout/images/mini-cart/1.jpg" class="cart__mini"
+                                                    alt="">
                                                 <div class="cart__item-menu-list">
                                                     <h5 class="">Women’s winter dress</h5>
                                                     <span class="">1x$45.00</span>
@@ -100,7 +102,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="./cart.html" class="cart__item-menu-link">
+                                            <a href="?url=cart.php" class="cart__item-menu-link">
                                                 <img src="./images/mini-cart/2.jpg" class="cart__mini" alt="">
                                                 <div class="cart__item-menu-list">
                                                     <h5 class="">Full sleev women shirt</h5>

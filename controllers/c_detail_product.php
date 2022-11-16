@@ -20,11 +20,9 @@ class c_detail
         //Lấy ra comment
         $comments = $m_comment -> getComment();
 
-        include('models/m_customer.php');
-        $m_customer= new m_customer();
-
         //Lấy ra người dùng đăng nhập hiện tại
         if(isset($_SESSION["user_id"])) {
+            $m_customer = new m_customer();
             $user = $m_customer-> getCustomerById($_SESSION["user_id"]);
         }
 
@@ -38,7 +36,7 @@ class c_detail
             include('models/m_comment.php');
             $m_comment = new m_comment();
             $id_product = $_POST["id_product"];
-            $id_person = $_SESSION["users"];
+            $id_person = $_SESSION["user_id"];
             $content = $_POST["comment"];
 
             $m_comment -> insertComment($id_person,$id_product,$content);

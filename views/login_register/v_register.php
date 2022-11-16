@@ -57,6 +57,14 @@
                 <input type="text" name="name" id="" class="regis__input">
             </div>
             <div class="regis__box">
+                <label for="" class="regis__title">address</label> <br>
+                <input type="text" name="address" id="" class="regis__input">
+            </div>
+            <div class="regis__box">
+                <label for="" class="regis__title">phone number</label> <br>
+                <input type="text" name="phone_number" id="" class="regis__input">
+            </div>
+            <div class="regis__box">
                 <label for="" class="regis__title">password</label> <br>
                 <input type="password" name="password" id="" class="regis__input">
             </div>
@@ -65,6 +73,9 @@
                 <input type="password" name="rp_password" id="" class="regis__input">
             </div>
             <input type="submit" value="Register" name="btn_register" class="regis__sub"><br>
+            <a href="?url=login.php" class="log__a">
+                <p>Đăng nhập ngay</p>
+            </a>
         </form>
     </div>
 </body>

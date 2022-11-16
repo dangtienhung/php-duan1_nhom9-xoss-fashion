@@ -33,33 +33,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- css -->
-    <link rel="stylesheet" href="public/layout/css/style.css">
-    <link rel="stylesheet" href="public/layout/css/reponsive.css">
 </head>
 
 <body>
-    <div class="log__container">
-        <form action="?url=check_login.php" method="post" class="log__main">
-            <?php if(isset($_SESSION['error_login_user'])) { ?>
-                <h3 style="color: red"><?php echo $_SESSION['error_login_user'];?></h3>
-            <?php } $_SESSION['error_login_user']= ""; ?>
-            <div class="log__box">
-                <label for="" class="log__title">email</label> <br>
-                <input type="email" name="email" id="" class="log__input">
+
+    <div class="main-wrapper">
+
+        <!-- ======= 404__container ======= -->
+        <div class="page-404 bg-off-white fix d-flex justify-content-center align-items-center" style="height: 100vh">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="content-404 text-center">
+                            <h1 style="font-size: 200px; font-weight: 600;">404</h1>
+                            <h3 style="font-size: 24px; font-weight: 600;">The page you requeted cannot be found.</h3>
+                            <br>
+                            <a href="?url=home"><button>
+                                    <h2>> Click here to return Homepage <</h2>
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="log__box">
-                <label for="" class="log__title">password</label><br>
-                <input type="password" name="current-password" id="" class="log__input">
-            </div>
-            <input type="submit" name="btn_login" value="Sign in" class="log__sub"><br>
-            <a href="?url=register.php" class="log__a">
-                <p>Đăng ký ngay</p>
-            </a>
-        </form>
+        </div>
+
     </div>
+
 </body>
+
 <!-- jquey -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -70,11 +71,7 @@
 
 <!-- boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-
-<!-- javascript -->
-<script src="public/layout/javascript/slick-slider.js"></script>
-<script src="public/layout/javascript/main.js"></script>
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+</script>
 
 </html>
