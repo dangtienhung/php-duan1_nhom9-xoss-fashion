@@ -6,7 +6,7 @@ class c_cart
     {
         include('models/m_cart.php');
 
-        $view = 'views/home/v_cart.php';
+        $view = 'views/cart/v_cart.php';
         include('templates/client/layout.php');
     }
 }
