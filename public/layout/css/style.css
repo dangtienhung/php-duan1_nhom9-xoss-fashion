@@ -1550,7 +1550,33 @@ html {
   margin-bottom: 40px;
 }
 
+.detail__product-comment-box::-webkit-scrollbar {
+  width: 0.6rem;
+  /* chiều rộng rộng 6px */
+}
+
+.detail__product-comment-box::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  /*màunềncủathanhcuộn*/
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.detail__product-comment-box::-webkit-scrollbar-track {
+  background-color: #fff;
+  /* màu nền của thanh cuộn */
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
 .detail__product-comment-view {
+  padding-right: 5px;
   margin-bottom: 30px;
 }
 
@@ -1590,6 +1616,28 @@ html {
   text-transform: uppercase;
   font-weight: 600;
   line-height: 12px;
+}
+
+.detail__comment-form-wrap-box a {
+  display: inline-flex;
+  background-color: #f05a66;
+  border: 1px solid #eee;
+  color: #606060;
+  height: 37px;
+  min-width: 40px;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.detail__comment-form-wrap-box a:hover {
+  background: transparent;
+  color: #f05a66;
+  border-color: #f05a66;
 }
 
 .detail__comment-form-action {

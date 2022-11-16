@@ -1,10 +1,9 @@
 <?php
     $url = isset($_GET["url"]) ? $_GET["url"] : "/";
-    print($url);
-    die;
     include 'controllers/c_home.php';
     include 'controllers/c_detail_product.php';
-    
+    include 'controllers/c_product.php';
+
     switch($url) {
         case '/':
         case 'home':
@@ -13,7 +12,15 @@
             break;
         case 'detail.php':
             $detail = new c_detail();
-            $deatil->index();
+            $detail->index();
+            break;
+        case 'product.php':
+            $product = new c_product();
+            $product->index();
+            break;
+        case 'add_comment.php':
+            $add_comment = new c_detail();
+            $add_comment->insertComment();
             break;
         default:
         //In ra layout ko tìm thấy trang chủ

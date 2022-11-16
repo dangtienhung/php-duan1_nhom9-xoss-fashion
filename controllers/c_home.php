@@ -10,6 +10,7 @@ class c_home
         $featured_products = $m_product -> getfeaturedProducts();
         // Láy ra sản phẩm mới nhất
         $new_products = $m_product -> getNewProduct();
+
         $view = 'views/home/v_home.php';
         include('templates/client/layout.php');
     }

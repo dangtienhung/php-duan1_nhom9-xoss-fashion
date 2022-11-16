@@ -3,31 +3,31 @@
             <div class="container">
                 <div class="row footer__brands">
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/1.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/1.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/2.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/2.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/3.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/3.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/4.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/4.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/5.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/5.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/6.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/6.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/7.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/7.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/8.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/8.png" alt="" class="footer__brand-img">
                     </div>
                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 footer__brands-item">
-                        <img src="images/brands/9.png" alt="" class="footer__brand-img">
+                        <img src="public/layout/images/brands/9.png" alt="" class="footer__brand-img">
                     </div>
                 </div>
             </div>
@@ -104,8 +104,8 @@
     crossorigin="anonymous"></script>
 
 <!-- javascript -->
-<script src="javascript/slick-slider.js"></script>
-<script src="javascript/detail.js"></script>
-<script src="javascript/main.js"></script>
+<script src="public/layout/javascript/slick-slider.js"></script>
+<script src="public/layout/javascript/detail.js"></script>
+<script src="public/layout/javascript/main.js"></script>
 
 </html>

@@ -16,7 +16,7 @@ include 'templates/admin/head.php';
                     ĐĂNG NHẬP HỆ THỐNG
                 </p>
                 <!-- đăng nhập tài khoản & password -->
-                <form action="process-login.php" method="POST" class="validate-form">
+                <form action="action-login.php" method="POST" class="validate-form">
                     <div class="validate-input">
                         <span><i class="fa-solid fa-user"></i></span>
                         <input type="email" placeholder="Email quản trị" name="email" id="username" required>
@@ -35,7 +35,8 @@ include 'templates/admin/head.php';
 
                     <!-- đăng nhập -->
                     <div class="validate-form-btn">
-                        <input type="submit" name="login" value="Đăng nhập" id="submit" onclick="validate()" />
+                        <!-- <button>login</button> -->
+                        <input type="submit" name="login" value="Đăng nhập" id="submit" />
                     </div>
                     <!-- /* quên mật khẩu */ -->
                     <div class="text-start mt-3">
