@@ -5,6 +5,7 @@
     include 'controllers/c_product.php';
     include 'controllers/c_login.php';
     include 'controllers/c_register.php';
+    include 'controllers/c_info.php';
 
     switch($url) {
         case '/':
@@ -43,6 +44,14 @@
         case 'check_register.php':
             $register = new c_register();
             $register -> check_register();
+            break;
+        case 'info.php':
+            $info = new c_info();
+            $info -> index();
+            break;
+        case 'change_info.php':
+            $info = new c_info();
+            $info -> change_info();
             break;
         default:
         //In ra layout trang chủ không tồn tại (404)

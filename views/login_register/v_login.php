@@ -55,7 +55,7 @@
             </div>
             <input type="submit" name="btn_login" value="Sign in" class="log__sub"><br>
             <a href="?url=register.php" class="log__a">
-                <p>Register</p>
+                <p>Đăng ký ngay</p>
             </a>
         </form>
     </div>

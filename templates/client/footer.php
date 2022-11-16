@@ -107,5 +107,6 @@
 <script src="public/layout/javascript/slick-slider.js"></script>
 <script src="public/layout/javascript/detail.js"></script>
 <script src="public/layout/javascript/main.js"></script>
+<script src="public/layout/javascript/info.js"></script>
 
 </html>
