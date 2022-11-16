@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="item__product-body">
-                                <h2><?php echo $value->name?></h2>
+                                <h3><?php echo $value->name?></h3>
                                 <h3><?php echo number_format($value->price)?></h3>
                             </div>
                         </a>

@@ -38,6 +38,17 @@
                                     class="body__image img_item" />
                             </div>
                             <div class="mb-3">
+                                <label for="address" class="form-label fs-3">địa chỉ khách hàng</label>
+                                <input type="text" class="form-control fs-3" id="address" placeholder="địa chỉ khách hàng"
+                                    name="address" value="<?= $each->address ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label fs-3">số điện thoại khách hàng</label>
+                                <input type="text" class="form-control fs-3" id="phone_number"
+                                    placeholder="phone_number khách hàng" name="phone_number"
+                                    value="<?= $each->phone_number ?>">
+                            </div>
+                            <div class="mb-3">
                                 <label for="email" class="form-label fs-3">Email khách hàng</label>
                                 <input type="text" class="form-control fs-3" id="email" placeholder="Email khách hàng"
                                     name="email" value="<?= $each->email ?>">

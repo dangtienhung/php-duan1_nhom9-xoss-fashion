@@ -29,6 +29,16 @@
                                 <input class="form-control fs-3" type="file" id="image" name="image">
                             </div>
                             <div class="mb-3">
+                                <label for="address" class="form-label fs-3">Địa chỉ khách hàng</label>
+                                <input type="text" class="form-control fs-3" id="address" placeholder="address người dùng"
+                                    name="address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label fs-3">số điện thoại khách hàng</label>
+                                <input type="text" class="form-control fs-3" id="phone_number"
+                                    placeholder="phone_number người dùng" name="phone_number">
+                            </div>
+                            <div class="mb-3">
                                 <label for="email" class="form-label fs-3">Email người dùng</label>
                                 <input type="text" class="form-control fs-3" id="email" placeholder="Email người dùng"
                                     name="email">

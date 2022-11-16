@@ -70,7 +70,7 @@
                                         <i class="icon fa-solid fa-angle-down"></i>
                                     </a>
                                     <ul class="header__sub-menu">
-                                        <li><a href="#">my cart</a></li>
+                                        <li><a href="?url=cart.php">my cart</a></li>
                                         <li><a href="?url=info.php">infomation</a></li>
                                     </ul>
                                 </li>
@@ -84,12 +84,12 @@
                             </ul>
                             <ul class="header__top-menu-list cart">
                                 <li class="header__top-menu-item">
-                                    <a href="#" class="header__top-menu-link">
+                                    <a href="?url=cart.php" class="header__top-menu-link">
                                         <i class="fa-brands fa-opencart"></i>
                                     </a>
                                     <ul class="header__sub-menu">
                                         <li>
-                                            <a href="./cart.html" class="cart__item-menu-link">
+                                            <a href="?url=cart.php" class="cart__item-menu-link">
                                                 <img src="public/layout/images/mini-cart/1.jpg" class="cart__mini"
                                                     alt="">
                                                 <div class="cart__item-menu-list">
@@ -102,7 +102,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="./cart.html" class="cart__item-menu-link">
+                                            <a href="?url=cart.php" class="cart__item-menu-link">
                                                 <img src="./images/mini-cart/2.jpg" class="cart__mini" alt="">
                                                 <div class="cart__item-menu-list">
                                                     <h5 class="">Full sleev women shirt</h5>
