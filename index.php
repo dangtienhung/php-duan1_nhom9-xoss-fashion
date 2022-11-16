@@ -6,6 +6,7 @@
     include 'controllers/c_login.php';
     include 'controllers/c_register.php';
     include 'controllers/c_info.php';
+    include 'controllers/c_404.php';
 
     switch($url) {
         case '/':
@@ -54,5 +55,8 @@
             $info -> change_info();
             break;
         default:
+            $error404 = new c_404();
+            $error404 -> index();
+            break;
         //In ra layout trang chủ không tồn tại (404)
     }

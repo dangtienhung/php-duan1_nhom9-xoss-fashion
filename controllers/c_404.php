@@ -1,8 +1,7 @@
 <?php
 
 class c_404 {
-    public function index() {
-        $view="";
-        include('templates/client/layout.php');
+    public function index() {   
+        include('views/404/404.php');
     }
 }
