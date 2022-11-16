@@ -27,6 +27,8 @@
                 <tr>
                     <th>Tên người dùng</th>
                     <th>Hình ảnh</th>
+                    <th>Address</th>
+                    <th>Phone_number</th>
                     <th>Email</th>
                     <th>Role</th>
                     <th>Tính năng</th>
@@ -36,11 +38,19 @@
                 <tr>
                     <td><?= $each->name_customer; ?></td>
                     <td>
-                        <img src="public/front-end/images/customer/<?= $each->picture; ?>" alt=""
+                        
+                            <?php if ($each->picture==NULL) {?> 
+                                <img src="public/front-end/images/trend-avatar-1.jpg" alt=""
                             class="img_item">
+                                <?php } else { ?>
+                            <img src="public/front-end/images/customer/<?= $each->picture; ?>" alt=""
+                                                        class="img_item">
+                                <?php } ?>
                     </td>
+                    <td><?= $each->address; ?></td>
+                    <td><?= $each->phone_number; ?></td>
                     <td><?= $each->email; ?></td>
-                    <td><?= $each->role; ?></td>
+                    <td><?= $each->role_name; ?></td>
                     <td>
                         <a href="edit-customer.php?id=<?= $each->id; ?>">
                             sửa
