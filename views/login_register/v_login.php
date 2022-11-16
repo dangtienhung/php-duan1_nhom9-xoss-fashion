@@ -47,7 +47,7 @@
             <?php } $_SESSION['error_login_user']= ""; ?>
             <div class="log__box">
                 <label for="" class="log__title">email</label> <br>
-                <input type="text" name="email" id="" class="log__input">
+                <input type="email" name="email" id="" class="log__input">
             </div>
             <div class="log__box">
                 <label for="" class="log__title">password</label><br>

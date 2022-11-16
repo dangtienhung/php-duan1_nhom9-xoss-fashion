@@ -38,7 +38,7 @@ class c_detail
             include('models/m_comment.php');
             $m_comment = new m_comment();
             $id_product = $_POST["id_product"];
-            $id_person = $_SESSION["users"];
+            $id_person = $_SESSION["user_id"];
             $content = $_POST["comment"];
 
             $m_comment -> insertComment($id_person,$id_product,$content);
