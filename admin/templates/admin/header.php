@@ -41,13 +41,15 @@
                 </a>
             </li>
             <li>
-                <a href="" class="sidebar__menu-link">
+                <a href="customer.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Quản lý user
                 </a>
             </li>
             <li>
-                <a href="" class="sidebar__menu-link">
+
+
+                <a href="comments.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-comments-dollar"></i>
                     Quản lý bình luận
                 </a>

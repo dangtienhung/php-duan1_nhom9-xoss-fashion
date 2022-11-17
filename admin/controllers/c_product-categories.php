@@ -16,7 +16,6 @@ class c_product_categories
         $search = '';
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
-            echo 'search: ' . $search;
         }
         // phân trang
         $page = 1;
