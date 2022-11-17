@@ -36,7 +36,7 @@
                             <div class="mb-3">
                                 <label for="picture" class="form-label fs-3">HÌnh ảnh sản phẩm</label>
                                 <input type="file" min="0" class="form-control fs-3" id="picture"
-                                     name="picture" required>
+                                     name="picture" value="<?=$list_item->picture;?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label fs-3">Mô tả sản phẩm</label>
