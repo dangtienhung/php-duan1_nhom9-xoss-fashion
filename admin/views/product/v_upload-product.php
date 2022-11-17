@@ -21,32 +21,32 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label fs-3">Tên sản phẩm</label>
                                 <input type="text" class="form-control fs-3" id="name"
-                                    placeholder="Tên sản phẩm" name="name" required>
+                                    placeholder="Tên sản phẩm" name="name" required value="<?= $list_item->name ;?>">
                             </div>
                             <div class="mb-3">
                                 <label for="price" class="form-label fs-3">Giá sản phẩm</label>
                                 <input type="text" class="form-control fs-3" id="price" placeholder="Giá sản phẩm"
-                                    name="price" required>
+                                    name="price" required value="<?= $list_item->price ;?>">
                             </div>
                             <div class="mb-3">
                                 <label for="saleOff" class="form-label fs-3">Giảm giá sản phẩm</label>
                                 <input type="number" min="0" class="form-control fs-3" id="sale"
-                                    placeholder="Giảm giá sản phẩm" name="saleOff" required>
+                                    placeholder="Giảm giá sản phẩm" name="saleOff" required value="<?= $list_item->saleOff ;?>">
                             </div>
                             <div class="mb-3">
-                                <label for="picture" class="form-label fs-3">Giảm giá sản phẩm</label>
+                                <label for="picture" class="form-label fs-3">HÌnh ảnh sản phẩm</label>
                                 <input type="file" min="0" class="form-control fs-3" id="picture"
-                                     name="picture" required>
+                                     name="picture" value="<?=$list_item->picture;?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label fs-3">Mô tả sản phẩm</label>
                                 <textarea name="description" placeholder="Mô tả sản phẩm" class="form-control fs-3"
-                                    id="description" rows="3" required></textarea>
+                                    id="description" rows="3" required ><?= $list_item->description ;?></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="saleOff" class="form-label fs-3">Giảm giá sản phẩm</label>
+                                <label for="saleOff" class="form-label fs-3">Lượt xem sản phẩm</label>
                                 <input type="number" min="0" class="form-control fs-3" id="sale"
-                                    placeholder="Lượt xem sản phẩm" name="view_number" required>
+                                    placeholder="Lượt xem sản phẩm" name="view_number" required value="<?= $list_item->view_number ;?>">
                             </div>
                             <div class="mb-3">
                                 <label for="id_category" class="form-label fs-3">Loại sản phẩm</label>
