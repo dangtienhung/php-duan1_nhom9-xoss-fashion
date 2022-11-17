@@ -63,6 +63,7 @@ class c_product {
         $upload_product = new m_product();
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
+            $list_item = $upload_product->get_product_by_id($id);
             $category_type = $upload_product->get_all_category_type();
         }
         if (isset($_POST['btn-submit'])) {
