@@ -28,17 +28,17 @@ class m_product_category extends database
                 limit $number_in_on_page
                 offset $clear;";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($search, $number_in_on_page, $clear));
+        return $this->loadAllRows();
     }
 
     // đếm số lượng sản phẩm với từ khóa tìm kiếm
     public function get_count_search($search)
     {
-        $sql = "select count(*) from category where category.title_category like '%$search%'";
+        $sql = "select count(*) as 'count' from category where category.title_category like '%$search%'";
         $this->setQuery($sql);
-        return $this->loadRecord(array($search));
+        return $this->loadRecord();
     }
-
+//để tooi ngồi mò cho okay 
     // lấy ra danh mục sản phẩm theo id
     public function get_category_by_id($id)
     {
