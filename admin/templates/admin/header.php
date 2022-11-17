@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="products.php" class="sidebar__menu-link">
+                <a href="product.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-list-check"></i>
                     Quản lý sản phẩm
                 </a>
