@@ -8,6 +8,12 @@ const change_email_btn = document.querySelector("#change_email")
 const input_phone_number = document.querySelector("#phone_number_value");
 const input_email = document.querySelector("#email_value");
 
+//Preview Avatar
+const img_input = document.querySelector("#img_input");
+const view_image = document.querySelector("#view_image");
+const div_image = document.querySelector(".info__image-preview");
+const cancel = document.querySelector("#cancel");
+
 if(div_content) {
     div_content.forEach((e, index) => { 
         if(index != 0)
@@ -58,5 +64,20 @@ if(input_email) {
             bool = true
             input_email.value = current_email.value;
         }
+    })
+}
+
+if(img_input) {
+    img_input.addEventListener('change', ()=> {
+        var url = URL.createObjectURL(img_input.files[0]);
+        view_image.src = url
+        div_image.style.display="block";
+    })
+
+    cancel.addEventListener('click', () => {
+        view_image.src = '';
+        img_input.value = '';
+        div_image.style.display="none";
+        console.log(view_image.src)
     })
 }

@@ -5,7 +5,7 @@
             <!-- head aside -->
             <div class="info__aside-header">
                 <div class="info__Avatar">
-                    <img src="<?php if($user->picture == "") { echo "public/layout/images/no-image.png"; } else { echo "public/layout/images/team/$user->picture"; }?>"
+                    <img src="<?php if($user->picture == "") { echo "public/layout/images/no-image.png"; } else { echo "admin/public/front-end/images/customer/$user->picture"; }?>"
                         alt="">
                 </div>
                 <div class="info__Name-phone-number">
@@ -64,10 +64,18 @@
                         </table>
                         <div class="info__change-avatar">
                             <div class="info__view-avatar">
-                                <img src="<?php if($user->picture == "") { echo "public/layout/images/no-image.png"; } else { echo "public/layout/images/team/$user->picture"; }?>"
+                                <img src="<?php if($user->picture == "") { echo "public/layout/images/no-image.png"; } else { echo "admin/public/front-end/images/customer/$user->picture"; }?>"
                                     alt="">
+                                    <input type="text" name="current_picture" value="<?php echo $user->picture?>" hidden>
                             </div>
-                            <input name="avatar" type="file" accept=".jpg,.jpeg,.png">
+                            <input name="avatar" type="file" accept=".jpg,.jpeg,.png" id="img_input" >
+                            <div class="info__image-preview" style="display: none;">
+                                <p>Xem trước ảnh</p>
+                                <div class="info__preview">
+                                    <img src="" alt="" id="view_image">
+                                </div>
+                                <button type='button' id='cancel'>Hủy Lựa Chọn</button>
+                            </div>
                             <p>Giới hạn dung lượng chỉ 1MB <br> định dạng jpg, jpeg, png</p>
                         </div>
                         <button class="info_btn-save" name="btn_save">Lưu thông tin</button>
@@ -89,8 +97,8 @@
                 <h2>Địa chỉ của tôi</h2>
                 <!-- Content -->
                 <div class="info__address-wrap-box">
-                    <h4>Nguyễn Quang Đăng</h4> <span>+ 0916448844</span>
-                    <p>Địa chỉ: <span>666 HELL</span></p>
+                    <h4>Nguyễn Quang Đăng</h4> <span>+ <?php echo $user->phone_number?></span>
+                    <p>Địa chỉ: <span><?php echo $user->address?></span></p>
                 </div>
             </div>
             <!-- Change Pass -->

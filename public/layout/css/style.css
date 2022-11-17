@@ -2588,6 +2588,37 @@ html {
   min-width: 40px;
 }
 
+.info__image-preview p{
+  font-size: 1.3rem;
+}
+
+.info__image-preview button {
+  margin: 5px 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f05a66;
+  border: 1px solid #f05a66;
+  padding: 10px 5px;
+}
+
+.info__image-preview button:hover {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #f05a66;
+}
+
+.info__preview {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.info__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .info_btn-save {
   background-color: #f05a66;
   border: 1px solid #eee;

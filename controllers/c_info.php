@@ -26,14 +26,14 @@ class c_info {
             } else {
                 $phone_number = $_POST["phoneNumber"];
             }
-            $avatar = "";
+            $avatar = isset($_POST["current_picture"]) ? $_POST["current_picture"] : "";
 
             if($_FILES["avatar"]["size"] != 0) {
                 $avatar = $_FILES["avatar"]["name"];
             }
             $m_customer = new m_customer();
             $m_customer -> save_change_info($email, $phone_number, $avatar, $_SESSION["user_id"]);
-            move_uploaded_file($_FILES["avatar"]["tmp_name"],"public/layout/images/team/".$_FILES["avatar"]["name"]);
+            move_uploaded_file($_FILES["avatar"]["tmp_name"],"admin/public/front-end/images/customer/".$_FILES["avatar"]["name"]);
             header("location:?url=info.php");
         }
     }
