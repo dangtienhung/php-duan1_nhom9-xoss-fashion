@@ -4,7 +4,7 @@
         <div class="detail__product-view">
             <!-- Product Image -->
             <div class="detail__product-image">
-                <img src="public/layout/images/product/<?php echo $detail_product->picture?>" alt="">
+                <img src="admin/public/front-end/images/products/<?php echo $detail_product->picture?>" alt="">
             </div>
             <!-- Product Content -->
             <div class="detail__product-content">
@@ -63,7 +63,7 @@
                             <h5>QUANTITY:</h5>
                             <div class="detail__product-wrap-quantity">
                                 <!-- Input Quantity -->
-                                <input type="text" value="0" name="quantity" class="detail_product-input-plus-minus">
+                                <input type="text" value="0" name="quantity" class="detail_product-input-plus-minus" id="1">
 
                                 <!-- Increase -->
                                 <span class="detail__product-inc btnqty">
@@ -179,7 +179,7 @@
                         <!-- Item Image -->
                         <div class="detail__item-image">
                             <a href="?url=detail.php&id_product=<?php echo $value->id?>">
-                                <img src="public/layout/images/product/<?php echo $value->picture?>" alt="">
+                                <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
                             </a>
                         </div>
                         <!-- Item new -->

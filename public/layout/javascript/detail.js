@@ -30,9 +30,10 @@ const btn_dec = document.querySelector(".detail__product-dec")
 
 if(input_quantity) {
     btn_inc.addEventListener('click', () => {
-
         let value = input_quantity.value
-        input_quantity.value = parseInt(value) + 1;
+        if(parseInt(value) < input_quantity.id) {
+            input_quantity.value = parseInt(value) + 1;
+        }
     })
 
     btn_dec.addEventListener('click', () => {

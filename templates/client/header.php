@@ -143,8 +143,9 @@
                             </ul>
                             <!-- search -->
                             <div class="col-sm-8 col-lg-2 header__search">
-                                <form action="" method="post" class="header__search-form">
-                                    <input type="search" name="search__products" class="header__search-input"
+                                <form action="" method="GET" class="header__search-form">
+                                    <input type="text" name="url" value="product.php" hidden>
+                                    <input type="search" name="search" class="header__search-input"
                                         placeholder="Search ....">
                                     <button class="header__search-btn">
                                         <i class="icon fa-solid fa-search"></i>

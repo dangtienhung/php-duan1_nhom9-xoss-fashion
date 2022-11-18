@@ -1,4 +1,7 @@
 <div class="products__container">
+    <?php if(isset($_GET['search']) && !empty($_GET["search"])) {?>
+        <h1 style="margin-left: 30px;" align='left'>tìm thấy <?php echo $number_count ?> kết quả tìm kiếm cho từ khóa "<?php echo $_GET["search"]?>"</h1>
+    <?php } ?>
     <div class="row">
         <div class="col-md-3 col-xs-12 sidebar-container float-right">
             <div class="row">
@@ -15,83 +18,12 @@
                                     <ul class="dropdown-menu">
                                         <?php foreach($categories as $value): ?>
                                             <?php if($values->id == $value->id_category_type) { ?>
-                                                <li><a class="dropdown-item" href="?url=product.php&id_category=<?php echo $value->id?>"><?php echo $value->title_category?></a></li>
+                                                <li><a class="dropdown-item" href="?url=product.php&id_category=<?php echo $value->id?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>"><?php echo $value->title_category?></a></li>
                                             <?php } ?>
                                         <?php endforeach ?>
                                     </ul>
                                 <?php endforeach?>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                    <div class="products__sin_sidebar brand-sidebar">
-                        <h3 class="sidebar-title">POPULAR BRAND</h3>
-                        <div class="sidebar-wrapper fix">
-                            <ul class="cus-scroll">
-                                <li><a href="#">rayban</a></li>
-                                <li><a href="#">denim</a></li>
-                                <li><a href="#">polo</a></li>
-                                <li><a href="#">adiddas</a></li>
-                                <li><a href="#">nike</a></li>
-                                <li><a href="#">gucci</a></li>
-                                <li><a href="#">cats eye</a></li>
-                                <li><a href="#">rayban</a></li>
-                                <li><a href="#">denim</a></li>
-                                <li><a href="#">polo</a></li>
-                                <li><a href="#">adiddas</a></li>
-                                <li><a href="#">nike</a></li>
-                                <li><a href="#">gucci</a></li>
-                                <li><a href="#">cats eye</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                    <div class="products__sin_sidebar price-sidebar">
-                        <h3 class="sidebar-title">FILTER BY COLOR</h3>
-                        <div class="sidebar-wrapper fix">
-                            <div id="price-range"></div>
-                            <div class="price-values fix">
-                                <p>Range</p>
-                                <input type="text" id="price-amount" readonly>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                    <div class="products__sin_sidebar products__size_sidebar">
-                        <h3 class="sidebar-title">FILTER BY COLOR</h3>
-                        <div class="sidebar-wrapper fix">
-                            <a href="#">s</a>
-                            <a href="#">m</a>
-                            <a href="#">l</a>
-                            <a href="#">xl</a>
-                            <a href="#">xxl</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                    <div class="products__sin_sidebar color-sidebar">
-                        <h3 class="sidebar-title">FILTER BY COLOR</h3>
-                        <div class="sidebar-wrapper fix">
-                            <ul class="cus-scroll">
-                                <li><a href="#"><span><i class="fa-solid"
-                                                style="background-color: black; width: 12px;height: 12px;"></i></span>black</a>
-                                </li>
-                                <li><a href="#"><span><i class="fa-solid"
-                                                style="background-color: red; width: 12px;height: 12px;"></i></span>red</a>
-                                </li>
-                                <li><a href="#"><span><i class="fa-solid"
-                                                style="background-color: green; width: 12px;height: 12px;"></i></span>green</a>
-                                </li>
-                                <li><a href="#"><span><i class="fa-solid"
-                                                style="background-color: yellow; width: 12px;height: 12px;"></i></span>yellow</a>
-                                </li>
-                                <li><a href="#"><span><i class="fa-solid"
-                                                style="background-color: pink; width: 12px;height: 12px;"></i></span>pink</a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -135,7 +67,7 @@
             </div>
 
             <div class="products__content row">
-                <?php foreach($products as $value): ?>
+                <?php if($number_count > 0) { foreach($products as $value): ?>
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="products__product-item">
                             <!-- Item Image + Action -->
@@ -143,7 +75,7 @@
                                 <!-- Item Image -->
                                 <div class="products__item-image">
                                     <a href="?url=detail.php&id_product=<?php echo $value->id?>">
-                                        <img src="public/layout/images/product/<?php echo $value->picture?>" alt="">
+                                        <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
                                     </a>
                                 </div>
                                 <!-- View products -->
@@ -183,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                <?php endforeach ?>
+                <?php endforeach; } ?>
             </div>
             <div class="shop-toolbar shop-toolbar-bottom fix">
                 <div class="row">
@@ -192,13 +124,15 @@
                         <a class="list" href="#list-view" data-toggle="tab"><i class="zmdi zmdi-storage"></i></a>
                     </div>
                     <div class="col-lg-4 col-sm-5 col-xs-12 pagination text-center">
-                        <ul>
-                            <li><a href="#"><i class="fa-solid fa-chevron-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#" class="active">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#"><i class="fa-solid fa-chevron-right"></i></a></li>
+                    <ul class="pagination pb-3 d-flex justify-content-center">
+                            <?php for ($i = 1; $i <= $number_page; $i++) { ?>
+                                <li class="<?php if(isset($_GET["page"]) && $_GET['page'] == $i) { echo 'active'; }?>">
+                                    <a class="page-link fs-3 px-3 text-danger mx-1"
+                                        href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?>&page=<?php echo $i; ?>&search=<?php echo $search; ?>">
+                                        <?php echo $i ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-sm-5 col-xs-9 short-by text-right float-right">

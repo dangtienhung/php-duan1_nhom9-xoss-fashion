@@ -72,7 +72,7 @@
                     <div class="item__product">
                         <a href="?url=detail.php&id_product=<?php echo $value->id?>">
                             <div class="item__product-head">
-                                <img src="public/layout/images/product/<?php echo $value->picture?>" alt="">
+                                <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
                                 <div class="item__controll-btn">
                                     <a href="#" class="item__btn-buy">Mua ngay</a>
                                     <a href="#" class="item__btn-cart">Giỏ hàng</a>
@@ -123,10 +123,10 @@
                     <div class="item__product">
                         <a href="?url=detail.php&id_product=<?php echo $value->id?>">
                             <div class="item__product-head">
-                                <img src="public/layout/images/product/<?php echo $value->picture?>" alt="">
+                                <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
                                 <div class="item__controll-btn">
                                     <a href="#" class="item__btn-buy">Mua ngay</a>
-                                    <a href="#" class="item__btn-cart">Giỏi hàng</a>
+                                    <a href="#" class="item__btn-cart">Giỏ hàng</a>
                                 </div>
                             </div>
                             <div class="item__product-body">

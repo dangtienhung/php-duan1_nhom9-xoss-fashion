@@ -49,7 +49,7 @@ class c_product
                 if ($image = "") {
                     echo "không có ảnh";
                 } else {
-                    $folder = "public/admin/font-end/images/products/";
+                    $folder = "public/front-end/images/products/";
                     $file_extension = explode('.', $picture)[1];
                     $file_name = time() . '.' . $file_extension;
                     $path_file = $folder . $file_name;
