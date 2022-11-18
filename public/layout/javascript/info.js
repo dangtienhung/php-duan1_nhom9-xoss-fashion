@@ -1,12 +1,17 @@
 //change div cotent by option
 const options = document.querySelectorAll(".info__list-option>li");
 const div_content = document.querySelectorAll(".info__main-wrap-box>div");
+
+//change info 
 const current_phone_number = document.querySelector(".info__content-box #phone_number");
 const current_email = document.querySelector(".info__content-box #email");
+const current_name = document.querySelector(".info__content-box #name");
 const change_phone_number_btn = document.querySelector("#change_phone_number");
 const change_email_btn = document.querySelector("#change_email")
+const change_name_btn = document.querySelector("#change_name")
 const input_phone_number = document.querySelector("#phone_number_value");
 const input_email = document.querySelector("#email_value");
+const input_name = document.querySelector("#name_value");
 
 //Preview Avatar
 const img_input = document.querySelector("#img_input");
@@ -63,6 +68,22 @@ if(input_email) {
             change_email_btn.innerText = "Thay đổi"
             bool = true
             input_email.value = current_email.value;
+        }
+    })
+}
+
+if(input_name) {
+    let bool = true;
+    change_name_btn.addEventListener('click', () => {
+        if(bool) {
+            input_name.disabled = false;
+            change_name_btn.innerText = "Hủy"
+            bool = false
+        } else {
+            input_name.disabled = true;
+            change_name_btn.innerText = "Thay đổi"
+            bool = true
+            input_name.value = current_name.value;
         }
     })
 }
