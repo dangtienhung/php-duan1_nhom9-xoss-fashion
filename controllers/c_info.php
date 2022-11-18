@@ -7,8 +7,11 @@ class c_info {
 
     public function index() {
         $m_customer = new m_customer();
-        $user = $m_customer -> getCustomerById($_SESSION["user_id"]);
-
+        if(isset($_SESSION['user_id'])) {
+            $user = $m_customer -> getCustomerById($_SESSION["user_id"]);
+        } else {
+            header("location:?url=login.php");
+        }
         $view='views/info/v_info.php';
         include('templates/client/layout.php');
     }

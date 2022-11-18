@@ -68,6 +68,7 @@ if(input_email) {
 }
 
 if(img_input) {
+    var url ="";
     img_input.addEventListener('change', ()=> {
         var url = URL.createObjectURL(img_input.files[0]);
         view_image.src = url
@@ -78,6 +79,7 @@ if(img_input) {
         view_image.src = '';
         img_input.value = '';
         div_image.style.display="none";
+        URL.revokeObjectURL(url);
         console.log(view_image.src)
     })
 }

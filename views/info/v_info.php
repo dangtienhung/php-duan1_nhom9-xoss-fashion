@@ -97,7 +97,7 @@
                 <h2>Địa chỉ của tôi</h2>
                 <!-- Content -->
                 <div class="info__address-wrap-box">
-                    <h4>Nguyễn Quang Đăng</h4> <span>+ <?php echo $user->phone_number?></span>
+                    <h4><?php echo $user->name_customer?></h4> <span>+ <?php echo $user->phone_number?></span>
                     <p>Địa chỉ: <span><?php echo $user->address?></span></p>
                 </div>
             </div>

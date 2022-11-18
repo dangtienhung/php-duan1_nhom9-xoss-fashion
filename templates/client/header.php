@@ -169,12 +169,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="header__menu-responsive-item">
-                        <a class="header__menu-responsive-link" href="#">Home</a>
+                        <a class="header__menu-responsive-link" href="?url=home">Home</a>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="header__menu-responsive-item">
-                        <a class="header__menu-responsive-link" href="#">
+                        <a class="header__menu-responsive-link" href="?url=product.php">
                             Shop
                         </a>
                     </div>
@@ -186,7 +186,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="header__menu-responsive-item-cart">
-                        <a class="header__menu-responsive-link" href="#">My Bad</a>
+                        <a class="header__menu-responsive-link" href="?url=cart.php">My Bad</a>
                     </div>
                 </div>
             </div>
