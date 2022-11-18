@@ -38,7 +38,7 @@ class m_product_category extends database
         $this->setQuery($sql);
         return $this->loadRecord();
     }
-//để tooi ngồi mò cho okay 
+
     // lấy ra danh mục sản phẩm theo id
     public function get_category_by_id($id)
     {
