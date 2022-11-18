@@ -49,7 +49,7 @@ class c_product
                 if ($image = "") {
                     echo "không có ảnh";
                 } else {
-                    $folder = "public/admin/font-end/images/";
+                    $folder = "public/admin/font-end/images/products/";
                     $file_extension = explode('.', $picture)[1];
                     $file_name = time() . '.' . $file_extension;
                     $path_file = $folder . $file_name;
@@ -75,28 +75,30 @@ class c_product
             $name = $_POST['name'];
             $price = $_POST['price'];
             $saleOff = $_POST['saleOff'];
-            $image = $_FILES['picture'];
+            $image = $_FILES['new-picture'];
             $picture = ($image['error'] == 0) ? $image['name'] : '';
             $description = $_POST['description'];
             $view_number = $_POST['view_number'];
             $id_category = $_POST['id_category'];
-            if ($image != "") {
-                $product_id = $upload_product->get_product_by_id($id);
-                $upload = $upload_product->upload_product($name, $price, $saleOff, $picture, $description, $view_number, $id_category, $id);
-                if ($upload) {
-                    $folder = 'public/front-end/images/';
-                    $file_extension = explode('.', $picture)[1];
-                    $file_name = time() . '.' . $file_extension;
-                    $path_file = $folder . $file_name;
-                    $product_id = $upload_product->get_product_by_id($id);
-                    move_uploaded_file($image['tmp_name'], $path_file);
-                    header('location: product.php');
-                } else {
-                    header('location: product.php');
+            if ($image != "" && $image['size']>0) {
+                $folder = 'public/front-end/images/products/';
+                $file_extension = explode('.', $picture)[1];
+                $file_name = time() . '.' . $file_extension;
+                $path_file = $folder . $file_name;
+                $list_item = $upload_product->get_product_by_id($id);
+                move_uploaded_file($image['tmp_name'], $path_file);
+            }else{
+                if(isset($_POST['picture-old'])){
+                    $picture_old = $_POST['picture-old'];
+                }else {
+                    $picture_old = $list_item->picture;
                 }
-            }else {
-                echo "nhập lại";
+                 $file_name = $picture_old;
+                
             }
+            
+            $upload = $upload_product->upload_product($name, $price, $saleOff, $picture, $description, $view_number, $id_category, $id);
+            header('location: product.php');
         }
         $view = ('views/product/v_upload-product.php');
         include('templates/admin/layout.php');
