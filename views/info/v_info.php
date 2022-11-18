@@ -43,11 +43,15 @@
                             id="phone_number" hidden>
                         <!-- curent email -->
                         <input type="email" name="current_email" value="<?php echo $user->email?>" id="email" hidden>
+                        
+                        <!-- curent name -->
+                        <input type="text" name="current_name" value="<?php echo $user->name_customer?>" id="name" hidden>
 
                         <table class="info__table-view-info">
                             <tr>
                                 <td>Tên đăng nhập</td>
-                                <td><?php echo $user->name_customer?></td>
+                                <td><input type="text" id="name_value" name="user_name" value="<?php echo $user->name_customer?>"
+                                        disabled> <button id="change_name" type="button">Thay đổi</button></span></td>
                             </tr>
                             <tr>
                                 <td>email</td>
@@ -97,7 +101,7 @@
                 <h2>Địa chỉ của tôi</h2>
                 <!-- Content -->
                 <div class="info__address-wrap-box">
-                    <h4>Nguyễn Quang Đăng</h4> <span>+ <?php echo $user->phone_number?></span>
+                    <h4><?php echo $user->name_customer?></h4> <span>+ <?php echo $user->phone_number?></span>
                     <p>Địa chỉ: <span><?php echo $user->address?></span></p>
                 </div>
             </div>

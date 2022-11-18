@@ -36,9 +36,14 @@
                             <div class="mb-3">
                                 <label for="picture" class="form-label fs-3">HÌnh ảnh sản phẩm</label>
                                 <input type="file" min="0" class="form-control fs-3" id="picture"
-                                     name="picture" value="<?=$list_item->picture;?>" required>
+                                     name="new-picture">
                             </div>
                             <div class="mb-3">
+                                <label for="picture" class="form-label fs-3">Giữ lại hình ảnh cũ</label>
+                                <input type="hidden" name="picture-old" id="picture" value="<?= $list_item->picture?>">
+                                <img src="public/front-end/images/products/<?= $list_item->picture?>"  class="body__image img_item" />
+                            </div>
+                            <div class="mb-3">  
                                 <label for="description" class="form-label fs-3">Mô tả sản phẩm</label>
                                 <textarea name="description" placeholder="Mô tả sản phẩm" class="form-control fs-3"
                                     id="description" rows="3" required ><?= $list_item->description ;?></textarea>
