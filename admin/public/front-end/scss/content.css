@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
-
 /** space height */
 /** color-box */
 * {
@@ -14,7 +13,6 @@
   width: calc(100vw - 28rem);
   margin-left: 28rem;
 }
-
 .content-wrapper .app__title {
   height: 4rem;
   background-color: #fff;
@@ -29,21 +27,17 @@
   border-left: 0.6rem solid #df3b31;
   box-shadow: 9px 9px 9px #5a5a5a, 9px 9px 9px #ffffff;
 }
-
 .content-wrapper .app__title-title {
   margin-left: 2.4rem;
 }
-
 .content-wrapper .app__title #clock {
   margin-right: 2.4rem;
   font-size: 1.4rem;
   font-weight: 500;
 }
-
 .content-wrapper .analysis {
   display: flex;
 }
-
 .content-wrapper .analysis,
 .content-wrapper .content__chart {
   background-color: #fff;
@@ -56,7 +50,6 @@
   -o-border-radius: 0.4rem;
   box-shadow: 9px 9px 9px #5a5a5a, 9px 9px 9px #ffffff;
 }
-
 .content-wrapper .analysis i,
 .content-wrapper .content__chart i {
   border-radius: 0.4rem;
@@ -72,32 +65,27 @@
   font-size: 2.5rem;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
-
 .content-wrapper .analysis .icon--customer,
 .content-wrapper .content__chart .icon--customer {
   background-color: #b9ffd3;
   color: #22ad56;
 }
-
 .content-wrapper .analysis .icon--product,
 .content-wrapper .content__chart .icon--product {
   background-color: #adcbf3;
   color: #1d5aab;
 }
-
 .content-wrapper .analysis .icon--comment,
 .content-wrapper .content__chart .icon--comment {
   background-color: #fde1c3;
   color: #ff8b07;
 }
-
 .content-wrapper .analysis__info,
 .content-wrapper .content__chart__info {
   flex: 1;
   padding: 0 2rem;
   align-self: center;
 }
-
 .content-wrapper .analysis__info h4,
 .content-wrapper .content__chart__info h4 {
   text-transform: uppercase;
@@ -107,21 +95,18 @@
   font-size: 1.6rem;
   font-weight: 600;
 }
-
 .content-wrapper .analysis__info p,
 .content-wrapper .content__chart__info p {
   font-size: 1.6rem;
   margin: 0;
   margin-bottom: 0.4rem;
 }
-
 .content-wrapper .analysis__info-sum,
 .content-wrapper .content__chart__info-sum {
   border-top: 1px dashed #333;
   margin-top: 0.4rem;
   padding-top: 1rem;
 }
-
 .content-wrapper .content__chart-title {
   margin-bottom: 3rem;
 }
@@ -137,7 +122,6 @@
   background-color: #001c40;
   border-bottom-left-radius: 100%;
 }
-
 .login__limit .login__container {
   min-height: 100vh;
   width: 100%;
@@ -148,7 +132,6 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .login__limit .login__wrapper {
   width: 96rem;
   display: flex;
@@ -165,27 +148,22 @@
   overflow: hidden;
   padding: 10rem;
 }
-
 .login__limit .login__wrapper .login__img {
   width: 31.6rem;
 }
-
 .login__limit .login__wrapper .login__img img {
   width: 100%;
   display: block;
 }
-
 .login__limit .login__wrapper .login__form {
   width: 30rem;
   text-align: center;
 }
-
 .login__limit .login__wrapper .login__form-title {
   font-size: 2.2rem;
   font-weight: 500;
   padding-bottom: 3rem;
 }
-
 .login__limit .login__wrapper .validate-form .validate-input {
   padding: 0.8rem 0rem 0.8rem 0.8rem;
   border: 1px solid #ccc;
@@ -199,11 +177,9 @@
   font-size: 1.6rem;
   margin-bottom: 1.6rem;
 }
-
 .login__limit .login__wrapper .validate-form .validate-input i {
   padding: 0 2rem;
 }
-
 .login__limit .login__wrapper .validate-form .validate-form-btn input {
   width: 100%;
   padding: 0.8rem 0;
@@ -219,14 +195,6 @@
   color: #fff;
 }
 
-
-
-
-
-
-
-
-
 /* products */
 .container__main {
   margin-top: 1.6rem;
@@ -241,7 +209,6 @@
   padding: 0 0.8rem;
   box-shadow: 9px 9px 9px #5a5a5a, 9px 9px 9px #ffffff;
 }
-
 .container__main-handler {
   padding: 1.6rem 0;
   height: 5rem;
@@ -250,7 +217,6 @@
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
 }
-
 .container__main-link a {
   display: inline-block;
   padding: 8px;
@@ -265,11 +231,9 @@
   font-size: 1.4rem;
   box-shadow: 9px 9px 9px #5a5a5a, 9px 9px 9px #ffffff;
 }
-
 .container__main-search {
   box-shadow: 9px 9px 9px #5a5a5a, 9px 9px 9px #ffffff;
 }
-
 .container__main-search input {
   padding: 8px;
   min-width: 28rem;
@@ -290,7 +254,6 @@
   margin-top: 1rem;
   padding-bottom: 1rem;
 }
-
 .container__table table {
   border-collapse: collapse;
   border-radius: 0.6rem;
@@ -305,17 +268,14 @@
   background: #d9d9d9;
   box-shadow: inset 20px 20px 60px #b8b8b8, inset -20px -20px 60px #fafafa;
 }
-
 .container__table tr:first-child {
   height: 40px;
 }
-
 .container__table tr:first-child th {
   background-color: #df3b31;
   color: #ffffff;
   font-weight: 500;
 }
-
 .container__table td,
 .container__table th {
   border: 1px solid #dddddd;
@@ -325,34 +285,27 @@
   color: #000;
   font-weight: 400;
 }
-
 .container__table tr:nth-child(even) td {
   background-color: rgba(79, 79, 79, 0.3294117647);
   color: #ffffff;
 }
-
 .container__table td a i {
   color: #df3b31;
 }
-
 .container__table tr {
   height: 10rem;
 }
-
 .container__table-desc-parent {
   width: 300px;
 }
-
 .container__table-desc {
   height: 10rem;
   overflow-y: scroll;
   max-width: 100%;
 }
-
 .container__table-desc::-webkit-scrollbar {
   width: 1px;
 }
-
 .container__table-desc p {
   width: 100%;
 }
@@ -379,12 +332,70 @@
 }
 
 ::placeholder {
+  text-align: right;
   font-size: 1.6rem;
   color: #000;
 }
 
-.form-control:focus {
-  box-shadow: unset;
+.sidebar__mobile-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 28, 64, 0.6);
+  z-index: 101;
+}
+.sidebar__mobile-container .icon {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  font-size: 2.4rem;
+  color: #fff;
 }
 
-/*# sourceMappingURL=content.css.map */
+/* menu bobile */
+.sidebar__mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 28rem;
+  background-color: #fff;
+}
+.sidebar__mobile.active {
+  display: block;
+}
+.sidebar__mobile .icon {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  font-size: 2rem;
+  color: #333333;
+}
+.sidebar__mobile .sidebar__mobile-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sidebar__mobile .sidebar__menu-link {
+  padding: 0.8rem 1.6rem;
+}
+.sidebar__mobile .sidebar__admin {
+  z-index: 100;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+  .content-wrapper {
+    margin-left: 0;
+    width: unset;
+  }
+  .sidebar__mobile {
+    display: block;
+  }
+}/*# sourceMappingURL=content.css.map */
