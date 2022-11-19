@@ -24,11 +24,16 @@
                             ?>.00
                         </span>
                         <!-- Old Price -->
-                        <span class="detail__product-price-old">(
+                        <span class="detail__product-price-old">
                             <?php if(number_format($detail_product->saleOff) != 0) {
-                                echo $detail_product->price;
-                            }  ?>
-                            )</span>
+                                echo '('.$detail_product->price.')';
+                            } ?>
+                        </span>
+                        <span class="detail__product-price-sale">
+                            <?php if(number_format($detail_product->saleOff) != 0) {
+                                    echo 'Giảm '.$detail_product->saleOff.'%';
+                            } ?>
+                        </span>
                     </div>
                 </div>
                 <!-- Product Overview -->

@@ -1249,10 +1249,6 @@ html {
   border-right: 0px solid #eee;
 }
 
-.products__content {
-
-}
-
 /* code css phần details(sản phẩm chi tiết) */
 .detail__body {
   color: #606060;
@@ -1386,6 +1382,11 @@ html {
   position: absolute;
   top: 9px;
   width: 100%;
+}
+
+.detail__product-wrap-price .detail__product-price-sale {
+  font-size: 1.4rem;
+  padding: 0 5px 0 4px;
 }
 
 .detail__product-overview {
