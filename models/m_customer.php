@@ -24,4 +24,10 @@ class m_customer extends database{
         return $this->execute(array($name, $email, $phone_number, $avatar, $id));
     }
 
+    public function save_change_pass($new_pass, $id) {
+        $sql = "update customer set passWord=? where id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($new_pass, $id));
+    }
+
 }

@@ -2718,6 +2718,26 @@ html {
   color: black;
   font-weight: 500;
 }
+
+.info__form-pass {
+  width: 50%;
+}
+
+.info__form-pass label {
+  font-size: 1.3rem;
+  color: #e65235;
+  font-weight: 700;
+}
+
+.info__form-pass input {
+  width: 100%;
+  padding: 10px 5px;
+  margin: 5px 0;
+}
+
+.info__form-pass button {
+  margin-top: 20px;
+}
 /*reponsive tablet*/
 @media all and (max-width:76.8rem) {}
 
@@ -3137,7 +3157,9 @@ html {
     display: block;
   }
 
-
+  .info__form-pass {
+    width: 100%;
+  }
   .info_btn-save {
     margin: 0 auto;
   }

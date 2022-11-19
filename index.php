@@ -55,6 +55,10 @@
             $info = new c_info();
             $info -> change_info();
             break;
+        case 'change_pass.php':
+            $info = new c_info();
+            $info -> change_password();
+            break;
         case 'cart.php':
             $cart = new c_cart();
             $cart -> index();
