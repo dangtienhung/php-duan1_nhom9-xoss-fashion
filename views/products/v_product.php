@@ -13,7 +13,7 @@
                             <!-- dropdown -->
                             <div class="products__dropdown">
                                 <?php foreach($categories_type as $values): ?>
-                                    <ul class="products__drop_btn btn dropdown-toggle" data-bs-toggle="dropdown"
+                                    <ul class="products__drop_btn btn dropdown-toggle product__cate" data-bs-toggle="dropdown"
                                     aria-expanded="false"><?php echo $values->type?></ul>
                                     <ul class="dropdown-menu">
                                         <?php foreach($categories as $value): ?>
