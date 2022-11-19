@@ -9,8 +9,8 @@
             return $this -> loadAllRows();
         }
 
-        public function getProductBySearch($search,$number_in_on_page, $clear){
-            $sql = "select * FROM product where name like '%$search%' limit $number_in_on_page
+        public function getProductBySearch($search,$number_in_on_page, $clear, $order_by, $action){
+            $sql = "select * FROM product where name like '%$search%' $order_by $action limit $number_in_on_page
             offset $clear;"; 
             $this ->setQuery($sql);
             // lấy dữ liệu nhiều dùng 
@@ -29,8 +29,8 @@
             return $this->loadAllRows();
         }
 
-        public function getProductByCateory($id_category, $search, $number_in_on_page, $clear) {
-            $sql = "SELECT * FROM `product` where id_category = $id_category And name like '%$search%' limit $number_in_on_page
+        public function getProductByCateory($id_category, $search, $number_in_on_page, $clear, $order_by, $action) {
+            $sql = "SELECT * FROM `product` where id_category = $id_category And name like '%$search%' $order_by $action limit $number_in_on_page
             offset $clear;";
             $this->setQuery($sql);
             return $this->loadAllRows();

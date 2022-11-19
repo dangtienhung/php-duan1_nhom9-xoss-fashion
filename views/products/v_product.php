@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-3 col-xs-12 sidebar-container float-right">
             <div class="row">
-                <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="col-md-12 col-sm-6 col-xs-12 product__category-bar">
                     <div class="products__sin_sidebar category-sidebar">
                         <h3 class="sidebar-title">categories</h3>
                         <h5 align="center"><a href="?url=product.php">> Click Here To See All Products <</a></h5>
@@ -33,13 +33,13 @@
 
         <div class="col-md-9 col-xs-12 shop-products">
             <div class="shop-toolbar shop-toolbar-top fix">
-                <div class="row">
-                    <div class="col-sm-3 col-xs-5 view-mode text-left">
+                <div class="row" >
+                    <div class="col-sm-3 col-xs-5 view-mode text-left product__head-column">
                         <a class="grid active" href="#grid-view" data-toggle="tab"><i
                                 class="fa-sharp fa-solid fa-grid"></i></a>
                         <a class="list" href="#list-view" data-toggle="tab"><i class="fa-solid fa-list"></i></a>
                     </div>
-                    <div class="col-sm-3 col-xs-7 pro-show text-right float-right">
+                    <div class="col-sm-3 col-xs-7 pro-show text-right float-right product__head-column">
                         <div class="products__show_wrap">
                             <label>show:</label>
                             <select class="show-select">
@@ -50,17 +50,19 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xs-12 short-by text-center">
+                    <div class="col-sm-6 col-xs-12 short-by text-center product__head-column">
                         <div class="products__short_by_wrap">
                             <label>short by:</label>
-                            <select class="sort-select">
-                                <option>Name Ascending</option>
-                                <option>Name Descending</option>
-                                <option>Date Ascending</option>
-                                <option>Date Descending</option>
-                                <option>Price Ascending</option>
-                                <option>Price Descending</option>
-                            </select>
+                            <ul class="products__drop_btn btn dropdown-toggle product__sort-action" data-bs-toggle="dropdown"
+                                    aria-expanded="false"><?php echo $order.' '.$action?></ul>
+                            <ul class="dropdown-menu">
+                                <li href="#"><a class="dropdown-item" href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?><?php if(isset($_GET["page"])) { echo '&page='.$_GET["page"]; } ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>&order=name&action=asc">Name Ascending</a></li>
+                                <li><a class="dropdown-item" href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?><?php if(isset($_GET["page"])) { echo '&page='.$_GET["page"]; } ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>&order=name&action=desc">Name Descending</a></li>
+                                <li><a class="dropdown-item" href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?><?php if(isset($_GET["page"])) { echo '&page='.$_GET["page"]; } ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>&order=date_added&action=asc">Date Ascending</a></li>
+                                <li><a class="dropdown-item" href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?><?php if(isset($_GET["page"])) { echo '&page='.$_GET["page"]; } ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>&order=date_added&action=desc">Date Descending</a></li>
+                                <li><a class="dropdown-item" href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?><?php if(isset($_GET["page"])) { echo '&page='.$_GET["page"]; } ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>&order=price&action=asc">Price Ascending</a></li>
+                                <li><a class="dropdown-item" href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?><?php if(isset($_GET["page"])) { echo '&page='.$_GET["page"]; } ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?>&order=price&action=desc">Price Descending</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -128,7 +130,7 @@
                             <?php for ($i = 1; $i <= $number_page; $i++) { ?>
                                 <li class="<?php if(isset($_GET["page"]) && $_GET['page'] == $i) { echo 'active'; }?>">
                                     <a class="page-link fs-3 px-3 text-danger mx-1"
-                                        href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?>&page=<?php echo $i; ?>&search=<?php echo $search; ?>">
+                                        href="?url=product.php<?php if(isset($_GET["id_category"])) { echo '&id_category='.$_GET["id_category"]; } ?>&page=<?php echo $i; ?><?php if(isset($_GET['search'])) { echo '&search='.$search; } ?><?php if(isset($_GET["order"]) && isset($_GET["action"])) { echo '&order='.$_GET['order'].'&action='.$_GET['action']; }?>">
                                         <?php echo $i ?>
                                     </a>
                                 </li>
@@ -136,17 +138,6 @@
                         </ul>
                     </div>
                     <div class="col-lg-4 col-sm-5 col-xs-9 short-by text-right float-right">
-                        <div class="products__short_by_wrap">
-                            <label>short by:</label>
-                            <select class="sort-select">
-                                <option>Name Ascending</option>
-                                <option>Name Descending</option>
-                                <option>Date Ascending</option>
-                                <option>Date Descending</option>
-                                <option>Price Ascending</option>
-                                <option>Price Descending</option>
-                            </select>
-                        </div>
                     </div>
 
                 </div>
