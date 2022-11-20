@@ -11,12 +11,11 @@ class c_login
             $email = $_POST['email'];
             $password = $_POST['current-password'];
             $this->save_login_session($email, $password);
-            if (isset($_SESSION['admin_id'])) {
+            if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] != 3) {
                 header('location: home.php');
             } else {
                 $_SESSION['error_login'] = "Sai thông tin đăng nhập";
                 header('location: index.php');
-                echo 'Đăng nhập thất bại';
             }
         }
     }
@@ -32,5 +31,16 @@ class c_login
             $_SESSION['admin_role'] = $admin->role;
             // header('location: index.php');
         }
+    }
+    // đăng xuất
+    public function check_logout()
+    {
+        unset($_SESSION['admin_id']);
+        unset($_SESSION['admin_name']);
+        unset($_SESSION['admin_email']);
+        unset($_SESSION['admin_picture']);
+        unset($_SESSION['admin_role']);
+        unset($_SESSION['error_login']);
+        header('location: index.php');
     }
 }

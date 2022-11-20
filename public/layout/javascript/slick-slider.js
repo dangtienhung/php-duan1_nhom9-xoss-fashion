@@ -82,3 +82,4 @@ $(".detail__product-slider").slick({
         nextArrow:
         "<button type='button' class='slick-next slick-btn'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
 });
+

@@ -357,3 +357,66 @@
     font-size: 1.6rem;
     color: base.$black-color;
 }
+.sidebar__mobile-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba($color: #001c40, $alpha: 0.6);
+    z-index: 101;
+    .icon {
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+        font-size: 2.4rem;
+        color: #fff;
+    }
+}
+/* menu bobile */
+.sidebar__mobile {
+    display: none;
+    &.active {
+        display: block;
+    }
+    .icon {
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+        font-size: 2rem;
+        color: #333333;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 28rem;
+    background-color: #fff;
+    .sidebar__mobile-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .sidebar__menu-link {
+        padding: 0.8rem 1.6rem;
+    }
+    .sidebar__admin {
+        z-index: 100;
+    }
+}
+
+// tablet
+@media (min-width: 768px) and (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+    .content-wrapper {
+        margin-left: 0;
+        width: unset;
+    }
+
+    .sidebar__mobile {
+        display: block;
+    }
+}
