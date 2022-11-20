@@ -80,7 +80,10 @@
                             </div>
                             <div class="item__product-body">
                                 <h3><?php echo $value->name?></h3>
-                                <h3><?php echo number_format($value->price)?></h3>
+                                <h3>$ <?php echo number_format($value->price)?>.00</h3>
+                                <?php if($value->quantity == 0) {?>
+                                    <h5>Đã hết hàng</h5>
+                                <?php } ?>
                             </div>
                         </a>
                     </div>
@@ -124,14 +127,19 @@
                         <a href="?url=detail.php&id_product=<?php echo $value->id?>">
                             <div class="item__product-head">
                                 <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
-                                <div class="item__controll-btn">
-                                    <a href="#" class="item__btn-buy">Mua ngay</a>
-                                    <a href="#" class="item__btn-cart">Giỏ hàng</a>
-                                </div>
+                                <?php if($value->quantity > 0) {?>
+                                    <div class="item__controll-btn">
+                                        <a href="#" class="item__btn-buy">Mua ngay</a>
+                                        <a href="#" class="item__btn-cart">Giỏ hàng</a>
+                                    </div>
+                                <?php } ?>
                             </div>
                             <div class="item__product-body">
                                 <h3><?php echo $value->name?></h3>
-                                <h3>$ <?php echo number_format($value->price)?></h3>
+                                <h3>$ <?php echo number_format($value->price)?>.00</h3>
+                                <?php if($value->quantity == 0) {?>
+                                    <h5>Đã hết hàng</h5>
+                                <?php } ?>
                             </div>
                         </a>
                     </div>

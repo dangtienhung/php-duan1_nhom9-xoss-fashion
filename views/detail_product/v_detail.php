@@ -4,6 +4,11 @@
         <div class="detail__product-view">
             <!-- Product Image -->
             <div class="detail__product-image">
+                <?php if($detail_product->quantity ==0) {?>
+                    <div class="detail__wall-wrap-image">
+                        <h2>Đã hết hàng</h2>
+                    </div>
+                <?php } ?>
                 <img src="admin/public/front-end/images/products/<?php echo $detail_product->picture?>" alt="">
             </div>
             <!-- Product Content -->
@@ -15,9 +20,9 @@
                     <div class="detail__product-wrap-price">
                         <!-- New Price -->
                         <span class="detail__product-price-new">
-                            $ <?php if(number_format($detail_product->saleOff) == 0) {
+                            $ <?php if(number_format($detail_product->saleOff) == 0 && $detail_product->quantity > 0) {
                                 echo $detail_product->price;
-                            } else {
+                            } else if(number_format($detail_product->saleOff) != 0 && $detail_product->quantity > 0) {
                                 $new_price = $detail_product->price * ($detail_product->saleOff/100);
                                 echo $new_price;
                             }
@@ -25,7 +30,7 @@
                         </span>
                         <!-- Old Price -->
                         <span class="detail__product-price-old">
-                            <?php if(number_format($detail_product->saleOff) != 0) {
+                            <?php if(number_format($detail_product->saleOff) != 0 && $detail_product->quantity > 0) {
                                 echo '('.$detail_product->price.')';
                             } ?>
                         </span>
@@ -84,7 +89,7 @@
                     </div>
                     <!-- Product Action -->
                     <div class="detail__product-action">
-                        <button name="btn_add" class="detail__product-action-btn btn-text">ADD TO BAG</button>
+                        <button name="btn_add" class="detail__product-action-btn btn-text" <?php if($detail_product->quantity == 0) { echo 'disabled'; }?> >ADD TO BAG</button>
                     </div>
                 </form>
             </div>
@@ -194,17 +199,19 @@
                             <i class="fa-regular fa-square-plus"></i>
                         </a>
                         <!-- Action -->
-                        <div class="detail__item-action">
-                            <a href="#"><button class="detail__item-action-btn btn-icon">
-                                    <i class="fa-solid fa-arrows-rotate"></i>
-                                </button></a>
-                            <a href="#"><button class="detail__item-action-btn btn-text">
-                                    add to bag
-                                </button></a>
-                            <a href="#"><button class="detail__item-action-btn btn-icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </button></a>
-                        </div>
+                        <?php if($value->quantity > 0) {?>
+                            <div class="detail__item-action">
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                        <i class="fa-solid fa-arrows-rotate"></i>
+                                    </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                        add to bag
+                                    </button></a>
+                                <a href="#"><button class="detail__item-action-btn btn-icon">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button></a>
+                            </div>
+                        <?php } ?>
                     </div>
                     <!-- Detail Item -->
                     <div class="detail__item-detail">
@@ -214,9 +221,9 @@
                         </a>
                         <!-- New Price -->
                         <span class="detail__item-price new">
-                            $ <?php if(number_format($value->saleOff) == 0) {
+                            $ <?php if(number_format($value->saleOff) == 0 && $detail_product->quantity > 0) {
                                 echo $value->price;
-                            } else {
+                            } else if(number_format($value->saleOff) != 0 && $detail_product->quantity > 0) {
                                 $new_price_sg = $value->price * ($value->saleOff/100);
                                 echo $new_price_sg;
                             }
@@ -224,10 +231,13 @@
                         </span>
                         <!-- Old Price -->
                         <span class="detail__item-price old">(
-                            <?php if(number_format($value->saleOff) != 0) {
+                            <?php if(number_format($value->saleOff) != 0 && $detail_product->quantity > 0) {
                                 echo $value->price;
                             }  ?>
                         )</span>
+                        <?php if($value->quantity ==0) {?>
+                                <h5>Đã hết hàng</h5>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php endforeach ?>
