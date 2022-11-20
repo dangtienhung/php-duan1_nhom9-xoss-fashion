@@ -1248,6 +1248,7 @@ html {
   width: 50%;
   padding: 0 15px;
   position: relative;
+  max-height: 581px;
 }
 
 .detail__product-image .detail__wall-wrap-image {
