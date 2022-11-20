@@ -52,10 +52,12 @@ class c_customers
             $name_customer = $_POST['username'];
             $picture = $_FILES['image'];
             $email = $_POST['email'];
+            $address= $_POST['address'];
+            $phone_number=$_POST['phone_number'];
             $passWord = $_POST['password'];
             $picture_name = ($picture['error'] == 0) ? $picture['name'] : '';
             $role=$_POST['role'];
-            $result = $c_customer->create_customer($name_customer, $email, $passWord, $picture_name,$role);
+            $result = $c_customer->create_customer($name_customer, $email, $passWord, $picture, $role, $address, $phone_number);
             if ($result) {
                 if ($picture_name != '') {
                     $folder = 'public/admin/images/customer/';
@@ -92,6 +94,8 @@ class c_customers
         if (isset($_POST['btn-submit'])) {
             $id = $_POST['id'];
             $name_customer = $_POST['username'];
+            $address=$_POST['address'];
+            $phone_number=$_POST['phone_number'];
             $picture = $_FILES['image_new'];
             $new_picture = ($picture['error'] == 0) ? $picture['name'] : '';
             $email = $_POST['email'];
@@ -106,7 +110,7 @@ class c_customers
                 if (isset($_POST['image_old'])) {
                     $photo_old = $_POST['image_old'];
                 } else {
-                    $photo_old = 'picture-trang-facebook.jpg';
+                    $photo_old = 'avatar-trang-facebook.jpg';
                 }
                 $file_name = $photo_old;
             }
@@ -115,7 +119,7 @@ class c_customers
                 $_SESSION['user_name'] = $name_customer;
                 $_SESSION['user_email'] = $email;
             }
-            $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $file_name,$role);
+            $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $picture, $role, $address, $phone_number);
             header('location: customer.php');
         }
     }
