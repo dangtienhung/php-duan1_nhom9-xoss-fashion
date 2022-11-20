@@ -983,6 +983,7 @@ html {
 
 .product__sort-action {
   font-size: 1.3rem;
+  border: 1px solid #ccc;
 }
 
 .dropdown-menu {

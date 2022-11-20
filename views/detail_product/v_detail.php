@@ -68,7 +68,7 @@
                             <h5>QUANTITY:</h5>
                             <div class="detail__product-wrap-quantity">
                                 <!-- Input Quantity -->
-                                <input type="text" value="0" name="quantity" class="detail_product-input-plus-minus" id="1">
+                                <input type="text" value="0" name="quantity" class="detail_product-input-plus-minus" id="<?php echo $detail_product->quantity?>">
 
                                 <!-- Increase -->
                                 <span class="detail__product-inc btnqty">

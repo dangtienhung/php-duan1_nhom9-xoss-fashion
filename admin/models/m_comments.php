@@ -22,7 +22,7 @@ class m_comments extends database
                 limit $number_in_on_page
                 offset $clear;";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($number_in_on_page, $clear));
+        return $this->loadAllRows();
     }
 
     // tìm kiếm bình luận
@@ -41,7 +41,7 @@ class m_comments extends database
                     limit $number_in_on_page
                     offset $clear;";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($search, $number_in_on_page, $clear));
+        return $this->loadAllRows();
     }
 
     // đếm số lượng bình luận trùng với từ khóa search
@@ -49,7 +49,7 @@ class m_comments extends database
     {
         $sql = "select count(*) from comment where comment_content like '%$search%'";
         $this->setQuery($sql);
-        return $this->loadRecord(array($search));
+        return $this->loadRecord();
     }
 
     // lấy ra comment theo idItem
