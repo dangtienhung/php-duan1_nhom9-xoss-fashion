@@ -21,7 +21,53 @@
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
         </div>
+        <i class="icon fa-solid fa-bars"></i>
     </header>
+
+    <div class="sidebar__mobile-container active icon">
+        <i class="fa-solid fa-xmark icon"></i>
+    </div>
+    <!-- aside mobile -->
+    <div class="sidebar__mobile active">
+        <!-- admin -->
+        <div class="sidebar__admin">
+            <img src="https://kynguyenlamdep.com/wp-content/uploads/2022/06/anh-gai-xinh-cuc-dep.jpg" alt=""
+                class="sidebar__admin-avatar">
+            <div class="sidebar__admin-body">
+                <h3>đặng tiến hưng</h3>
+                <p>Chào mừng bạn đã quay trở lại!</p>
+            </div>
+        </div>
+        <!-- content -->
+        <aside class="sidebar__menu">
+            <ul class="sidebar__menu-list">
+                <li>
+                    <a href="" class="sidebar__menu-link">
+                        <i class="fa-brands fa-microsoft"></i>
+                        Bảng điều khiển
+                    </a>
+                </li>
+                <li>
+                    <a href="./product.html" class="sidebar__menu-link">
+                        <i class="fa-solid fa-list-check"></i>
+                        Quản lý sản phẩm
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="sidebar__menu-link">
+                        <i class="fa-solid fa-address-card"></i>
+                        Quản lý user
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="sidebar__menu-link">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                        Quản lý bình luận
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </div>
 
     <!-- aside -->
     <div class="container-fluid sidebar">
@@ -96,6 +142,17 @@
                     </form>
                 </div>
             </div>
+            <div class="container__main-handler-mobile">
+                <button data-bs-toggle="modal" data-bs-target="#openModal" class="btn btn-danger fs-4" name="submit">
+                    <i class="fa-solid fa-plus"></i>
+                    Thêm sản
+                    phẩm</button>
+                <div class="container__main-search">
+                    <form action="">
+                        <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm">
+                    </form>
+                </div>
+            </div>
             <div class="container__table">
                 <table>
                     <tr>
@@ -149,6 +206,46 @@
                 </table>
             </div>
         </main>
+
+        <!-- Modal -->
+        <div class="modal fade modal-xl" id="openModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3" id="exampleModalLabel">Thêm danh mục sản phẩm</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="action-product-category.php" method="post">
+                            <div class="mb-3">
+                                <label for="" class="form-label fs-3">Tên danh mục</label>
+                                <input type="text" class="form-control fs-3" name="name-product-category"
+                                    placeholder="Tên danh mục" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label fs-3">Mô tả danh mục</label>
+                                <textarea class="form-control fs-3" id="" rows="3" name="desc-product-category"
+                                    placeholder="Mô tả danh mục" required></textarea>
+                            </div>
+                            <select class="form-select fs-3" aria-label="Default select example" name="id_product_type">
+                                <option value="1">abc</option>
+                                <option value="1">abc</option>
+                                <option value="1">abc</option>
+                            </select>
+                            <!-- <button id="btnSubmit" name="submit" class="btn btn-primary">oke</button> -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary fs-4"
+                                    data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-danger fs-4" data-bs-target="submit-form"
+                                    name="submit">Thêm sản
+                                    phẩm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 
@@ -158,5 +255,6 @@
     crossorigin="anonymous"></script>
 <script src="./js/time.js"></script>
 <script src="js/chart.js"></script>
+<script src="js/main.js"></script>
 
 </html>

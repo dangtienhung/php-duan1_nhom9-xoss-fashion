@@ -11,4 +11,7 @@
 <!-- chart -->
 <!-- <script src="public/front-end/js/chart.js"></script> -->
 
+<!-- mainjs -->
+<script src="public/front-end/js/main.js"></script>
+
 </html>
