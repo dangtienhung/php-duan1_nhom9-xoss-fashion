@@ -731,6 +731,17 @@ html {
   font-weight: 500;
   font-size: 1.8rem;
 }
+.item__product-body h5 {
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  background: #c0392b;
+  color: white;
+  padding: 10px 0;
+  transform: translateY(-700%);
+  float: left;
+  width: 100%;
+}
 
 /* index__banner */
 .banner__wrapper {
@@ -1215,7 +1226,7 @@ html {
   }
 }
 
-.detail__container h5 {
+.detail__container .detail__product-content h5 {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0 0 12px;
@@ -1236,12 +1247,33 @@ html {
 .detail__product-image {
   width: 50%;
   padding: 0 15px;
+  position: relative;
+}
+
+.detail__product-image .detail__wall-wrap-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.detail__product-image .detail__wall-wrap-image h2 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.5rem;
 }
 
 .detail__product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
 }
 
 .detail__product-content {
@@ -1843,14 +1875,12 @@ html {
 .detail__item-price {
   color: #f05a66;
   line-height: 16px;
-  display: block;
   font-weight: 600;
-  float: left;
 }
 
 .detail__item-price.new {
   font-size: 1.8rem;
-  margin-right: 11px;
+  margin-right: 5px;
 }
 
 .detail__item-price.old {
@@ -1867,6 +1897,16 @@ html {
   top: 7px;
   left: 0;
   position: absolute;
+}
+
+.detail__item-detail h5{
+  text-transform: uppercase;
+    display: block;
+    text-align: center;
+    background: #c0392b;
+    color: white;
+    padding: 10px 0;
+    transform: translateY(-700%);
 }
 
 /* detail slick */
@@ -2929,6 +2969,7 @@ html {
   .banner__wrapper .banner__primary-desc h3 {
     font-size: 1rem;
   }
+
   .banner__wrapper .banner__item .banner__item-desc h2 {
     font-size: 1rem;
   }
