@@ -13,7 +13,7 @@
                             <!-- dropdown -->
                             <div class="products__dropdown">
                                 <?php foreach($categories_type as $values): ?>
-                                    <ul class="products__drop_btn btn dropdown-toggle" data-bs-toggle="dropdown"
+                                    <ul class="products__drop_btn btn dropdown-toggle product__cate" data-bs-toggle="dropdown"
                                     aria-expanded="false"><?php echo $values->type?></ul>
                                     <ul class="dropdown-menu">
                                         <?php foreach($categories as $value): ?>
@@ -85,21 +85,23 @@
                                     <i class="fa-regular fa-square-plus"></i>
                                 </a>
                                 <!-- Action -->
-                                <div class="products__item-action">
-                                    <a href="#"><button class="products__item-action-btn btn-icon">
-                                            <i class="fa-solid fa-arrows-rotate"></i>
-                                        </button></a>
-                                    <a href="#"><button class="products__item-action-btn btn-text">
-                                            add to bag
-                                        </button></a>
-                                    <a href="#"><button class="products__item-action-btn btn-icon">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </button></a>
-                                </div>
-                                <div class="products__sin_details fix">
+                                <?php if($value->quantity > 0) {?>
+                                    <div class="products__item-action">
+                                        <a href="#"><button class="products__item-action-btn btn-icon">
+                                                <i class="fa-solid fa-arrows-rotate"></i>
+                                            </button></a>
+                                        <a href="#"><button class="products__item-action-btn btn-text">
+                                                add to bag
+                                            </button></a>
+                                        <a href="#"><button class="products__item-action-btn btn-icon">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </button></a>
+                                    </div>
+                                <?php } ?>
+                                <div class="products__sin_details fix  item__product-body">
                                     <a class="products__sin_title" href="?url=detail.php&id_product=<?php echo $value->id?>"><?php echo $value->name?></a>
                                     <!-- Product Price -->
-                                    <div class="products__sin_price float-left">
+                                    <div class="products__sin_price">
                                         <span class="new">$ <?php echo $value->price?>.00</span>
                                     </div>
                                     <!-- Product Ratting -->
@@ -113,6 +115,9 @@
                                         </div>
                                         <span>(<?php echo $value->view_number?>)</span>
                                     </div>
+                                    <?php if($value->quantity == 0) { ?>
+                                            <h5>Đã hết hàng</h5>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>

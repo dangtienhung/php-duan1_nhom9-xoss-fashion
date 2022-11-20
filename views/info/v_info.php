@@ -43,15 +43,17 @@
                             id="phone_number" hidden>
                         <!-- curent email -->
                         <input type="email" name="current_email" value="<?php echo $user->email?>" id="email" hidden>
-                        
+
                         <!-- curent name -->
-                        <input type="text" name="current_name" value="<?php echo $user->name_customer?>" id="name" hidden>
+                        <input type="text" name="current_name" value="<?php echo $user->name_customer?>" id="name"
+                            hidden>
 
                         <table class="info__table-view-info">
                             <tr>
                                 <td>Tên đăng nhập</td>
-                                <td><input type="text" id="name_value" name="user_name" value="<?php echo $user->name_customer?>"
-                                        disabled> <button id="change_name" type="button">Thay đổi</button></span></td>
+                                <td><input type="text" id="name_value" name="user_name"
+                                        value="<?php echo $user->name_customer?>" disabled> <button id="change_name"
+                                        type="button">Thay đổi</button></span></td>
                             </tr>
                             <tr>
                                 <td>email</td>
@@ -70,9 +72,9 @@
                             <div class="info__view-avatar">
                                 <img src="<?php if($user->picture == "") { echo "public/layout/images/no-image.png"; } else { echo "admin/public/front-end/images/customer/$user->picture"; }?>"
                                     alt="">
-                                    <input type="text" name="current_picture" value="<?php echo $user->picture?>" hidden>
+                                <input type="text" name="current_picture" value="<?php echo $user->picture?>" hidden>
                             </div>
-                            <input name="avatar" type="file" accept=".jpg,.jpeg,.png" id="img_input" >
+                            <input name="avatar" type="file" accept=".jpg,.jpeg,.png" id="img_input">
                             <div class="info__image-preview" style="display: none;">
                                 <p>Xem trước ảnh</p>
                                 <div class="info__preview">
@@ -111,6 +113,18 @@
                 <h2>Đổi mật khẩu</h2>
                 <h5>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</h5>
                 <!-- Content -->
+                <form action="?url=change_pass.php" class='info__form-pass' method="POST">
+                    <label for="passWord">Your Password</label> <br>
+                    <input type="password" name="passWord" placeholder="Enter Your Password">
+                    <br>
+                    <label for="new-password">New Password</label> <br>
+                    <input type="password" name="new-password" placeholder="Enter New Password">
+                    <br>
+                    <label for="rePassWord">Repeat Password</label> <br>
+                    <input type="password" name="rePassWord" placeholder="Repeat Password">
+                    <br>
+                    <button type="submit" class="info_btn-save" name="btn-change">Login</button>
+                </form>
             </div>
             <!-- Bill -->
             <div class="info__main-bill">
@@ -119,6 +133,14 @@
             <div class="info__main-notification">
 
             </div>
+            <div class="info__main-notification">
+
+            </div>
         </div>
     </main>
 </div>
+<?php
+    if(isset($_COOKIE['nofication'])) {
+        echo '<script>alert("'.$_COOKIE['nofication'].'")</script>';
+    }
+?>
