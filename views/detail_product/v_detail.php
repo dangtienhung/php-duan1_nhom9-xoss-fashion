@@ -56,7 +56,7 @@
                     <a href="#">XXL</a>
                 </div>
                 <!-- Product Color + Quantity -->
-                <form action="#" method="POST">
+                <form action="?url=add_to_cart&id_product=<?php echo $detail_product->id?>" method="POST">
                     <div class="detail__product-color-quantity">
                         <!-- Color -->
                         <div class="detail__product-color">
@@ -73,7 +73,7 @@
                             <h5>QUANTITY:</h5>
                             <div class="detail__product-wrap-quantity">
                                 <!-- Input Quantity -->
-                                <input type="text" value="0" name="quantity" class="detail_product-input-plus-minus" id="<?php echo $detail_product->quantity?>">
+                                <input type="text" value="1" name="quantity" class="detail_product-input-plus-minus" id="<?php echo $detail_product->quantity?>">
 
                                 <!-- Increase -->
                                 <span class="detail__product-inc btnqty">
@@ -204,7 +204,7 @@
                                 <a href="#"><button class="detail__item-action-btn btn-icon">
                                         <i class="fa-solid fa-arrows-rotate"></i>
                                     </button></a>
-                                <a href="#"><button class="detail__item-action-btn btn-text">
+                                <a href="?url=add_to_cart&id_product=<?php echo $value->id?>"><button class="detail__item-action-btn btn-text">
                                         add to bag
                                     </button></a>
                                 <a href="#"><button class="detail__item-action-btn btn-icon">

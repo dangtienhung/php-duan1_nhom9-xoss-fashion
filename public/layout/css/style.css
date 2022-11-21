@@ -307,6 +307,10 @@ html {
   left: unset;
   width: 23rem;
 }
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu li {
+  display: flex;
+}
+
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu li:not(:last-child) {
   margin-bottom: 0.4rem;
 }
@@ -314,13 +318,21 @@ html {
   display: inline-block;
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0;
+  flex-wrap: wrap;
 }
-.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link img {
+
+
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link .cart__item-menu-img {
   width: 5rem;
+  height: 6rem;
+}
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link .cart__item-menu-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-list {
   flex: 1;
@@ -333,7 +345,6 @@ html {
   margin: 0.4rem 0 0.8rem;
   overflow: hidden;
   line-height: 1.8rem;
-  height: 3.6rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
