@@ -108,6 +108,13 @@
                 </a>
             </li>
             <li>
+            <li>
+                <a href="info.php" class="sidebar__menu-link">
+                    <i class="fa-sharp fa-solid fa-circle-info"></i>
+                    Thông Tin
+                </a>
+            </li>
+            <li>
                 <a href="comments.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-comments-dollar"></i>
                     Quản lý bình luận
