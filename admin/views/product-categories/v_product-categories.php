@@ -2,7 +2,7 @@
 
 if (isset($_GET['success'])) {
     $abc = $_GET['success'];
-    // echo '<script>alert("{$abc}")</script>';
+    echo '<script>alert("cập nhật sản phẩm thành công!")</script>';
 }
 if (isset($_GET['error'])) {
     echo '<script>alert("Thêm sản phẩm thất bại!")</script>';
@@ -30,6 +30,20 @@ if (isset($_GET['error'])) {
                     Tạo sản phẩm mới
                 </a>
             </div>
+            <div class="container__main-search">
+                <form action="">
+                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
+                                                                                                        echo $_GET['search'];
+                                                                                                    } ?>">
+                </form>
+            </div>
+        </div>
+        <!-- mobile -->
+        <div class="container__main-handler-mobile">
+            <button data-bs-toggle="modal" data-bs-target="#openModal" class="btn btn-danger fs-4" name="submit">
+                <i class="fa-solid fa-plus"></i>
+                Thêm sản
+                phẩm</button>
             <div class="container__main-search">
                 <form action="">
                     <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
