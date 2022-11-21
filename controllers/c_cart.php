@@ -21,11 +21,12 @@ class c_cart
             $id = $_GET['id_product'];
             $product = $m_product -> getProductById($id);
             $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
+            $price = $product->saleOff == 0 ? $product->price : $product->price*($product->saleOff / 100);
             if(empty($_SESSION['carts'][$id])) {
                 $_SESSION['carts'][$id]['name'] = $product->name; 
                 $_SESSION['carts'][$id]['id'] = $product->id; 
                 $_SESSION['carts'][$id]['picture'] = $product->picture; 
-                $_SESSION['carts'][$id]['price'] = $product->price; 
+                $_SESSION['carts'][$id]['price'] = $price; 
                 $_SESSION['carts'][$id]['quantity'] = $quantity;
                 $_SESSION['carts'][$id]['max_quantity'] = $product->quantity;
             } else {
