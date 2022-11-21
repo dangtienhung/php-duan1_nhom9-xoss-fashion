@@ -9,6 +9,10 @@ class c_info {
         $m_customer = new m_customer();
         if(isset($_SESSION['user_id'])) {
             $user = $m_customer -> getCustomerById($_SESSION["user_id"]);
+
+            include('models/m_cart.php');
+            $m_cart = new m_cart();
+            $orders = $m_cart -> getOrderByIdCustomer($_SESSION["user_id"]);
         } else {
             header("location:?url=login.php");
         }

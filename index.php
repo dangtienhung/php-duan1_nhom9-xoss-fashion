@@ -71,6 +71,14 @@
             $cart = new c_cart();
             $cart -> delete_item_from_cart();
             break;
+        case 'change_quantity':
+            $cart = new c_cart();
+            $cart -> handle_change_quantity();
+            break;
+        case 'create_order':
+            $cart = new c_cart();
+            $cart -> create_order();
+            break;
         default:
             $error404 = new c_404();
             $error404 -> index();

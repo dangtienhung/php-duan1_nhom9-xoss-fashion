@@ -127,8 +127,32 @@
                 </form>
             </div>
             <!-- Bill -->
-            <div class="info__main-bill">
-
+            <div class="info__main-bill">          
+                <div class="info__bill-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Ngày đặt</td>
+                                <td>Số lượng</td>
+                                <td>Hoạt động</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($orders as $value): ?>
+                                <tr>
+                                    <td><?php echo $value->id ?></td>
+                                    <td><?php echo $value->order_date ?></td>
+                                    <td><?php echo $value->quantity ?></td>
+                                    <td>
+                                        <button><a href="#">Xóa Bill</a></button>
+                                        <button>Xem chi tiết</button>
+                                    </td>
+                                </tr>
+                            <?php  endforeach ?>
+                        </tbody>
+                    </table>
+                </div>  
             </div>
             <div class="info__main-notification">
 
