@@ -8,6 +8,7 @@
     include 'controllers/c_info.php';
     include 'controllers/c_404.php';
     include 'controllers/c_cart.php';
+    include 'controllers/c_order.php';
 
     switch($url) {
         case '/':
@@ -78,6 +79,14 @@
         case 'create_order':
             $cart = new c_cart();
             $cart -> create_order();
+            break;
+        case 'delete_order':
+            $info = new c_info();
+            $info -> delete_order();
+            break;
+        case 'order.php':
+            $order = new c_order();
+            $order -> index();
             break;
         default:
             $error404 = new c_404();

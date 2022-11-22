@@ -17,11 +17,11 @@
             <div class="info__aside-main">
                 <!-- List Option -->
                 <ul class="info__list-option">
-                    <li class="active"><i class="fa-regular fa-id-badge"></i> Hồ Sơ</li>
+                    <li class="<?php if(!isset($_GET['checkbill'])) { echo "active"; }?>"><i class="fa-regular fa-id-badge"></i> Hồ Sơ</li>
                     <li><i class="fa-sharp fa-solid fa-money-check-dollar"></i> Ngân Hàng</li>
                     <li><i class="fa-solid fa-map-location-dot"></i> Địa Chỉ</li>
                     <li><i class="fa-solid fa-user-lock"></i> Đổi Mật Khẩu</li>
-                    <li><i class="fa-solid fa-file-invoice-dollar"></i> Đơn Mua</li>
+                    <li class="<?php if(isset($_GET['checkbill'])) { echo 'active'; }?>"><i class="fa-solid fa-file-invoice-dollar"></i> Đơn Mua</li>
                     <li><i class="fa-sharp fa-solid fa-bell"></i> Thông báo</li>
                 </ul>
             </div>
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <!-- Bank -->
-            <div class="info__main-bank">
+            <div class="info__main-bank" style="display:none;">
                 <!-- Title -->
                 <h2>Thẻ Tín Dụng/Ghi Nợ</h2>
                 <a href="#"><button class="info_btn-save"><i class="fa-regular fa-square-plus"></i> Thêm thẻ
@@ -98,7 +98,7 @@
                 <h1 align="center">Bạn chưa liên kết tới ngân hàng nào</h1>
             </div>
             <!-- Address -->
-            <div class="info__main-address">
+            <div class="info__main-address" style="display:none;">
                 <!-- Title -->
                 <h2>Địa chỉ của tôi</h2>
                 <!-- Content -->
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <!-- Change Pass -->
-            <div class="info__main-change-pass">
+            <div class="info__main-change-pass" style="display:none;">
                 <!-- Title -->
                 <h2>Đổi mật khẩu</h2>
                 <h5>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</h5>
@@ -127,26 +127,26 @@
                 </form>
             </div>
             <!-- Bill -->
-            <div class="info__main-bill">          
-                <div class="info__bill-list">
+            <div class="info__main-bill" style="display:none;">          
+                <div class="info__bill-list" style="<?php if(count($orders) > 3) { echo 'overflow: scroll;'; }?>">
                     <table>
                         <thead>
                             <tr>
                                 <td>Id</td>
                                 <td>Ngày đặt</td>
-                                <td>Số lượng</td>
+                                <td>Số lượng Sản Phẩm</td>
                                 <td>Hoạt động</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($orders as $value): ?>
+                            <?php foreach($orders as $key => $value): ?>
                                 <tr>
                                     <td><?php echo $value->id ?></td>
                                     <td><?php echo $value->order_date ?></td>
-                                    <td><?php echo $value->quantity ?></td>
+                                    <td><?php echo $value->total_quantity ?></td>
                                     <td>
-                                        <button><a href="#">Xóa Bill</a></button>
-                                        <button>Xem chi tiết</button>
+                                        <button><a href="?url=delete_order&id_order=<?php echo $value->id?>">Xóa Bill</a></button>
+                                        <button><a href="?url=order.php&id_order=<?php echo $value->id?>">Xem chi tiết</a></button>
                                     </td>
                                 </tr>
                             <?php  endforeach ?>
@@ -154,10 +154,7 @@
                     </table>
                 </div>  
             </div>
-            <div class="info__main-notification">
-
-            </div>
-            <div class="info__main-notification">
+            <div class="info__main-notification" style="display:none;">
 
             </div>
         </div>

@@ -80,4 +80,19 @@ class c_info {
         }
         header("location:?url=info.php");
     }
+
+    public function delete_order() {
+        if(isset($_GET['id_order'])) {
+            include('models/m_cart.php');
+            $m_cart = new m_cart();
+
+            $id = $_GET['id_order'];
+
+            $m_cart -> delete_order($id);
+            setcookie("nofication","Xóa thành công", time() + 2, '/');
+        } else {
+            setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
+        }
+        header("location:?url=info.php&checkbill=");
+    }
 }

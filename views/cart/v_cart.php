@@ -97,7 +97,7 @@
                         </div>
                         <div class="col-md-4 col-xs-12 cart__checkout-process text-right">
                             <div class="wrap">
-                                <p><span>Subtotal</span><span>$ <?php echo $results?>.00</span></p>
+                                <p><span>Subtotal:</span><?php if(isset($results)) { ?><span>$ <?php echo $results?>.00</span><?php } ?></p>
                                 <!-- <h4><span>Grand total</span><span>$190.98</span></h4> -->
                                 <form action="?url=create_order" method="POST">
                                     <input type="text" name='results' value='<?php echo $results?>' hidden>

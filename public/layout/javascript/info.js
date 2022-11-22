@@ -19,15 +19,15 @@ const view_image = document.querySelector("#view_image");
 const div_image = document.querySelector(".info__image-preview");
 const cancel = document.querySelector("#cancel");
 
-if(div_content) {
-    div_content.forEach((e, index) => { 
-        if(index != 0)
-            e.style.display = 'none' 
-    })
-}
 
 if(options) {
+
     options.forEach((value,key) => {
+        console.log(value.className + key)
+        if(value.className == 'active') {
+            div_content.forEach((e) => { e.style.display = 'none' })
+            div_content[key].style.display = 'block';
+        }
         value.addEventListener('click', (e) => {
             e.preventDefault()    
             options.forEach((e) => { e.classList.remove('active')})

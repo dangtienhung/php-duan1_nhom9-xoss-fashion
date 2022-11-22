@@ -106,9 +106,9 @@ class c_cart
             setcookie('nofication', 'Chưa có sản phẩm', time() + 2, '/');
             header('location:?url=cart.php');
         }
-        setcookie('nofication', 'Đã Tạo Hóa Đơn Thành Công, Vào quản lý bill của bạn để xem chi tiết', time() + 2, '/');
+        setcookie('nofication', 'Đã Tạo Hóa Đơn Thành Công, xem chi tiết trong phần quản lý', time() + 2, '/');
         unset($_SESSION['carts']);
-        header('location:?url=cart.php');
+        header('location:?url=info.php&checkbill=');
     }
 
 }
