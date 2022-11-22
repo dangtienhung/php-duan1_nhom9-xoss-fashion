@@ -31,6 +31,18 @@
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
             <li>
+                <a href="info.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-address-card"></i>
+                    Thông tin admin
+                </a>
+            </li>
+            <li>
+                <a href="staff.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-address-card"></i>
+                    Quản lý nhân viên
+                </a>
+            </li>
+            <li>
                 <a href="home.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-microsoft"></i>
                     Bảng điều khiển
@@ -38,7 +50,7 @@
             </li>
             <li>
                 <a href="product-categories.php" class="sidebar__menu-link">
-                    <i class="fa-solid fa-list-check"></i>
+                    <i class="fa-solid fa-list"></i>
                     Quản lý danh mục sản phẩm
                 </a>
             </li>
@@ -50,8 +62,8 @@
             </li>
             <li>
                 <a href="customer.php" class="sidebar__menu-link">
-                    <i class="fa-solid fa-address-card"></i>
-                    Quản lý user
+                    <i class="fa-solid fa-users"></i>
+                    Quản lý người dùng
                 </a>
             </li>
             <li>
@@ -84,6 +96,18 @@
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
             <li>
+                <a href="info.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-address-card"></i>
+                    Thông tin admin
+                </a>
+            </li>
+            <li>
+                <a href="staff.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-address-card"></i>
+                    Quản lý nhân viên
+                </a>
+            </li>
+            <li>
                 <a href="home.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-microsoft"></i>
                     Bảng điều khiển
@@ -91,7 +115,7 @@
             </li>
             <li>
                 <a href="product-categories.php" class="sidebar__menu-link">
-                    <i class="fa-solid fa-list-check"></i>
+                    <i class="fa-solid fa-list"></i>
                     Quản lý danh mục sản phẩm
                 </a>
             </li>
@@ -103,15 +127,8 @@
             </li>
             <li>
                 <a href="customer.php" class="sidebar__menu-link">
-                    <i class="fa-solid fa-address-card"></i>
-                    Quản lý user
-                </a>
-            </li>
-            <li>
-            <li>
-                <a href="info.php" class="sidebar__menu-link">
-                    <i class="fa-sharp fa-solid fa-circle-info"></i>
-                    Thông Tin
+                    <i class="fa-solid fa-users"></i>
+                    Quản lý người dùng
                 </a>
             </li>
             <li>
