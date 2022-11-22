@@ -8,7 +8,7 @@
                     <p>WOMEN’S NEW FASHION</p>
                     <span>SEE OUR FULL COLLECTION.S SUMMER 2016 LOOKBOOK</span>
                 </h1>
-                <a href="?url=product.php" class="index__banner-btn">Shop now</a>
+                <a href="#" class="index__banner-btn">Shop now</a>
             </div>
         </div>
     </div>
@@ -75,7 +75,8 @@
                             <img src="admin/public/front-end/images/products/<?php echo $value->picture ?>" alt="">
                             <div class="item__controll-btn">
                                 <a href="#" class="item__btn-buy">Mua ngay</a>
-                                <a href="#" class="item__btn-cart">Giỏ hàng</a>
+                                <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
+                                    class="item__btn-cart">Giỏ hàng</a>
                             </div>
                         </div>
                         <div class="item__product-body">
@@ -130,12 +131,13 @@
                             <?php if ($value->quantity > 0) { ?>
                             <div class="item__controll-btn">
                                 <a href="#" class="item__btn-buy">Mua ngay</a>
-                                <a href="#" class="item__btn-cart">Giỏ hàng</a>
+                                <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
+                                    class="item__btn-cart">Giỏ hàng</a>
                             </div>
                             <?php } ?>
                         </div>
                         <div class="item__product-body">
-                            <h3><?php echo $value->name ?></h3>
+                            <h3><?php echo $value->name; ?></h3>
                             <h3>$ <?php echo number_format($value->price) ?>.00</h3>
                             <?php if ($value->quantity == 0) { ?>
                             <h5>Đã hết hàng</h5>

@@ -9,6 +9,12 @@
             return $this -> loadAllRows();
         }
 
+        public function getProductById($id){
+            $sql = "select * FROM product where id = ?"; 
+            $this ->setQuery($sql);
+            return $this -> loadRow(array($id));
+        }
+
         public function getProductBySearch($search,$number_in_on_page, $clear, $order_by, $action){
             $sql = "select * FROM product where name like '%$search%' $order_by $action limit $number_in_on_page
             offset $clear;"; 

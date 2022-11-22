@@ -63,6 +63,22 @@
             $cart = new c_cart();
             $cart -> index();
             break;
+        case 'add_to_cart':
+            $cart = new c_cart();
+            $cart -> save_to_cart();
+            break;
+        case 'delete_item_from_cart':
+            $cart = new c_cart();
+            $cart -> delete_item_from_cart();
+            break;
+        case 'change_quantity':
+            $cart = new c_cart();
+            $cart -> handle_change_quantity();
+            break;
+        case 'create_order':
+            $cart = new c_cart();
+            $cart -> create_order();
+            break;
         default:
             $error404 = new c_404();
             $error404 -> index();

@@ -90,7 +90,7 @@
                                         <a href="#"><button class="products__item-action-btn btn-icon">
                                                 <i class="fa-solid fa-arrows-rotate"></i>
                                             </button></a>
-                                        <a href="#"><button class="products__item-action-btn btn-text">
+                                        <a href="?url=add_to_cart&id_product=<?php echo $value->id?>"><button class="products__item-action-btn btn-text">
                                                 add to bag
                                             </button></a>
                                         <a href="#"><button class="products__item-action-btn btn-icon">
