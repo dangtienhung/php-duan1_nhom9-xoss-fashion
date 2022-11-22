@@ -12,7 +12,7 @@ class m_staff extends database
         $sql = "select * from customer 
                 where role = 2 and name_customer like '%$search%';";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($search));
+        return $this->loadAllRows();
     }
     // thêm nhân viên
     public function add_one_staff($name, $password, $email, $address, $phone, $img, $role)
@@ -51,6 +51,6 @@ class m_staff extends database
                 where 
                 id = '$id';";
         $this->setQuery($sql);
-        return $this->execute(array($name, $password, $email, $address, $phone, $img, $role, $id));
+        return $this->execute();
     }
 }

@@ -46,7 +46,7 @@ if (isset($_GET['error'])) {
                 phẩm</button>
             <div class="container__main-search">
                 <form action="">
-                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
+                    <input type="search" name="search" id="" placeholder="Tìm kiếm danh mục sản phẩm" value="<?php if (isset($_GET['search'])) {
                                                                                                         echo $_GET['search'];
                                                                                                     } ?>">
                 </form>

@@ -43,9 +43,9 @@
                             </select>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary fs-4"
-                                    data-bs-dismiss="modal">Đóng</button>
+                                    data-bs-dismiss="modal"><a style="color:white;" href="product-categories.php">Đóng</a></button>
                                 <button type="submit" class="btn btn-danger fs-4" data-bs-target="submit-form"
-                                    name="submit">Thêm sản
+                                    name="submit">Sửa danh mục sản
                                     phẩm</button>
                             </div>
                         </form>
