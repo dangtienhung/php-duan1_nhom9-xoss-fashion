@@ -67,28 +67,29 @@
     <h1 class="title">Sản phẩm nổi bật</h1>
     <div class="container">
         <div class="row">
-            <?php foreach($featured_products as $value):?>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="item__product">
-                        <a href="?url=detail.php&id_product=<?php echo $value->id?>">
-                            <div class="item__product-head">
-                                <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
-                                <div class="item__controll-btn">
-                                    <a href="#" class="item__btn-buy">Mua ngay</a>
-                                    <a href="#" class="item__btn-cart">Giỏ hàng</a>
-                                </div>
+            <?php foreach ($featured_products as $value) : ?>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="item__product">
+                    <a href="?url=detail.php&id_product=<?php echo $value->id ?>">
+                        <div class="item__product-head">
+                            <img src="admin/public/front-end/images/products/<?php echo $value->picture ?>" alt="">
+                            <div class="item__controll-btn">
+                                <a href="#" class="item__btn-buy">Mua ngay</a>
+                                <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
+                                    class="item__btn-cart">Giỏ hàng</a>
                             </div>
-                            <div class="item__product-body">
-                                <h3><?php echo $value->name?></h3>
-                                <h3>$ <?php echo number_format($value->price)?>.00</h3>
-                                <?php if($value->quantity == 0) {?>
-                                    <h5>Đã hết hàng</h5>
-                                <?php } ?>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                        <div class="item__product-body">
+                            <h3><?php echo $value->name ?></h3>
+                            <h3>$ <?php echo number_format($value->price) ?>.00</h3>
+                            <?php if ($value->quantity == 0) { ?>
+                            <h5>Đã hết hàng</h5>
+                            <?php } ?>
+                        </div>
+                    </a>
                 </div>
-            <?php endforeach?>
+            </div>
+            <?php endforeach ?>
         </div>
     </div>
 </div>
@@ -121,30 +122,31 @@
     <h1 class="title">Sản phẩm mới nhất</h1>
     <div class="container">
         <div class="row">
-            <?php foreach($new_products as $value): ?>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="item__product">
-                        <a href="?url=detail.php&id_product=<?php echo $value->id?>">
-                            <div class="item__product-head">
-                                <img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt="">
-                                <?php if($value->quantity > 0) {?>
-                                    <div class="item__controll-btn">
-                                        <a href="#" class="item__btn-buy">Mua ngay</a>
-                                        <a href="#" class="item__btn-cart">Giỏ hàng</a>
-                                    </div>
-                                <?php } ?>
+            <?php foreach ($new_products as $value) : ?>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="item__product">
+                    <a href="?url=detail.php&id_product=<?php echo $value->id ?>">
+                        <div class="item__product-head">
+                            <img src="admin/public/front-end/images/products/<?php echo $value->picture ?>" alt="">
+                            <?php if ($value->quantity > 0) { ?>
+                            <div class="item__controll-btn">
+                                <a href="#" class="item__btn-buy">Mua ngay</a>
+                                <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
+                                    class="item__btn-cart">Giỏ hàng</a>
                             </div>
-                            <div class="item__product-body">
-                                <h3><?php echo $value->name?></h3>
-                                <h3>$ <?php echo number_format($value->price)?>.00</h3>
-                                <?php if($value->quantity == 0) {?>
-                                    <h5>Đã hết hàng</h5>
-                                <?php } ?>
-                            </div>
-                        </a>
-                    </div>
+                            <?php } ?>
+                        </div>
+                        <div class="item__product-body">
+                            <h3><?php echo $value->name; ?></h3>
+                            <h3>$ <?php echo number_format($value->price) ?>.00</h3>
+                            <?php if ($value->quantity == 0) { ?>
+                            <h5>Đã hết hàng</h5>
+                            <?php } ?>
+                        </div>
+                    </a>
                 </div>
-            <?php endforeach?>
+            </div>
+            <?php endforeach ?>
             <!-- end -->
         </div>
     </div>

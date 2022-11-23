@@ -307,6 +307,10 @@ html {
   left: unset;
   width: 23rem;
 }
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu li {
+  display: flex;
+}
+
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu li:not(:last-child) {
   margin-bottom: 0.4rem;
 }
@@ -314,13 +318,21 @@ html {
   display: inline-block;
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0;
+  flex-wrap: wrap;
 }
-.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link img {
+
+
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link .cart__item-menu-img {
   width: 5rem;
+  height: 6rem;
+}
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link .cart__item-menu-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-list {
   flex: 1;
@@ -333,7 +345,6 @@ html {
   margin: 0.4rem 0 0.8rem;
   overflow: hidden;
   line-height: 1.8rem;
-  height: 3.6rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -1996,6 +2007,49 @@ html {
   min-width: 130px;
 }
 
+.cart__product-wrap-quantity {
+  border: 1px solid #eee;
+  width: 84px;
+  height: 40px;
+  position: relative;
+}
+
+.cart_product-input-plus-minus {
+  background: transparent none repeat 0 0;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  color: #303030;
+  float: left;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  width: 54px;
+  font-size: 1.4rem;
+  z-index: 1;
+}
+
+.cart__product-wrap-quantity::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 54px;
+  height: 100%;
+  z-index: 10;
+}
+
+.cart__product-wrap-quantity .btnqty {
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  width: 28px;
+  height: 18px;
+}
+
 .cart__table thead tr th.price {
   min-width: 130px;
 }
@@ -2043,15 +2097,6 @@ html {
   width: 63px;
 }
 
-.cart__table .cart__pro-qua::before {
-  background: #eee none repeat scroll 0 0;
-  content: "";
-  height: 100%;
-  position: absolute;
-  right: 18px;
-  top: 0;
-  width: 1px;
-}
 
 .cart__table .cart__pro-qua select {
   appearance: none;
@@ -2512,8 +2557,39 @@ html {
 
 .info__main-wrap-box {
   min-height: 400px;
+  overflow: hidden;
   padding: 15px;
   background-color: #fff;
+}
+
+.info__bill-list {
+  max-height: 595px;
+  position: relative;
+}
+
+.info__bill-list::-webkit-scrollbar {
+  width: 0.6rem;
+  /* chiều rộng rộng 6px */
+}
+
+.info__bill-list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  /*màunềncủathanhcuộn*/
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.info__bill-list::-webkit-scrollbar-track {
+  background-color: #fff;
+  /* màu nền của thanh cuộn */
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 .info__content-box form{
@@ -2668,6 +2744,61 @@ html {
   font-weight: 500;
 }
 
+.info__bill-list table{
+  width: 100%;
+}
+
+.info__bill-list table thead {
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+
+.info__bill-list table thead td {
+  border: 1px solid #ccc;
+}
+
+.info__bill-list table tr {
+  width: 100%;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.info__bill-list table tr td:first-child {
+  width: 8%;
+}
+
+.info__bill-list table tr td{
+  padding: 20px 0;
+  width: 30%;
+  text-align: center;
+}
+
+.info__bill-list table tr td button {
+  padding: 10px 0;
+  width: 50%;
+  color: #fff;
+  background-color: #c0392b;
+  border: 1px solid #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 10px;
+}
+
+
+.info__bill-list table tr td button a {
+  color: #fff;
+}
+
+.info__bill-list table tr td button:hover a {
+  color: #c0392b;
+} 
+
+.info__bill-list table tr td button:hover {
+  color: #c0392b;
+  background-color: #fff;
+  border: 1px solid #c0392b;
+}
 .info__form-pass {
   width: 50%;
 }
@@ -2686,6 +2817,87 @@ html {
 
 .info__form-pass button {
   margin-top: 20px;
+}
+
+/* Orders */
+.order__container {
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order__btn {
+  width: 100%;
+  margin: 10px 0 10px 68px;
+}
+
+.order__btn button {
+  padding: 15px 10px;
+  border: 1px solid #fff;
+  background: #c0392b;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.order__btn button:hover {
+  border: 1px solid #c0392b;
+  background: #fff;
+  color: #c0392b;
+}
+
+.order__btn span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.order_wrap-box {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.order_wrap-box table {
+  width: 100%;
+}
+
+.order_wrap-box table thead tr {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.order_wrap-box table thead tr td {
+  border: 1px solid #ccc;
+}
+
+.order_wrap-box table tr td {
+  width: 16%;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 10px;
+}
+
+.order_wrap-box table tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.order_wrap-box table tr td img {
+  width: 85%;
+  height: 200px;
+}
+
+.order__total {
+  width: 100%;
+  text-align: right;
+} 
+
+.order__total h2 {
+  color: #c0392b;
+  padding: 10px 0;
+  margin-right: 70px;
 }
 /*reponsive tablet*/
 @media all and (max-width:76.8rem) {}
@@ -2912,6 +3124,10 @@ html {
   .info__change-avatar input[type="file"] {
     width: 50%;
   }
+
+  .info__bill-list table tr td button {
+    width: 70%;
+  }
 }
 
 /* tablet desktop: 768px */
@@ -3018,6 +3234,8 @@ html {
     text-align: center;
     margin-top: 10px;
   }
+
+
   /* product */
   .products__container{
     margin-top: 20px;
@@ -3054,6 +3272,15 @@ html {
   }
   .info__change-avatar input[type="file"] {
     width: 100%;
+  }
+
+  .info__bill-list table thead tr td {
+    font-size: 1rem;
+  }
+
+  .info__bill-list table tr td button {
+    width: 100%;
+    margin: 10px 0;
   }
 }
 /* @keyframe */

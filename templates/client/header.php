@@ -87,33 +87,30 @@
                                     <a href="?url=cart.php" class="header__top-menu-link">
                                         <i class="fa-brands fa-opencart"></i>
                                     </a>
-                                    <ul class="header__sub-menu">
-                                        <li>
-                                            <a href="?url=cart.php" class="cart__item-menu-link">
-                                                <img src="public/layout/images/mini-cart/1.jpg" class="cart__mini"
-                                                    alt="">
-                                                <div class="cart__item-menu-list">
-                                                    <h5 class="">Women’s winter dress</h5>
-                                                    <span class="">1x$45.00</span>
-                                                    <button class="cart__remove-btn">
-                                                        <i class="icon fa-solid fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="?url=cart.php" class="cart__item-menu-link">
-                                                <img src="./images/mini-cart/2.jpg" class="cart__mini" alt="">
-                                                <div class="cart__item-menu-list">
-                                                    <h5 class="">Full sleev women shirt</h5>
-                                                    <span class="">1x$50.00</span>
-                                                    <button class="cart__remove-btn">
-                                                        <i class="icon fa-solid fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <?php if(isset($_SESSION['user_id']) && !empty($_SESSION['carts'])) { ?>
+                                        <ul class="header__sub-menu">
+                                            <?php $i=1; foreach($_SESSION['carts'] as $value): ?>
+                                                <?php if($i++ < 5) {?>
+                                                    <li>
+                                                        <a href="?url=cart.php" class="cart__item-menu-link">
+                                                            <div class="cart__item-menu-img">
+                                                                <img src="admin/public/front-end/images/products/<?php echo $value['picture']?>" class="cart__mini" alt="">
+                                                            </div>
+                                                            <div class="cart__item-menu-list">
+                                                                <h5 class=""><?php echo $value['name']?></h5>
+                                                                <span class=""><?php echo $value['quantity'].'x $ '.$value['price'].'.00';?></span>
+                                                                <button class="cart__remove-btn">
+                                                                    <a href="?url=delete_item_from_cart&id_product=<?php echo $value['id']?>">
+                                                                        <i class="icon fa-solid fa-trash"></i>
+                                                                    </a>
+                                                                </button>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                <?php }?>
+                                            <?php endforeach ?>
+                                        </ul>
+                                    <?php } ?>
                                 </li>
                             </ul>
                         </div>

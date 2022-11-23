@@ -9,6 +9,10 @@ class c_info {
         $m_customer = new m_customer();
         if(isset($_SESSION['user_id'])) {
             $user = $m_customer -> getCustomerById($_SESSION["user_id"]);
+
+            include('models/m_cart.php');
+            $m_cart = new m_cart();
+            $orders = $m_cart -> getOrderByIdCustomer($_SESSION["user_id"]);
         } else {
             header("location:?url=login.php");
         }
@@ -63,17 +67,32 @@ class c_info {
                     if($_POST["new-password"] == $_POST["rePassWord"]) { 
                         $passWord = $_POST["new-password"];
                         $m_customer -> save_change_pass($passWord, $_SESSION['user_id']);
-                        setcookie("nofication","Thay đổi thành công", time() + 3, '/');
+                        setcookie("nofication","Thay đổi thành công", time() + 2, '/');
                     } else {
-                        setcookie("nofication","Mật khẩu nhập lại không trùng khớp!", time() + 3, '/');
+                        setcookie("nofication","Mật khẩu nhập lại không trùng khớp!", time() + 2, '/');
                     }
                 } else {
-                    setcookie("nofication","Nhập sai mật khẩu", time() + 3, '/');
+                    setcookie("nofication","Nhập sai mật khẩu", time() + 2, '/');
                 }
             } else {
-                setcookie("nofication","Chưa nhập đủ thông tin", time() + 3, '/');
+                setcookie("nofication","Chưa nhập đủ thông tin", time() + 2, '/');
             }
         }
         header("location:?url=info.php");
+    }
+
+    public function delete_order() {
+        if(isset($_GET['id_order'])) {
+            include('models/m_cart.php');
+            $m_cart = new m_cart();
+
+            $id = $_GET['id_order'];
+
+            $m_cart -> delete_order($id);
+            setcookie("nofication","Xóa thành công", time() + 2, '/');
+        } else {
+            setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
+        }
+        header("location:?url=info.php&checkbill=");
     }
 }

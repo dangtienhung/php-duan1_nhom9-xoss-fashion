@@ -25,64 +25,66 @@
                                     <th class="name">product name</th>
                                     <th class="qty">quantity</th>
                                     <th class="price">price</th>
-                                    <th class="total">totle</th>
+                                    <th class="total">total</th>
                                     <th class="remove">remove</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php if(!empty($_SESSION['carts'])) { ?>
+                                <?php $i=1;$results=0; foreach($_SESSION['carts'] as $value): ?>
                                 <tr>
-                                    <td><span class="cart__number">1</span></td>
-                                    <td><a href="#" class="cart__pro-image"><img src="./images/product/4.jpg"
+                                    <td><span class="cart__number"><?php echo $i++;?></span></td>
+                                    <td><a href="#" class="cart__pro-image"><img
+                                                src="admin/public/front-end/images/products/<?php echo $value['picture']?>"
                                                 alt="" /></a></td>
-                                    <td><a href="#" class="cart__pro-title">Women’s winter dress</a></td>
+                                    <td><a href="#" class="cart__pro-title"><?php echo $value['name']?></a></td>
                                     <td>
                                         <div class="cart__pro-qua">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                            </select>
+                                            <div class="cart__product-wrap-quantity">
+                                                <!-- Input Quantity -->
+                                                <input type="text" value="<?php echo $value['quantity']?>" name="quantity"
+                                                    class="cart_product-input-plus-minus"
+                                                    id="<?php echo $value['max_quantity']?>">
+
+                                                <!-- Increase -->
+                                                <span class="cart__product-inc btnqty">
+                                                    <a href="?url=change_quantity&id_product=<?php echo $value['id']?>&set=incre"><i class="fa-solid fa-chevron-up"></i></a>
+                                                </span>
+
+                                                <!-- Decrease -->
+                                                <span class="cart__product-dec btnqty">
+                                                    <a href="?url=change_quantity&id_product=<?php echo $value['id']?>&set=decre"><i class="fa-solid fa-chevron-down"></i></a>
+                                                </span>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="cart__pro-price">$104.99</p>
+                                        <p class="cart__pro-price">$ <?php echo $value['price']?>.00</p>
                                     </td>
                                     <td>
-                                        <p class="cart__price-total">$104.99</p>
+                                        <p class="cart__pro-total">$
+                                            <?php $total = $value['price']*$value['quantity']; echo $total; ?>.00</p>
                                     </td>
-                                    <td><button class="cart__pro-remove">Xóa</button>
+                                    <td><a href="?url=delete_item_from_cart&id_product=<?php echo $value['id']?>"><button
+                                                class="cart__pro-remove">Xóa</button></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><span class="cart__number">2</span></td>
-                                    <td><a href="#" class="cart__pro-image"><img src="./images/product/1.jpg"
-                                                alt="" /></a></td>
-                                    <td><a href="#" class="cart__pro-title">Full sleev women shirt</a></td>
-                                    <td>
-                                        <div class="cart__pro-qua">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="cart__pro-price">$85.99</p>
-                                    </td>
-                                    <td>
-                                        <p class="cart__price-total">$85.99</p>
-                                    </td>
-                                    <td><button class="cart__pro-remove">Xóa</button>
+                                <?php $results = $results + $total?>
+                                <?php endforeach?>
+                                <?php } else { ?>
+                                <tr align='center'>
+                                    <td style='padding: 40px 0;' colspan="7">
+                                        <h2>Giỏ hàng trống</h2>
                                     </td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
                         <div class="col-md-8 col-xs-12 cart__actions cart__button-cuppon">
                             <div class="cart__action float-left">
-                                <a href="#" class="button color-hover">continiue shopping</a>
+                                <a href="?url=product.php" class="button color-hover">continiue shopping</a>
                             </div>
                             <div class="cart__cuppon-wrap float-right">
                                 <h4>DISCOUNT CODES</h4>
@@ -95,9 +97,12 @@
                         </div>
                         <div class="col-md-4 col-xs-12 cart__checkout-process text-right">
                             <div class="wrap">
-                                <p><span>Subtotal</span><span>$190.98</span></p>
-                                <h4><span>Grand total</span><span>$190.98</span></h4>
-                                <button class="button color-hover">process to checkout</button>
+                                <p><span>Subtotal:</span><?php if(isset($results)) { ?><span>$ <?php echo $results?>.00</span><?php } ?></p>
+                                <!-- <h4><span>Grand total</span><span>$190.98</span></h4> -->
+                                <form action="?url=create_order" method="POST" onsubmit="return confirm('Bạn có chắc chắn đặt hàng!!')">
+                                    <input type="text" name='results' value='<?php echo $results?>' hidden>
+                                    <button name="btn_create" class="button color-hover">process to checkout</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -106,3 +111,8 @@
         </div>
     </div>
 </div>
+<?php
+    if(isset($_COOKIE['nofication'])) {
+        echo '<script>alert("'.$_COOKIE['nofication'].'")</script>';
+    }
+?>

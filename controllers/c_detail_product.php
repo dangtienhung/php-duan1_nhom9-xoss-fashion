@@ -4,6 +4,10 @@ class c_detail
 {
     public function index()
     {
+        if(!isset($_GET['id_product'])) {
+            header("location:?url=home");
+        }
+        
         include('models/m_detail_product.php');
         $m_detail_product= new m_detail_product();
         // tăng số lượt view mỗi làn click vào xem
@@ -25,6 +29,8 @@ class c_detail
             $m_customer = new m_customer();
             $user = $m_customer-> getCustomerById($_SESSION["user_id"]);
         }
+
+
 
         $view = 'views/detail_product/v_detail.php';
         include('templates/client/layout.php');

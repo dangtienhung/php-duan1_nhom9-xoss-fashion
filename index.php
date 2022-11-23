@@ -8,6 +8,7 @@
     include 'controllers/c_info.php';
     include 'controllers/c_404.php';
     include 'controllers/c_cart.php';
+    include 'controllers/c_order.php';
 
     switch($url) {
         case '/':
@@ -62,6 +63,30 @@
         case 'cart.php':
             $cart = new c_cart();
             $cart -> index();
+            break;
+        case 'add_to_cart':
+            $cart = new c_cart();
+            $cart -> save_to_cart();
+            break;
+        case 'delete_item_from_cart':
+            $cart = new c_cart();
+            $cart -> delete_item_from_cart();
+            break;
+        case 'change_quantity':
+            $cart = new c_cart();
+            $cart -> handle_change_quantity();
+            break;
+        case 'create_order':
+            $cart = new c_cart();
+            $cart -> create_order();
+            break;
+        case 'delete_order':
+            $info = new c_info();
+            $info -> delete_order();
+            break;
+        case 'order.php':
+            $order = new c_order();
+            $order -> index();
             break;
         default:
             $error404 = new c_404();

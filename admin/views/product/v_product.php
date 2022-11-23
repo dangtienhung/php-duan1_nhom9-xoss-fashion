@@ -20,8 +20,25 @@
             </div>
             <div class="container__main-search">
                 <form action="">
-                    <input type="search" name="search" id="" value="<?php echo $search; ?>"
-                        placeholder="Tìm kiếm sản phẩm">
+                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
+                                                                                                        echo $_GET['search'];
+                                                                                                    } ?>">
+                </form>
+            </div>
+        </div>
+        <!-- mobile -->
+        <div class="container__main-handler-mobile">
+            <div class="container__main-link">
+                <a href="add-product.php">
+                    <i class="fa-solid fa-plus"></i>
+                    Tạo sản phẩm mới
+                </a>
+            </div>
+            <div class="container__main-search">
+                <form action="">
+                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
+                                                                                                        echo $_GET['search'];
+                                                                                                    } ?>">
                 </form>
             </div>
         </div>
@@ -51,12 +68,12 @@
                             <p><?= $each->description; ?></p>
                         </div>
                     </td>
-                    <td><?= $each->	date_added; ?></td>
+                    <td><?= $each->date_added; ?></td>
                     <td>
-                        <a href="upload-product.php?id=<?= $each->id;?>">
+                        <a href="upload-product.php?id=<?= $each->id; ?>">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a href="delete-product.php?id=<?= $each->id;?>">
+                        <a href="delete-product.php?id=<?= $each->id; ?>">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                     </td>
