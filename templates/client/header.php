@@ -98,7 +98,7 @@
                                                             </div>
                                                             <div class="cart__item-menu-list">
                                                                 <h5 class=""><?php echo $value['name']?></h5>
-                                                                <span class=""><?php echo $value['quantity'].'x'.$value['price'];?></span>
+                                                                <span class=""><?php echo $value['quantity'].'x $ '.$value['price'].'.00';?></span>
                                                                 <button class="cart__remove-btn">
                                                                     <a href="?url=delete_item_from_cart&id_product=<?php echo $value['id']?>">
                                                                         <i class="icon fa-solid fa-trash"></i>

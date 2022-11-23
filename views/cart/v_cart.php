@@ -99,7 +99,7 @@
                             <div class="wrap">
                                 <p><span>Subtotal:</span><?php if(isset($results)) { ?><span>$ <?php echo $results?>.00</span><?php } ?></p>
                                 <!-- <h4><span>Grand total</span><span>$190.98</span></h4> -->
-                                <form action="?url=create_order" method="POST">
+                                <form action="?url=create_order" method="POST" onsubmit="return confirm('Bạn có chắc chắn đặt hàng!!')">
                                     <input type="text" name='results' value='<?php echo $results?>' hidden>
                                     <button name="btn_create" class="button color-hover">process to checkout</button>
                                 </form>
