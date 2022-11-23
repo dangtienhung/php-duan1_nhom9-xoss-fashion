@@ -126,14 +126,11 @@ class c_customers
                 }
                 $file_name = $photo_old;
             }
-<<<<<<< HEAD
-=======
             if (isset($_SESSION["user_id"]) && $_SESSION['admin_id'] == $_SESSION['user_id']) {
                 $_SESSION['user_picture'] = $file_name;
                 $_SESSION['user_name'] = $name_customer;
                 $_SESSION['user_email'] = $email;
             }
->>>>>>> 894a7392c9f9ec1556425f680133b8308b5d4853
             $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $new_picture, $role, $address, $phone_number);
             // header('location: customer.php');
         }
