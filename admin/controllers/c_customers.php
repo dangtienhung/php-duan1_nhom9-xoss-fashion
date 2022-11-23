@@ -17,12 +17,8 @@ class c_customers
         $search = '';
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
-            echo 'search: ' . $search;
-            $number_count = $c_customers->get_count_search($search);
-            $view = ('views/product/v_product.php');
-            include('templates/admin/layout.php');
         }
-        $list = $c_customers->read_customer();
+        $list = $c_customers->read_customer($search);
         $view = 'views/customers/v_customer.php';
         include('templates/admin/layout.php');
     }
@@ -60,17 +56,22 @@ class c_customers
             $name_customer = $_POST['username'];
             $picture = $_FILES['image'];
             $email = $_POST['email'];
-            $address= $_POST['address'];
-            $phone_number=$_POST['phone_number'];
+            $address = $_POST['address'];
+            $phone_number = $_POST['phone_number'];
             $passWord = $_POST['password'];
             $picture_name = ($picture['error'] == 0) ? $picture['name'] : '';
-            $role=$_POST['role'];
-            $result = $c_customer->create_customer($name_customer, $email, $passWord, $picture_name, $role, $address, $phone_number);
+            $role = $_POST['role'];
+            if ($picture_name != '') {
+                $file_extension = explode('.', $picture_name)[1];
+                $file_name = time() . '.' . $file_extension;
+            }
+            echo '<pre>';
+            print_r($passWord);
+            echo '</pre>';
+            $result = $c_customer->create_customer($name_customer, $email, $passWord, $file_name, $role, $address, $phone_number);
             if ($result) {
                 if ($picture_name != '') {
-                    $folder = 'public/admin/images/customer/';
-                    $file_extension = explode('.', $picture_name)[1];
-                    $file_name = time() . '.' . $file_extension;
+                    $folder = 'public/front-end/images/customer/';
                     $path_file = $folder . $file_name;
                     move_uploaded_file($picture['tmp_name'], $path_file);
                 }
@@ -101,12 +102,16 @@ class c_customers
         if (isset($_POST['btn-submit'])) {
             $id = $_POST['id'];
             $name_customer = $_POST['username'];
-            $address=$_POST['address'];
-            $phone_number=$_POST['phone_number'];
+            $address = $_POST['address'];
+            $phone_number = $_POST['phone_number'];
             $picture = $_FILES['image_new'];
             $new_picture = ($picture['error'] == 0) ? $picture['name'] : '';
             $email = $_POST['email'];
             $passWord = $_POST['password'];
+            echo '<pre>';
+            print_r($passWord);
+            echo '</pre>';
+            die();
             if ($new_picture != '' && $picture['size'] > 0) {
                 $folder = 'public/front-end/images/customer/';
                 $file_extension = explode('.', $new_picture)[1];
@@ -121,13 +126,13 @@ class c_customers
                 }
                 $file_name = $photo_old;
             }
-            if(isset($_SESSION["user_id"]) && $_SESSION['admin_id'] == $_SESSION['user_id']) {
+            if (isset($_SESSION["user_id"]) && $_SESSION['admin_id'] == $_SESSION['user_id']) {
                 $_SESSION['user_picture'] = $file_name;
                 $_SESSION['user_name'] = $name_customer;
                 $_SESSION['user_email'] = $email;
             }
             $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $new_picture, $role, $address, $phone_number);
-            header('location: customer.php');
+            // header('location: customer.php');
         }
     }
 }

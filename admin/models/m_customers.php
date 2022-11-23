@@ -9,11 +9,12 @@ include('database.php');
 class m_customer extends database
 {
     /* lấy ra tất cả các người dùng */
-    public function read_customer()
+    public function read_customer($search)
     {
-        $sql = "select customer.id,customer.name_customer,customer.picture,customer.address,customer.phone_number,customer.email,role.role_name as role_name from customer join role on customer.role=role.id ";
+        $sql = "select customer.*, customer.id as 'id_customer' from customer 
+                where (role = 3 and name_customer like '%?%') or (role = 3)";
         $this->setQuery($sql);
-        return $this->loadAllRows();
+        return $this->loadAllRows(array($search));
     }
     public function get_count_search($search)
     {
@@ -31,11 +32,12 @@ class m_customer extends database
         $this->setQuery($sql);
         return $this->loadRow();
     }
-    public function getCustomerById($id_person){
-        $sql = "select * FROM customer where id = $id_person"; 
-        $this ->setQuery($sql);
+    public function getCustomerById($id_person)
+    {
+        $sql = "select * FROM customer where id = $id_person";
+        $this->setQuery($sql);
         // lấy dữ liệu 
-        return $this -> loadRow();
+        return $this->loadRow();
     }
     /* thêm người dùng */
     public function create_customer($name_customer, $email, $passWord, $picture_name, $role, $address, $phone_number)
@@ -69,12 +71,14 @@ class m_customer extends database
         $this->setQuery($sql);
         return $this->execute(array($id));
     }
-    public function save_change_info($name, $email, $phone_number, $id) {
+    public function save_change_info($name, $email, $phone_number, $id)
+    {
         $sql = "update customer set name_customer=?, email=?, phone_number=? where id = ?";
         $this->setQuery($sql);
         return $this->execute(array($name, $email, $phone_number, $id));
     }
-    public function save_change_pass($new_pass, $id) {
+    public function save_change_pass($new_pass, $id)
+    {
         $sql = "update customer set passWord=? where id = ?";
         $this->setQuery($sql);
         return $this->execute(array($new_pass, $id));

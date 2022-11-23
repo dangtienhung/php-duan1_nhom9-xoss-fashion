@@ -34,18 +34,17 @@
                                 <label for="image" class="form-label fs-3">Hoặc giữ lại hình ảnh</label><br />
                                 <input class="form-control fs-3" type="hidden" id="image_old" name="image_old"
                                     value="<?= $each->picture; ?>">
-                                    <?php if ($each->picture==NULL) {?> 
-                                <img src="public/front-end/images/trend-avatar-1.jpg" alt=""
-                            class="img_item">
+                                <?php if ($each->picture == NULL) { ?>
+                                <img src="public/front-end/images/trend-avatar-1.jpg" alt="" class="img_item">
                                 <?php } else { ?>
-                            <img src="public/front-end/images/customer/<?= $each->picture; ?>" 
-                                                        class="body__image img_item" />
+                                <img src="public/front-end/images/customer/<?= $each->picture; ?>"
+                                    class="body__image img_item" />
                                 <?php } ?>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label fs-3">địa chỉ khách hàng</label>
-                                <input type="text" class="form-control fs-3" id="address" placeholder="địa chỉ khách hàng"
-                                    name="address" value="<?= $each->address ?>">
+                                <input type="text" class="form-control fs-3" id="address"
+                                    placeholder="địa chỉ khách hàng" name="address" value="<?= $each->address ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="phone_number" class="form-label fs-3">số điện thoại khách hàng</label>
@@ -58,18 +57,8 @@
                                 <input type="text" class="form-control fs-3" id="email" placeholder="Email khách hàng"
                                     name="email" value="<?= $each->email ?>">
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label fs-3">Mật khẩu khách hàng</label>
-                                <input type="text" class="form-control fs-3" id="password"
-                                    placeholder="Password khách hàng" name="password"
-                                    value="<?= $each->passWord ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label for="role" class="form-label fs-3">Mật khẩu khách hàng</label>
-                                <input type="text" class="form-control fs-3" id="role"
-                                    placeholder="role khách hàng" name="role"
-                                    value="<?= $each->role ?>">
-                            </div>
+                            <input type="hidden" class="form-control fs-3" id="role" placeholder="role khách hàng"
+                                name="role" value="<?= $each->role ?>">
                             <div class="modal-footer">
                                 <button class="fs-4 btn btn-danger" name="btn-submit" type="submit">Sửa người
                                     dùng</button>
