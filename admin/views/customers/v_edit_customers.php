@@ -20,7 +20,7 @@
                     <div class="modal-body">
                         <form action="process-edit-customer.php" method="POST" enctype="multipart/form-data">
                             <input type="hidden" class="form-control fs-3" id="id" placeholder="Tên khách hàng"
-                                name="id" value="<?= $each->id_customer; ?>">
+                                name="id" value="<?= $each->id; ?>">
                             <div class="mb-3">
                                 <label for="username" class="form-label fs-3">Tên khách hàng</label>
                                 <input type="text" class="form-control fs-3" id="username" placeholder="Tên khách hàng"
@@ -33,7 +33,7 @@
                             <div class="mb-3">
                                 <label for="image" class="form-label fs-3">Hoặc giữ lại hình ảnh</label><br />
                                 <input class="form-control fs-3" type="hidden" id="image_old" name="image_old"
-                                    value="<?= $each->customer_avatar; ?>">
+                                    value="<?= $each->picture; ?>">
                                     <?php if ($each->picture==NULL) {?> 
                                 <img src="public/front-end/images/trend-avatar-1.jpg" alt=""
                             class="img_item">
