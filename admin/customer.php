@@ -6,6 +6,6 @@ if (isset($_SESSION['admin_name'])) {
     $customer = new c_customers();
     $customer->index();
 } else {
-    echo 'lỗi';
+    header('location : index.php');
     
 }

@@ -1,3 +1,4 @@
+
 <!-- container -->
 <main class="content-wrapper">
     <div class="row">
@@ -18,7 +19,7 @@
             </div>
         </div>
         <div class="container__table">
-        <form action="?url=change_info.php" method="POST" enctype="multipart/form-data">
+        <form action="change_info.php" method="POST" enctype="multipart/form-data">
                         <!-- current phone_number -->
                         <input type="text" name="current_phone_number" value="<?php echo $user->phone_number?>"
                             id="phone_number" hidden>
@@ -28,30 +29,43 @@
                         <!-- curent name -->
                         <input type="text" name="current_name" value="<?php echo $user->name_customer?>" id="name"
                             hidden>
-
+                        <input type="text" name="current_pass" value="<?php echo $user->passWord?>" id="name"
+                            hidden>
                         <table class="info__table-view-info">
                             <tr>
                                 <td>Tên đăng nhập</td>
                                 <td><input type="text" id="name_value" name="user_name"
-                                        value="<?php echo $user->name_customer?>" disabled> <button id="change_name"
-                                        type="button">Thay đổi</button></span></td>
+                                        value="<?php echo $user->name_customer?>" >
                             </tr>
                             <tr>
                                 <td>email</td>
                                 <td><input type="email" id="email_value" name="email" value="<?php echo $user->email?>"
-                                        disabled> <button id="change_email" type="button">Thay đổi</button></span>
+                                        >
                                 </td>
                             </tr>
                             <tr>
                                 <td>Số điện thoại</td>
                                 <td><input type="text" id="phone_number_value" name="phoneNumber"
-                                        value="<?php echo $user->phone_number?>" disabled> <button
-                                        id="change_phone_number" type="button">Thay đổi</button></td>
+                                        value="<?php echo $user->phone_number?>" >
                             </tr>
-                        </table>
 
-                        <button class="info_btn-save" name="btn_save">Lưu thông tin</button>
+                            <tr>
+                                <td>Mất khẩu</td>
+                                <td> 
+                                <input type="password" id="passWord_value" name="passWword"
+                                        value="<?php echo $user->passWord?>" >
+                                    <a href="change_pass.php"><i class="fa-solid fa-pen-to-square"></i></a>
+                            </tr>
+               
+                        </table>
+                        <button class="btn btn-warning " name="btn_save">Lưu thông tin</button>
                     </form>
+
         </div>
     </main>
-</main>
+    </main>
+<?php
+    if(isset($_COOKIE['nofication'])) {
+        echo '<script>alert("'.$_COOKIE['nofication'].'")</script>';
+    }
+?>

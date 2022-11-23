@@ -1,3 +1,14 @@
+<?php
+
+if (isset($_GET['success'])) {
+    $abc = $_GET['success'];
+    echo '<script>alert("cập nhật người dùng thành công!")</script>';
+}
+if (isset($_GET['error'])) {
+    echo '<script>alert("Thêm người dùng thất bại!")</script>';
+}
+
+?>
 <!-- container -->
 <main class="content-wrapper">
     <div class="row">
@@ -53,10 +64,10 @@
                     <td><?= $each->role_name; ?></td>
                     <td>
                         <a href="edit-customer.php?id=<?= $each->id; ?>">
-                            sửa
+                        <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                         <a href="delete-customer.php?id=<?= $each->id; ?>">
-                           xóa
+                        <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>
                 </tr>

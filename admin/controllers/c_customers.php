@@ -14,6 +14,14 @@ class c_customers
         $c_customers = new m_customer();
 
         // tìm kiến khách hàng
+        $search = '';
+        if (isset($_GET['search'])) {
+            $search = $_GET['search'];
+            echo 'search: ' . $search;
+            $number_count = $c_customers->get_count_search($search);
+            $view = ('views/product/v_product.php');
+            include('templates/admin/layout.php');
+        }
         $list = $c_customers->read_customer();
         $view = 'views/customers/v_customer.php';
         include('templates/admin/layout.php');
@@ -57,7 +65,7 @@ class c_customers
             $passWord = $_POST['password'];
             $picture_name = ($picture['error'] == 0) ? $picture['name'] : '';
             $role=$_POST['role'];
-            $result = $c_customer->create_customer($name_customer, $email, $passWord, $picture, $role, $address, $phone_number);
+            $result = $c_customer->create_customer($name_customer, $email, $passWord, $picture_name, $role, $address, $phone_number);
             if ($result) {
                 if ($picture_name != '') {
                     $folder = 'public/admin/images/customer/';
@@ -66,10 +74,9 @@ class c_customers
                     $path_file = $folder . $file_name;
                     move_uploaded_file($picture['tmp_name'], $path_file);
                 }
-                header('location: customer.php');
-                echo "<script>alert('thành công')</script>";
+                header('location: customer.php?success=Thêm mới danh mục người dùng thành công!');
             } else {
-                echo "<script>alert('thêm không thành công')</script>";
+                header('location: customer.php?error=Thêm mới danh mục người dùng không thành công!');
             }
         }
     }
@@ -119,7 +126,7 @@ class c_customers
                 $_SESSION['user_name'] = $name_customer;
                 $_SESSION['user_email'] = $email;
             }
-            $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $picture, $role, $address, $phone_number);
+            $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $new_picture, $role, $address, $phone_number);
             header('location: customer.php');
         }
     }
