@@ -2,7 +2,7 @@
 
 @session_start();
 include('controllers/c_customers.php');
-if (isset($_SESSION['admin_name'])) {
+if (isset($_SESSION['admin_id'])) {
     $customer = new c_customers();
     $customer->index();
 } else {

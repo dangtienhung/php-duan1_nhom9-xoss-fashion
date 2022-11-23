@@ -30,12 +30,22 @@
     <!-- content -->
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
+        <?php if ($_SESSION['admin_role']==1) { ?>
             <li>
                 <a href="info.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Thông tin admin
                 </a>
             </li>
+        <?php } else if ($_SESSION['admin_role']==2) { ?>
+            <li>
+                <a href="info.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-address-card"></i>
+                    Thông tin admin
+                </a>
+            </li>
+        <?php } ?>
+            
             <li>
                 <a href="staff.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
@@ -101,12 +111,22 @@
     <!-- content -->
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
-            <li>
+        <?php if ($_SESSION['admin_role']==1)  { ?>
+        <li>
                 <a href="info.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Thông tin admin
                 </a>
             </li>
+        <?php } else if($_SESSION['admin_role'] ==2) { ?>
+            <li>
+                <a href="show.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-address-card"></i>
+                    Thông tin admin
+                </a>
+            </li>
+        <?php } ?>
+            
             <li>
                 <a href="staff.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>

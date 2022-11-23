@@ -59,4 +59,9 @@ class m_comments extends database
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
+    public function delete_commnet($id) {
+        $sql = 'delete from comment where idItem = ?';
+        $this -> setQuery($sql);
+        return $this->execute(array($id));
+    }
 }

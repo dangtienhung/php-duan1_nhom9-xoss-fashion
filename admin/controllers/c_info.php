@@ -4,12 +4,25 @@ class c_info
 {
 
 
+    public function show()
+    {
+        include('models/m_customers.php');
+        $m_customer = new m_customer();
+        if(isset($_SESSION['admin_id']) && $_SESSION['admin_role'] == 2) {
+            $user = $m_customer -> getCustomerById();
+        } else {
+            header("notfound.php");
+        }
+        // tìm kiến khách hàng
+        $view = 'views/info/v_show.php';
+        include('templates/admin/layout.php');
+    }
     public function index()
     {
         include('models/m_customers.php');
         $m_customer = new m_customer();
-        if(isset($_SESSION['admin_id']) && $_SESSION['admin_role'] == 1 ) {
-            $user = $m_customer -> getCustomerById($_SESSION["admin_id"]);
+        if(isset($_SESSION['admin_id']) && $_SESSION['admin_role'] == 1) {
+            $user = $m_customer -> getCustomerById();
         } else {
             header("notfound.php");
         }

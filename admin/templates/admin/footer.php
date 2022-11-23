@@ -14,4 +14,7 @@
 <!-- mainjs -->
 <script src="public/front-end/js/main.js"></script>
 
+<!-- info_admin -->
+<script src="public/front-end/js/info_admin.js"></script>
+
 </html>
