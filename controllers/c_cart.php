@@ -102,14 +102,13 @@ class c_cart
                     $m_cart -> addDataToOrderDetail($id_order, $value['name'], $value['picture'], $value['price'], $value['quantity'],$total_item_cost);
                     $m_cart -> changeQuantity($value["id"], $value['quantity']);
                 }
+                setcookie('nofication', 'Đã Tạo Hóa Đơn Thành Công, xem chi tiết trong phần quản lý', time() + 2, '/');
+                unset($_SESSION['carts']);
+                header('location:?url=info.php&checkbill=');
             } else {
                 setcookie('nofication', 'Chưa có sản phẩm', time() + 2, '/');
                 header('location:?url=cart.php');
             }
-            
-            setcookie('nofication', 'Đã Tạo Hóa Đơn Thành Công, xem chi tiết trong phần quản lý', time() + 2, '/');
-            unset($_SESSION['carts']);
-            header('location:?url=info.php&checkbill=');
         } else {
             setcookie('nofication', 'Tài khoản admin không dùng để mua sản phẩm, xin vui lòng tạo tài khoản người dùng', time() + 2, '/');
             header('location:?url=cart.php');
