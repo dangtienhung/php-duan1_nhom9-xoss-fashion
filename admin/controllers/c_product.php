@@ -4,19 +4,20 @@
 <?php
 @session_start();
 
-include('models/m_product.php');
 
 class c_product
 {
     public function get_all_product_category()
-    {
+    {   
+        include('models/m_product.php');
         $get_all = new m_product();
         $list_product_category = $get_all->get_all_product_category();
         $view = ('views/product/v_product.php');
         include('templates/admin/layout.php');
     }
     public function get_all_product()
-    {
+    {   
+        include('models/m_product.php');
         $get_all_product = new m_product();
         // tìm kiếm
         $search = '';
@@ -32,7 +33,8 @@ class c_product
         include('templates/admin/layout.php');
     }
     public function c_ceate_product()
-    {
+    {   
+        include('models/m_product.php');
         $create_product = new m_product();
         $category_type = $create_product->get_all_category_type();
         if (isset($_POST['btn-submit'])) {
@@ -64,7 +66,8 @@ class c_product
         include('templates/admin/layout.php');
     }
     public function upload_product()
-    {
+    {   
+        include('models/m_product.php');
         $upload_product = new m_product();
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -104,10 +107,14 @@ class c_product
         include('templates/admin/layout.php');
     }
     public function delete_product()
-    {
+    {   
+        include('models/m_comments.php');
+        include('models/m_product.php');
+        $m_comments = new m_comments();
         $delete_product = new m_product();
         if (isset($_GET['id'])) {
             $id =  $_GET['id'];
+            $m_comments -> delete_commnet($id);
             $product_id = $delete_product->get_product_by_id($id);
             $result = $delete_product->delete_product($id);
             if ($result) {
