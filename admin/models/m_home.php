@@ -39,4 +39,12 @@ class m_home extends database
         $this->setQuery($sql);
         return $this->loadRecord();
     }
+
+    // đếm số lượng đơn hàng
+    public function count_order()
+    {
+        $sql = "SELECT COUNT(*) FROM orders";
+        $this->setQuery($sql);
+        return $this->loadRecord();
+    }
 }

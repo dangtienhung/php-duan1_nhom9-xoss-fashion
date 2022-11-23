@@ -32,10 +32,10 @@ class m_customer extends database
         $this->setQuery($sql);
         return $this->loadRow();
     }
-    public function getCustomerById($id_person)
-    {
-        $sql = "select * FROM customer where id = $id_person";
-        $this->setQuery($sql);
+    public function getCustomerById(){
+        $sql = "select * FROM customer where id = 1"; 
+        $this ->setQuery($sql);
+
         // lấy dữ liệu 
         return $this->loadRow();
     }

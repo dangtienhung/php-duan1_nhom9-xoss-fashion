@@ -23,6 +23,21 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- item1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="analysis">
+                        <i class="icon--comment fa-solid fa-comment"></i>
+                        <!-- <i class="icon--comment fa-brands fa-shopify"></i> -->
+                        <div class="analysis__info">
+                            <h4>Tổng bình luận</h4>
+                            <p><b><?php echo $count_comment ?> bình luận</b></p>
+                            <p class="analysis__info-sum">Tổng bình luận.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- item1 -->
+
                 <!-- item1 -->
                 <div class="col-md-6 mb-4">
                     <div class="analysis">
@@ -38,12 +53,13 @@
                 <!-- item1 -->
                 <div class="col-md-6 mb-4">
                     <div class="analysis">
-                        <i class="icon--comment fa-solid fa-comment"></i>
+                        <i class="icon--comment fa-solid fa-list"></i>
+                        <!-- <i class="icon--comment fa-solid fa-comment"></i> -->
                         <!-- <i class="icon--comment fa-brands fa-shopify"></i> -->
                         <div class="analysis__info">
-                            <h4>Tổng bình luận</h4>
-                            <p><b><?php echo $count_comment ?> các loại sản phẩm</b></p>
-                            <p class="analysis__info-sum">Tổng bình luận.</p>
+                            <h4>Tổng các loại sản phẩm</h4>
+                            <p><b><?php echo $count_product_categories ?> các loại sản phẩm</b></p>
+                            <p class="analysis__info-sum">Tổng số các loại sản phẩm được quản lý.</p>
                         </div>
                     </div>
                 </div>
@@ -52,12 +68,11 @@
                 <!-- item1 -->
                 <div class="col-md-6 mb-4">
                     <div class="analysis">
-                        <i class="icon--comment fa-solid fa-comment"></i>
-                        <!-- <i class="icon--comment fa-brands fa-shopify"></i> -->
+                        <i class="icon--comment fa-solid fa-cart-shopping"></i>
                         <div class="analysis__info">
-                            <h4>Tổng các loại sản phẩm</h4>
-                            <p><b><?php echo $count_product_categories ?> các loại sản phẩm</b></p>
-                            <p class="analysis__info-sum">Tổng số các loại sản phẩm được quản lý.</p>
+                            <h4>Tổng số lượng đơn hàng</h4>
+                            <p><b><?php echo $count_orders ?> các loại sản phẩm</b></p>
+                            <p class="analysis__info-sum">Số đơn hàng nhận được.</p>
                         </div>
                     </div>
                 </div>
@@ -87,14 +102,15 @@ if (myChartElement) {
     const myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['Bình luận', 'Khách hàng', 'Sản phẩm', 'Các loại sản phẩm'],
+            labels: ['Bình luận', 'Khách hàng', 'Sản phẩm', 'Danh mục sản phẩm', 'Đơn hàng'],
             datasets: [{
-                label: '# of Votes',
+                label: 'Số liệu: ',
                 data: [
                     <?php echo $count_comment; ?>,
                     <?php echo $count_customers; ?>,
                     <?php echo $count_products ?>,
-                    <?php echo $count_product_categories ?>
+                    <?php echo $count_product_categories ?>,
+                    <?= $count_orders; ?>
                 ],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
