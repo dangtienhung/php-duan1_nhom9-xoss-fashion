@@ -8,7 +8,7 @@ class m_cart extends database{
         return $this -> loadAllRows(array());
     }
 
-    public function getOrderById($id) {
+    public function getOrderDetailById($id) {
         $sql = "select order_date, orders.total as 'total_price', order_detail.total, name_product, picture, price, quantity FROM orders inner join order_detail on orders.id = order_detail.id_order where orders.id = ?"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 

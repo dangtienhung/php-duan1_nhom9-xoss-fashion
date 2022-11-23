@@ -43,7 +43,7 @@ class m_product extends database {
         return $this->loadRow(array($name,$price,$saleOff,$picture,$description,$view_number,$id_category));
     }
     // sửa sản phẩm
-    public function upload_product($name,$price,$saleOff,$picture,$description,$view_number,$id_category,$id){
+    public function upload_product($name,$price,$saleOff,$picture,$description,$view_number, $quantity, $id_category,$id){
         $sql = "update product 
                 set 
                 name = ?,
@@ -52,10 +52,11 @@ class m_product extends database {
                 picture = ?,
                 description = ?,
                 view_number = ?,
+                quantity = ?,
                 id_category =? 
                 where id = ?";
         $this->setQuery($sql);
-        return $this->execute(array($name,$price,$saleOff,$picture,$description,$view_number,$id_category,$id));
+        return $this->execute(array($name,$price,$saleOff,$picture,$description,$view_number, $quantity, $id_category,$id));
     }
     // xóa sản phẩm
     public function delete_product($id){

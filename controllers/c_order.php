@@ -8,10 +8,14 @@ class c_order {
 
             $id = $_GET['id_order'];
 
-            $orders = $m_cart -> getOrderById($id);
-
-            $view = 'views/bills/v_orders.php';
-            include('templates/client/layout.php');
+            $orders = $m_cart -> getOrderDetailById($id);
+            if($orders) {
+                $view = 'views/bills/v_orders.php';
+                include('templates/client/layout.php');
+            }
+            else {
+                header('location:?url=order.php&checkbill=');
+            }
         } else {
             setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
             header("location:?url=info.php&checkbill=");

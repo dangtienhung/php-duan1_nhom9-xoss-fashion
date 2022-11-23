@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li style="border-bottom: 1px solid #333;">
-                <a href="cart.php" class="sidebar__menu-link">
+                <a href="orders.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-opencart"></i>
                     Quản lý đơn hàng
                 </a>

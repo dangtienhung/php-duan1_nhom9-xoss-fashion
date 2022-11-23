@@ -25,23 +25,7 @@ if (isset($_GET['error'])) {
     <main class="container__main">
         <div class="container__main-handler">
             <div class="container__main-link">
-            </div>
-            <div class="container__main-search">
-                <form action="">
-                    <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
-                                                                                                        echo $_GET['search'];
-                                                                                                    } ?>">
-                </form>
-            </div>
-        </div>
-        <!-- mobile -->
-        <div class="container__main-handler-mobile">
-            <div class="container__main-search">
-                <form action="">
-                    <input type="search" name="search" id="" placeholder="Tìm kiếm danh mục sản phẩm" value="<?php if (isset($_GET['search'])) {
-                                                                                                                    echo $_GET['search'];
-                                                                                                                } ?>">
-                </form>
+
             </div>
         </div>
         <div class="container__table">
@@ -49,26 +33,26 @@ if (isset($_GET['error'])) {
                 <tr>
                     <th>Thời gian đặt</th>
                     <th>Thông tin người nhận</th>
-                    <th>Sản phẩm đặt hàng</th>
+                    <th>Tổng sản phẩm đã đặt</th>
                     <th>Tổng tiền</th>
                     <th>Tính năng</th>
                 </tr>
                 <!-- render danh sách sản phẩm -->
-                <?php foreach ($list_orders as $each) { ?>
+                <?php foreach ($orders as $each) { ?>
                 <tr>
                     <td><?= $each->order_date; ?></td>
                     <td><?= $each->name_customer; ?></td>
                     <td class="container__table-desc-parent">
                         <div class="container__table-desc">
-                            <p><?= $each->name_product; ?></p>
+                            <p><?= $each->total_quantity ?></p>
                         </div>
                     </td>
-                    <td><?= $each->total; ?></td>
+                    <td>$ <?= $each->total; ?>.00</td>
                     <td>
-                        <a href="edit-product-category.php?id=<?= $each->id; ?>">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                        <a href="order-detail.php?id_order=<?= $each->id; ?>">
+                            Xem chi tiết
                         </a>
-                        <a href="delete-product-category.php?id=<?= $each->id; ?>">
+                        <a href="delete-order.php?id_order=<?= $each->id; ?>">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                     </td>

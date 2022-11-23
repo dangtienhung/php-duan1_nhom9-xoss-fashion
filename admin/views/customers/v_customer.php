@@ -28,7 +28,7 @@ if (isset($_GET['error'])) {
                 </a> -->
                 <a data-bs-toggle="modal" data-bs-target="#openModal" class="text-white" style="cursor: pointer;">
                     <i class="fa-solid fa-plus"></i>
-                    Tạo sản phẩm mới
+                    Tạo tài khoản mới
                 </a>
             </div>
             <div class="container__main-search">

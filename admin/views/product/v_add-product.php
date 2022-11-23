@@ -43,6 +43,11 @@
                                     id="description" rows="3" required></textarea>
                             </div>
                             <div class="mb-3">
+                                <label for="quantity" class="form-label fs-3">Số lượng sản phẩm</label>
+                                <textarea name="quantity" placeholder="Số lượng sản phẩm" class="form-control fs-3"
+                                    id="description" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
                                 <label for="saleOff" class="form-label fs-3">Lượt xem sản phẩm</label>
                                 <input type="number" min="0" class="form-control fs-3" id="sale"
                                     placeholder="Lượt xem sản phẩm" name="view_number" required>

@@ -81,6 +81,7 @@ class c_product
             $image = $_FILES['new-picture'];
             $picture = ($image['error'] == 0) ? $image['name'] : '';
             $description = $_POST['description'];
+            $quantity = $_POST['quantity'];
             $view_number = $_POST['view_number'];
             $id_category = $_POST['id_category'];
             if ($image != "" && $image['size']>0) {
@@ -100,7 +101,7 @@ class c_product
                 
             }
             
-            $upload = $upload_product->upload_product($name, $price, $saleOff, $picture, $description, $view_number, $id_category, $id);
+            $upload = $upload_product->upload_product($name, $price, $saleOff, $picture, $description, $view_number, $quantity, $id_category, $id);
             header('location: product.php');
         }
         $view = ('views/product/v_upload-product.php');

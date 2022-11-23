@@ -18,6 +18,10 @@ class c_cart
         include('models/m_product.php');
         $m_product = new m_product();
 
+        if(!isset($_SESSION['user_id'])) {
+            header('location:?url=login.php');
+        }
+        
         if(isset($_GET['id_product'])) {
             //Lấy ra sản phẩm
             $id = $_GET['id_product'];
