@@ -12,15 +12,15 @@ class m_customer extends database
     public function read_customer($search)
     {
         $sql = "select customer.*, customer.id as 'id_customer' from customer 
-                where (role = 3 and name_customer like '%?%') or (role = 3)";
+                where (role = 3 and name_customer like '%$search%') or (role = 3)";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($search));
+        return $this->loadAllRows();
     }
     public function get_count_search($search)
     {
         $sql = "select count(*) as 'count' from customer where customer.name_customer like '%$search%'";
         $this->setQuery($sql);
-        return $this->loadRecord($search);
+        return $this->loadRecord();
     }
     /* lấy ra 1 người dùng */
     public function read_one_customer()
