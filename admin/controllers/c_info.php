@@ -8,7 +8,7 @@ class c_info
     {
         include('models/m_customers.php');
         $m_customer = new m_customer();
-        if(isset($_SESSION['admin_id']) && $_SESSION['admin_role'] == 1 ) {
+        if(isset($_SESSION['admin_id']) && $_SESSION['admin_role'] == 1) {
             $user = $m_customer -> getCustomerById($_SESSION["admin_id"]);
         } else {
             header("notfound.php");

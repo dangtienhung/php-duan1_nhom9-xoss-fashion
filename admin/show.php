@@ -6,6 +6,6 @@ if (isset($_SESSION['admin_name'])) {
     $info = new c_info();
     $info->index();
 } else {
-    header('location : index.php');
+    echo 'lỗi';
     
 }
