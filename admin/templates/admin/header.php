@@ -52,6 +52,12 @@
                     Quản lý nhân viên
                 </a>
             </li>
+            <li style="border-bottom: 1px solid #333;">
+                <a href="cart.php" class="sidebar__menu-link">
+                    <i class="fa-brands fa-opencart"></i>
+                    Quản lý đơn hàng
+                </a>
+            </li>
             <li>
                 <a href="home.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-microsoft"></i>
@@ -125,6 +131,12 @@
                 <a href="staff.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Quản lý nhân viên
+                </a>
+            </li>
+            <li style="border-bottom: 1px solid #333;">
+                <a href="orders.php" class="sidebar__menu-link">
+                    <i class="fa-brands fa-opencart"></i>
+                    Quản lý đơn hàng
                 </a>
             </li>
             <li>

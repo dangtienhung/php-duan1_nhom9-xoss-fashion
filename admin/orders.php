@@ -1,13 +1,14 @@
+<!-- đặng tiến hưng -->
 <?php
+
+include('controllers/c_orders.php');
 
 @session_start();
 
-include('controllers/c_customers.php');
-
 if (isset($_SESSION['admin_id'])) {
     if ($_SESSION['admin_role'] == 1 || $_SESSION['admin_role'] == 2) {
-        $customer = new c_customers();
-        $customer->create_customer();
+        $index = new c_order();
+        $index->get_all_orders();
     } else {
         header('location: index.php');
     }
