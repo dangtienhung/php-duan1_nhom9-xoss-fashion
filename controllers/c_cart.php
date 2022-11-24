@@ -38,24 +38,24 @@ class c_cart
                     $_SESSION['carts'][$id]['price'] = $price; 
                     $_SESSION['carts'][$id]['quantity'] = $quantity;
                     $_SESSION['carts'][$id]['max_quantity'] = $product->quantity;
-                    
+                    setcookie('nofication', 'Thêm thành công', time() + 2, '/');
+                    header('location:?url=cart.php');
                 } else {
-                    $check = $_SESSION['carts'][$id]['quantity'] + $quantity - 1;
-                    if($check < $product->quantity) {
+                    $check = $_SESSION['carts'][$id]['quantity'] + $quantity;
+                    if($check <= $product->quantity) {
                         $_SESSION['carts'][$id]['quantity'] = $_SESSION['carts'][$id]['quantity'] + $quantity;
+                        setcookie('nofication', 'Thêm thành công', time() + 2, '/');
+                        header('location:?url=cart.php');
                     } else {
                         setcookie('nofication', 'số lượng vượt quá giới hạn', time() + 2, '/');
                         header('location:?url=product.php');
                     }
                 } 
-            
             } else {
-            setcookie('nofication', 'Thêm không thành công', time() + 2, '/');
-            header('location:?url=cart.php');
+                setcookie('nofication', 'Thêm không thành công', time() + 2, '/');
+                header('location:?url=cart.php');
             }
         }
-        setcookie('nofication', 'Thêm thành công', time() + 2, '/');
-        header('location:?url=cart.php');
     }
 
     public function delete_item_from_cart() {

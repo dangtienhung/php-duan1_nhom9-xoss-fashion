@@ -150,3 +150,8 @@
         </div>
     </div>
 </div>
+<?php
+    if(isset($_COOKIE['nofication'])) {
+        echo '<script>alert("'.$_COOKIE['nofication'].'")</script>';
+    }
+?>

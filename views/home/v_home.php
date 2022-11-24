@@ -73,11 +73,13 @@
                     <a href="?url=detail.php&id_product=<?php echo $value->id ?>">
                         <div class="item__product-head">
                             <img src="admin/public/front-end/images/products/<?php echo $value->picture ?>" alt="">
-                            <div class="item__controll-btn">
-                                <a href="#" class="item__btn-buy">Mua ngay</a>
-                                <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
-                                    class="item__btn-cart">Giỏ hàng</a>
-                            </div>
+                            <?php if ($value->quantity > 0) { ?>
+                                <div class="item__controll-btn">
+                                    <a href="#" class="item__btn-buy">Mua ngay</a>
+                                    <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
+                                        class="item__btn-cart">Giỏ hàng</a>
+                                </div>
+                            <?php } ?>
                         </div>
                         <div class="item__product-body">
                             <h3><?php echo $value->name ?></h3>
@@ -129,11 +131,11 @@
                         <div class="item__product-head">
                             <img src="admin/public/front-end/images/products/<?php echo $value->picture ?>" alt="">
                             <?php if ($value->quantity > 0) { ?>
-                            <div class="item__controll-btn">
-                                <a href="#" class="item__btn-buy">Mua ngay</a>
-                                <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
-                                    class="item__btn-cart">Giỏ hàng</a>
-                            </div>
+                                <div class="item__controll-btn">
+                                    <a href="#" class="item__btn-buy">Mua ngay</a>
+                                    <a href="?url=add_to_cart&id_product=<?php echo $value->id ?>"
+                                        class="item__btn-cart">Giỏ hàng</a>
+                                </div>
                             <?php } ?>
                         </div>
                         <div class="item__product-body">
