@@ -106,13 +106,10 @@ class c_product
     }
     public function delete_product()
     {   
-        include('models/m_comments.php');
         include('models/m_product.php');
-        $m_comments = new m_comments();
         $delete_product = new m_product();
         if (isset($_GET['id'])) {
             $id =  $_GET['id'];
-            $m_comments -> delete_commnet($id);
             $product_id = $delete_product->get_product_by_id($id);
             $result = $delete_product->delete_product($id);
             if ($result) {

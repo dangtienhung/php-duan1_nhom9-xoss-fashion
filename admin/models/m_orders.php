@@ -21,9 +21,6 @@ class m_order extends database
     }
 
     public function delete_order($id) {
-        $sql = "delete from order_detail where id_order = ?";
-        $this->setQuery($sql);
-        $this->execute(array($id));
         $sql = "delete from orders where id = ?";
         $this->setQuery($sql);
         return $this->execute(array($id));
