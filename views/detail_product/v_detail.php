@@ -18,27 +18,33 @@
                 <!-- Product Price -->
                 <div class="detail__product-price">
                     <div class="detail__product-wrap-price">
-                        <!-- New Price -->
-                        <span class="detail__product-price-new">
-                            $ <?php if(number_format($detail_product->saleOff) == 0 && $detail_product->quantity > 0) {
-                                echo $detail_product->price;
-                            } else if(number_format($detail_product->saleOff) != 0 && $detail_product->quantity > 0) {
-                                $new_price = $detail_product->price * ($detail_product->saleOff/100);
-                                echo $new_price;
-                            }
-                            ?>.00
-                        </span>
-                        <!-- Old Price -->
-                        <span class="detail__product-price-old">
-                            <?php if(number_format($detail_product->saleOff) != 0 && $detail_product->quantity > 0) {
-                                echo '('.$detail_product->price.')';
-                            } ?>
-                        </span>
-                        <span class="detail__product-price-sale">
-                            <?php if(number_format($detail_product->saleOff) != 0) {
-                                    echo 'Giảm '.$detail_product->saleOff.'%';
-                            } ?>
-                        </span>
+                        <?php if($detail_product->quantity > 0) { ?>
+                            <!-- New Price -->
+                            <span class="detail__product-price-new">
+                                $ <?php if(number_format($detail_product->saleOff) == 0) {
+                                    echo $detail_product->price;
+                                } else if(number_format($detail_product->saleOff) != 0) {
+                                    $new_price = $detail_product->price * ($detail_product->saleOff/100);
+                                    echo $new_price;
+                                }
+                                ?>.00
+                            </span>
+                            <!-- Old Price -->
+                            <span class="detail__product-price-old">
+                                <?php if(number_format($detail_product->saleOff) != 0) {
+                                    echo '('.$detail_product->price.')';
+                                } ?>
+                            </span>
+                            <span class="detail__product-price-sale">
+                                <?php if(number_format($detail_product->saleOff) != 0) {
+                                        echo 'Giảm '.$detail_product->saleOff.'%';
+                                } ?>
+                            </span>
+                        <?php } else { ?>
+                            <span class="detail__product-price-new">
+                                $ <?php  echo $detail_product->price;?>.00
+                            </span>
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- Product Overview -->
@@ -73,7 +79,7 @@
                             <h5>QUANTITY:</h5>
                             <div class="detail__product-wrap-quantity">
                                 <!-- Input Quantity -->
-                                <input type="text" value="1" name="quantity" class="detail_product-input-plus-minus" id="<?php echo $detail_product->quantity?>">
+                                <input type="text" value="1" name="quantity" class="detail_product-input-plus-minus" id="<?php echo $quantity?>">
 
                                 <!-- Increase -->
                                 <span class="detail__product-inc btnqty">

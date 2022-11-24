@@ -30,7 +30,7 @@ class c_detail
             $user = $m_customer-> getCustomerById($_SESSION["user_id"]);
         }
 
-
+        $quantity = isset($_SESSION['carts'][$detail_product->id]) ? ($detail_product->quantity - $_SESSION['carts'][$detail_product->id]['quantity']) : $detail_product->quantity;
 
         $view = 'views/detail_product/v_detail.php';
         include('templates/client/layout.php');

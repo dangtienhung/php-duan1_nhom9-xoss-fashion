@@ -20,40 +20,40 @@ class c_cart
 
         if(!isset($_SESSION['user_id'])) {
             header('location:?url=login.php');
-        }
-        
-        if(isset($_GET['id_product'])) {
-            //Lấy ra sản phẩm
-            $id = $_GET['id_product'];
-            $product = $m_product -> getProductById($id);
-
-            //set số lượng
-            $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
-
-            $price = $product->saleOff == 0 ? $product->price : $product->price*($product->saleOff / 100);
-
-            if(empty($_SESSION['carts'][$id])) {
-                $_SESSION['carts'][$id]['name'] = $product->name; 
-                $_SESSION['carts'][$id]['id'] = $product->id; 
-                $_SESSION['carts'][$id]['picture'] = $product->picture; 
-                $_SESSION['carts'][$id]['price'] = $price; 
-                $_SESSION['carts'][$id]['quantity'] = $quantity;
-                $_SESSION['carts'][$id]['max_quantity'] = $product->quantity;
-
-            } else {
-                if($_SESSION['carts'][$id]['quantity'] < $product->quantity) {
-                    $_SESSION['carts'][$id]['quantity'] = $_SESSION['carts'][$id]['quantity'] + $quantity;
-                } else {
-                    setcookie('nofication', 'số lượng vượt quá giới hạn', time() + 2, '/');
-                    header('location:?url=product.php');
-                }
-            } 
-
         } else {
+            if(isset($_GET['id_product'])) {
+                //Lấy ra sản phẩm
+                $id = $_GET['id_product'];
+                $product = $m_product -> getProductById($id);
+
+                //set số lượng
+                $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
+
+                $price = $product->saleOff == 0 ? $product->price : $product->price*($product->saleOff / 100);
+                
+                if(empty($_SESSION['carts'][$id])) {
+                    $_SESSION['carts'][$id]['name'] = $product->name; 
+                    $_SESSION['carts'][$id]['id'] = $product->id; 
+                    $_SESSION['carts'][$id]['picture'] = $product->picture; 
+                    $_SESSION['carts'][$id]['price'] = $price; 
+                    $_SESSION['carts'][$id]['quantity'] = $quantity;
+                    $_SESSION['carts'][$id]['max_quantity'] = $product->quantity;
+                    
+                } else {
+                    $check = $_SESSION['carts'][$id]['quantity'] + $quantity - 1;
+                    if($check < $product->quantity) {
+                        $_SESSION['carts'][$id]['quantity'] = $_SESSION['carts'][$id]['quantity'] + $quantity;
+                    } else {
+                        setcookie('nofication', 'số lượng vượt quá giới hạn', time() + 2, '/');
+                        header('location:?url=product.php');
+                    }
+                } 
+            
+            } else {
             setcookie('nofication', 'Thêm không thành công', time() + 2, '/');
             header('location:?url=cart.php');
+            }
         }
-
         setcookie('nofication', 'Thêm thành công', time() + 2, '/');
         header('location:?url=cart.php');
     }
@@ -73,12 +73,12 @@ class c_cart
     public function handle_change_quantity() {
         if(isset($_GET['id_product'])) {
             $id=$_GET['id_product'];
-            if($_SESSION['carts'][$id]['quantity'] < $_SESSION['carts'][$id]['max_quantity'] && $_SESSION['carts'][$id]['quantity'] > 0) {
-                if($_GET['set'] == "incre") {
+            if(isset($_SESSION['carts'])) {
+                if($_GET['set'] == "incre" && $_SESSION['carts'][$id]['quantity'] < $_SESSION['carts'][$id]['max_quantity']) {
                     $_SESSION['carts'][$id]['quantity']++;
                 }
 
-                if($_GET['set'] == "decre") {
+                if($_GET['set'] == "decre" && $_SESSION['carts'][$id]['quantity'] > 0) {
                     $_SESSION['carts'][$id]['quantity']--;
                 }
             }

@@ -38,7 +38,7 @@ if(input_quantity) {
 
     btn_dec.addEventListener('click', () => {
         let value = input_quantity.value
-        if(parseInt(value) > 0) {
+        if(parseInt(value) > 1) {
             input_quantity.value = parseInt(value) - 1;
         }
     })
