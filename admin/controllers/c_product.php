@@ -44,23 +44,20 @@ class c_product
             $image = $_FILES['picture'];
             $picture = ($image['error'] == 0) ? $image['name'] : '';
             $description = $_POST['description'];
+            $quantity = $_POST['quantity'];
             $view_number = $_POST['view_number'];
             $id_category = $_POST['id_category'];
-            $create = $create_product->m_ceate_product($name, $price, $saleOff, $picture, $description, $view_number, $id_category);
-            if ($create) {
-                if ($image = "") {
-                    echo "không có ảnh";
-                } else {
-                    $folder = "public/front-end/images/products/";
-                    $file_extension = explode('.', $picture)[1];
-                    $file_name = time() . '.' . $file_extension;
-                    $path_file = $folder . $file_name;
-                    move_uploaded_file($image['tmp_name'], $path_file);
-                }
-                header('location: product.php');
+            if ($image == "") {
+                echo "không có ảnh";
             } else {
-                header('location: product.php');
+                $folder = "public/front-end/images/products/";
+                $file_extension = explode('.', $picture)[1];
+                $file_name = time() . '.' . $file_extension;
+                $path_file = $folder . $file_name;
+                move_uploaded_file($image['tmp_name'], $path_file);
             }
+            $create = $create_product->m_ceate_product($name, $price, $saleOff, $file_name, $description,  $quantity, $view_number, $id_category);
+            header('location: product.php');
         }
         $view = ('views/product/v_add-product.php');
         include('templates/admin/layout.php');
@@ -101,7 +98,7 @@ class c_product
                 
             }
             
-            $upload = $upload_product->upload_product($name, $price, $saleOff, $picture, $description, $view_number, $quantity, $id_category, $id);
+            $upload = $upload_product->upload_product($name, $price, $saleOff, $file_name, $description, $view_number, $quantity, $id_category, $id);
             header('location: product.php');
         }
         $view = ('views/product/v_upload-product.php');

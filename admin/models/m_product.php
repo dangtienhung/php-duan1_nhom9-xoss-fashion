@@ -36,11 +36,11 @@ class m_product extends database {
         return $this->loadAllRows();
     }
     //thêm sản phẩm 
-    public function m_ceate_product($name,$price,$saleOff,$picture,$description,$view_number,$id_category) {
-        $sql = "insert into product(name,price,saleOff,picture,description,view_number,id_category)
-        values(?,?,?,?,?,?,?)";
+    public function m_ceate_product($name,$price,$saleOff,$picture,$description, $quantity, $view_number,$id_category) {
+        $sql = "insert into product(name,price,saleOff,picture,description, quantity, view_number,id_category)
+        values(?,?,?,?,?,?,?,?)";
         $this->setQuery($sql);
-        return $this->loadRow(array($name,$price,$saleOff,$picture,$description,$view_number,$id_category));
+        return $this->loadRow(array($name,$price,$saleOff,$picture,$description,  $quantity, $view_number,$id_category));
     }
     // sửa sản phẩm
     public function upload_product($name,$price,$saleOff,$picture,$description,$view_number, $quantity, $id_category,$id){
