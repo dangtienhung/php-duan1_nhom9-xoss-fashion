@@ -657,9 +657,6 @@ html {
 .featured__container .item__product:hover .item__product-body h2 {
   color: #c0392b;
 }
-.featured__container .item__product a {
-  display: inline-block;
-}
 .featured__container .item__product .item__product-head {
   overflow: hidden;
   position: relative;

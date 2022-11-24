@@ -91,6 +91,8 @@ if(input_name) {
 if(img_input) {
     var url ="";
     img_input.addEventListener('change', ()=> {
+        view_image.src = '';
+        div_image.style.display="none";
         var url = URL.createObjectURL(img_input.files[0]);
         view_image.src = url
         div_image.style.display="block";
