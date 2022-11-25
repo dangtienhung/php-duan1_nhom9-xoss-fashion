@@ -8,7 +8,6 @@ class c_register {
     }
 
     public function check_register() {
-        include('models/m_customer.php');
         $m_customer= new m_customer();
 
         $customer =$m_customer-> getAllCustomer();
