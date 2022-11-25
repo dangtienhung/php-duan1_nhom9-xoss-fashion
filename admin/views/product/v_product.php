@@ -19,11 +19,11 @@
                 </a>
             </div>
             <div class="container__main-search">
-                <form action="">
+                <!-- <form action="">
                     <input type="search" name="search" id="" placeholder="Tìm kiếm sản phẩm" value="<?php if (isset($_GET['search'])) {
                                                                                                         echo $_GET['search'];
                                                                                                     } ?>">
-                </form>
+                </form> -->
             </div>
         </div>
         <!-- mobile -->
