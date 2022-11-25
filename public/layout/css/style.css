@@ -3066,17 +3066,17 @@ html {
 
   .regis__container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 7rem 3rem;
-    background: linear-gradient(to top, var(--green2-color), var(--aqua2-color));
+    background: var(--blue3-color);
   }
 
   .regis__main {
     width: 45rem;
-    height: 40rem;
+    height: 50rem;
     padding: 1rem;
     background: var(--blue5-color);
-    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
+    box-shadow: 0.2rem 0.5rem 1rem var(--aqua2-color);
     -webkit-border-radius: 1.7rem;
     -moz-border-radius: 1.7rem;
     -o-border-radius: 1.7rem;
@@ -3085,9 +3085,9 @@ html {
 
   .log__container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 15rem 3rem;
-    background: linear-gradient(to top, var(--green2-color), var(--aqua2-color));
+    background: var(--blue3-color);
   }
 
   .log__main {
@@ -3095,7 +3095,7 @@ html {
     height: 30rem;
     padding: 1rem;
     background: var(--blue5-color);
-    box-shadow: 0.2rem 0.5rem 1rem var(--pink2-color);
+    box-shadow: 0.2rem 0.5rem 1rem var(--aqua2-color);
     -webkit-border-radius: 1.7rem;
     -moz-border-radius: 1.7rem;
     -o-border-radius: 1.7rem;
