@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 16, 2022 lúc 05:50 AM
+-- Thời gian đã tạo: Th10 21, 2022 lúc 08:40 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -39,8 +39,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `title_category`, `description`, `id_category_type`) VALUES
-(1, 'Quần áo mùa đông', 'Ấm vc', 3),
-(2, 'áo polo ', 'Chất liệu vải cá sấu Cotton xuất xịn, chuẩn form cao cấp không xù lông, bề mặt vải mượt và bóng, thoáng mát, mang vận động vẫn thích hợp. ', 1);
+(2, 'áo polo ', 'Chất liệu vải cá sấu Cotton xuất xịn, chuẩn form cao cấp không xù lông, bề mặt vải mượt và bóng, thoáng mát, mang vận động vẫn thích hợp. ', 1),
+(11, 'áo sơ mi', 'Chất liệu vải cá sấu Cotton xuất xịn, chuẩn form cao cấp không xù lông, bề mặt vải mượt và bóng, thoáng mát, mang vận động vẫn thích hợp. ', 2);
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `comment_content`, `idItem`, `idPerson`, `timeComment`) VALUES
-(25, 'TEST', 8, 18, '2022-11-16 04:48:56');
+(26, 'haha', 34, 1, '2022-11-20 12:37:55');
 
 -- --------------------------------------------------------
 
@@ -94,6 +94,8 @@ CREATE TABLE `customer` (
   `name_customer` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Họ và tên',
   `passWord` varchar(60) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mật khẩu',
   `email` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Địa chỉ email',
+  `address` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Địa chỉ',
+  `phone_number` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'số điện thoại',
   `picture` varchar(250) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL COMMENT 'Tên hình ảnh',
   `active` bit(1) DEFAULT b'0' COMMENT 'Trạng thái kích hoạt',
   `role` int(1) NOT NULL COMMENT 'Vai trò'
@@ -103,12 +105,11 @@ CREATE TABLE `customer` (
 -- Đang đổ dữ liệu cho bảng `customer`
 --
 
-INSERT INTO `customer` (`id`, `name_customer`, `passWord`, `email`, `picture`, `active`, `role`) VALUES
-(1, 'admin', '123456', 'admin@fpt.edu.vn', NULL, b'0', 1),
-(2, 'đặng tiến hưng', '123456', 'hungdtph23624@fpt.edu.vn', NULL, b'0', 2),
-(3, 'người dùng 1', '123456', 'nguoidung@gmail.com', NULL, b'0', 3),
-(18, 'Nguyễn Quang Đăng222', '123456', 'mrbat905@gmail.com', NULL, b'0', 3),
-(20, 'Nguyễn Quang Đăng2', '123456', 'mrbat92205@gmail.com', NULL, b'0', 3);
+INSERT INTO `customer` (`id`, `name_customer`, `passWord`, `email`, `address`, `phone_number`, `picture`, `active`, `role`) VALUES
+(1, 'admin', '123456', 'admin@fpt.edu.vn', '666 HELL', '0101010101', 'woman2.PNG', b'0', 1),
+(2, 'đặng tiến hưng', '123456', 'hungdtph23624@fpt.edu.vn', '666 HELL', '0101010101', NULL, b'0', 2),
+(3, 'người dùng 1', '123456', 'nguoidung@gmail.com', '666 HELL', '0101010101', NULL, b'0', 3),
+(20, 'Nguyễn Quang Đăng2', '123456', 'mrbat92205@gmail.com', '666 HELL', '0101010101', NULL, b'0', 3);
 
 -- --------------------------------------------------------
 
@@ -118,10 +119,44 @@ INSERT INTO `customer` (`id`, `name_customer`, `passWord`, `email`, `picture`, `
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL COMMENT 'mã đơn hàng',
-  `id_product` int(11) NOT NULL COMMENT 'mã sản phẩm',
-  `id_person` int(11) NOT NULL COMMENT 'mã người dùng',
-  `oder_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'ngày đặt'
+  `id_customer` int(11) NOT NULL COMMENT 'mã người dùng\r\n',
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Ngày đặt đơn',
+  `total` int(11) NOT NULL COMMENT 'tổng tiền của hóa đơn'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`id`, `id_customer`, `order_date`, `total`) VALUES
+(2, 1, '2022-11-21 19:02:38', 130),
+(3, 1, '2022-11-21 19:04:44', 85);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(11) NOT NULL COMMENT 'id chi tiết hóa đơn',
+  `id_order` int(11) NOT NULL COMMENT 'id hóa đơn',
+  `name_product` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'tên sản phẩm',
+  `picture` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'ảnh sản phẩm',
+  `price` float NOT NULL COMMENT 'giá sản phẩm',
+  `quantity` int(11) NOT NULL COMMENT 'số lượng đặt ',
+  `total` int(11) NOT NULL COMMENT 'tổng tiền'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `id_order`, `name_product`, `picture`, `price`, `quantity`, `total`) VALUES
+(1, 2, 'Set quần áo mùa hè', '1664641179.webp', 45, 2, 90),
+(2, 2, 'Blue Hoodie ShirtCopy', 'Cool.jpg', 40, 1, 40),
+(3, 3, 'Set quần áo mùa hè', '1664641179.webp', 45, 1, 45),
+(4, 3, 'Blue Hoodie ShirtCopy', 'Cool.jpg', 40, 1, 40);
 
 -- --------------------------------------------------------
 
@@ -137,6 +172,7 @@ CREATE TABLE `product` (
   `picture` varchar(256) COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Hình ảnh',
   `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Ngày nhập hàng',
   `description` text COLLATE utf8mb4_vietnamese_ci NOT NULL COMMENT 'Mô tả hàng hóa',
+  `quantity` int(11) NOT NULL COMMENT 'Số lượng sản phẩm',
   `view_number` int(11) NOT NULL COMMENT 'Số lượt xem',
   `id_category` int(11) NOT NULL COMMENT 'Mã loại'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -145,8 +181,9 @@ CREATE TABLE `product` (
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `price`, `saleOff`, `picture`, `date_added`, `description`, `view_number`, `id_category`) VALUES
-(8, 'FULL SLEEV WOMEN SHIRT', 145, 20, '1.jpg', '2022-11-16 04:48:57', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem portul indunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 30, 1);
+INSERT INTO `product` (`id`, `name`, `price`, `saleOff`, `picture`, `date_added`, `description`, `quantity`, `view_number`, `id_category`) VALUES
+(10, 'Set quần áo mùa hè', 450, 10, '1664641179.webp', '2022-11-21 19:04:44', 'Thiết kế mới mẻ, đơn giản nhưng cá tính, chất liệu thoáng mát, mềm mịn', 7, 77, 11),
+(34, 'Blue Hoodie ShirtCopy', 200, 20, 'Cool.jpg', '2022-11-21 19:04:44', 'Thiết kế độc đáo, phong cách hiện đại hợp thời giới trẻ, chất liệu bền bỉ, thoáng mát, đem đến trải nghiệm tốt nhất cho người mặc', 7, 33, 2);
 
 -- --------------------------------------------------------
 
@@ -205,8 +242,14 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_product` (`id_product`,`id_person`),
-  ADD KEY `id_person` (`id_person`);
+  ADD KEY `id_product` (`id_customer`);
+
+--
+-- Chỉ mục cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_order` (`id_order`);
 
 --
 -- Chỉ mục cho bảng `product`
@@ -229,7 +272,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã loại hàng', AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã loại hàng', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `category_type`
@@ -241,7 +284,7 @@ ALTER TABLE `category_type`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã bình luận', AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã bình luận', AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `customer`
@@ -253,13 +296,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã đơn hàng';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã đơn hàng', AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id chi tiết hóa đơn', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã hàng hóa', AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã hàng hóa', AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
@@ -294,8 +343,13 @@ ALTER TABLE `customer`
 -- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Các ràng buộc cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `product`
