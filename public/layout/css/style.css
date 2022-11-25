@@ -2411,9 +2411,9 @@ html {
 
 .log__container {
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding: 15rem;
-  background: linear-gradient(to top, var(--green2-color), var(--aqua2-color));
+  background: var(--blue3-color);
 }
 
 .log__main {
@@ -2422,7 +2422,7 @@ html {
   margin: 0 auto;
   padding: 5rem;
   background: var(--blue5-color);
-  box-shadow: 0.2rem 0.7rem 1rem var(--pink2-color);
+  box-shadow: 0.2rem 0.7rem 1rem var(--aqua2-color);
   -webkit-border-radius: 2rem;
   -moz-border-radius: 2rem;
   -o-border-radius: 2rem;
@@ -2908,9 +2908,9 @@ html {
 
 .regis__container {
   width: 100%;
-  height: 100vh;
-  padding: 7rem;
-  background: linear-gradient(to top, var(--green2-color), var(--aqua2-color));
+  height: auto;
+  padding: 5rem;
+  background: var(--blue3-color);
 }
 
 .regis__main {
@@ -2919,7 +2919,7 @@ html {
   margin: 0 auto;
   padding: 5rem;
   background: var(--blue5-color);
-  box-shadow: 0.2rem 0.7rem 1rem var(--pink2-color);
+  box-shadow: 0.2rem 0.7rem 1rem var(--aqua2-color);
   -webkit-border-radius: 2rem;
   -moz-border-radius: 2rem;
   -o-border-radius: 2rem;
