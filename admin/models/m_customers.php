@@ -71,11 +71,11 @@ class m_customer extends database
         $this->setQuery($sql);
         return $this->execute(array($id));
     }
-    public function save_change_info($name, $email, $phone_number, $id)
+    public function save_change_info($name, $email, $phone_number,$address, $id)
     {
-        $sql = "update customer set name_customer=?, email=?, phone_number=? where id = ?";
+        $sql = "update customer set name_customer=?, email=?, phone_number=?, address=? where id = ?";
         $this->setQuery($sql);
-        return $this->execute(array($name, $email, $phone_number, $id));
+        return $this->execute(array($name, $email, $phone_number, $address, $id));
     }
     public function save_change_pass($new_pass, $id)
     {

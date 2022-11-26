@@ -33,6 +33,7 @@ class c_info
     public function change_info() {
         include('models/m_customers.php');
         if(isset($_POST["btn_save"])) {
+
             if(empty($_POST["email"])) {
                 $email = $_POST["current_email"];
             } else {
@@ -45,17 +46,24 @@ class c_info
                 $phone_number = $_POST["phoneNumber"];
             }
 
+            if(empty($_POST["address"])) {
+                $address = $_POST["current_address"];
+            } else {
+                $address = $_POST["address"];
+            }
+
             if(empty($_POST["user_name"])) {
                 $name = $_POST["current_name"];
             } else {
                 $name = $_POST["user_name"];
             }
+            
             if(isset($_SESSION["admin_id"]) ) {
                 $_SESSION['admin_name'] = $name;
                 $_SESSION['admin_email'] = $email;
             }
             $m_customer = new m_customer();
-            $m_customer -> save_change_info($name, $email, $phone_number, $_SESSION["admin_id"]);
+            $m_customer -> save_change_info($name, $email, $phone_number, $address, $_SESSION["admin_id"]);
             header("location: info.php");
         }
     }
