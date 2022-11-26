@@ -19,7 +19,17 @@ class m_home extends database
     // đếm số lượng khách hàng
     public function count_customers()
     {
-        $sql = "SELECT COUNT(*) FROM customer";
+        $sql = "SELECT COUNT(*) FROM customer
+                where customer.role = 3";
+        $this->setQuery($sql);
+        return $this->loadRecord();
+    }
+
+    // đếm số lượng nhân viên
+    public function count_staff()
+    {
+        $sql = "SELECT COUNT(*) FROM customer
+                where customer.role = 2";
         $this->setQuery($sql);
         return $this->loadRecord();
     }

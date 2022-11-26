@@ -30,22 +30,22 @@
     <!-- content -->
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
-        <?php if ($_SESSION['admin_role']==1) { ?>
+            <?php if ($_SESSION['admin_role'] == 1) { ?>
             <li>
                 <a href="info.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Thông tin admin
                 </a>
             </li>
-        <?php } else if ($_SESSION['admin_role']==2) { ?>
+            <?php } else if ($_SESSION['admin_role'] == 2) { ?>
             <li>
                 <a href="info.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Thông tin admin
                 </a>
             </li>
-        <?php } ?>
-            
+            <?php } ?>
+
             <li>
                 <a href="staff.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
@@ -111,28 +111,29 @@
     <!-- content -->
     <aside class="sidebar__menu">
         <ul class="sidebar__menu-list">
-        <?php if ($_SESSION['admin_role']==1)  { ?>
-        <li>
+            <?php if ($_SESSION['admin_role'] == 1) { ?>
+            <li>
                 <a href="info.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Thông tin admin
                 </a>
             </li>
-        <?php } else if($_SESSION['admin_role'] ==2) { ?>
+            <?php } else if ($_SESSION['admin_role'] == 2) { ?>
             <li>
                 <a href="show.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Thông tin admin
                 </a>
             </li>
-        <?php } ?>
-            
+            <?php } ?>
+            <?php if ($_SESSION['admin_role'] == 1) { ?>
             <li>
                 <a href="staff.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-address-card"></i>
                     Quản lý nhân viên
                 </a>
             </li>
+            <?php } ?>
             <li style="border-bottom: 1px solid #333;">
                 <a href="orders.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-opencart"></i>
