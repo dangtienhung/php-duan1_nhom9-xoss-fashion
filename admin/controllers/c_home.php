@@ -14,6 +14,7 @@ class c_home
         $count_product_categories = $m_home->count_product_categories();
         $count_comment = $m_home->count_comment();
         $count_orders = $m_home->count_order();
+        $count_staff = $m_home->count_staff();
         $view = 'views/home/v_home.php';
         include('templates/admin/layout.php');
     }

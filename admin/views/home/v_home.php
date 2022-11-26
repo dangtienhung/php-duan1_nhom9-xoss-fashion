@@ -27,6 +27,18 @@
                 <!-- item1 -->
                 <div class="col-md-6 mb-4">
                     <div class="analysis">
+                        <i class="icon--customer fa-solid fa-users-gear"></i>
+                        <div class="analysis__info">
+                            <h4>Tổng số nhân viên</h4>
+                            <p><b><?php echo $count_staff; ?> nhân viên</b></p>
+                            <p class="analysis__info-sum">Tổng số nhân viên được quản lý.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- item1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="analysis">
                         <i class="icon--comment fa-solid fa-comment"></i>
                         <!-- <i class="icon--comment fa-brands fa-shopify"></i> -->
                         <div class="analysis__info">
@@ -85,7 +97,7 @@
                     <div class="content__chart">
                         <h3 class="content__chart-title">Phân tích dữ liệu</h3>
                         <div class="content__chart-graph">
-                            <canvas id="myChart" width="400" height="400"></canvas>
+                            <canvas id="myChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -102,7 +114,7 @@ if (myChartElement) {
     const myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['Bình luận', 'Khách hàng', 'Sản phẩm', 'Danh mục sản phẩm', 'Đơn hàng'],
+            labels: ['Bình luận', 'Khách hàng', 'Sản phẩm', 'Danh mục sản phẩm', 'Đơn hàng', 'Nhân viên'],
             datasets: [{
                 label: 'Số liệu: ',
                 data: [
@@ -110,7 +122,8 @@ if (myChartElement) {
                     <?php echo $count_customers; ?>,
                     <?php echo $count_products ?>,
                     <?php echo $count_product_categories ?>,
-                    <?= $count_orders; ?>
+                    <?php echo $count_orders; ?>,
+                    <?php echo $count_staff; ?>
                 ],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

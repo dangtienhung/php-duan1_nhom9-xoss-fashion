@@ -108,10 +108,6 @@ class c_customers
             $new_picture = ($picture['error'] == 0) ? $picture['name'] : '';
             $email = $_POST['email'];
             $passWord = $_POST['password'];
-            echo '<pre>';
-            print_r($passWord);
-            echo '</pre>';
-            die();
             if ($new_picture != '' && $picture['size'] > 0) {
                 $folder = 'public/front-end/images/customer/';
                 $file_extension = explode('.', $new_picture)[1];
