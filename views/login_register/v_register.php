@@ -49,30 +49,30 @@
             <input type="number" name="role" value="3" hidden>
 
             <div class="regis__box">
-                <label for="" class="regis__title">email</label> <br>
+                <label for="" class="regis__title">Email</label> <br>
                 <input type="email" name="email" id="" class="regis__input">
             </div>
             <div class="regis__box">
-                <label for="" class="regis__title">user name</label> <br>
+                <label for="" class="regis__title">Tên đăng nhập</label> <br>
                 <input type="text" name="name" id="" class="regis__input">
             </div>
             <div class="regis__box">
-                <label for="" class="regis__title">address</label> <br>
+                <label for="" class="regis__title">Địa chỉ</label> <br>
                 <input type="text" name="address" id="" class="regis__input">
             </div>
             <div class="regis__box">
-                <label for="" class="regis__title">phone number</label> <br>
+                <label for="" class="regis__title">Số điện thoại</label> <br>
                 <input type="text" name="phone_number" id="" class="regis__input">
             </div>
             <div class="regis__box">
-                <label for="" class="regis__title">password</label> <br>
+                <label for="" class="regis__title">Mật khẩu</label> <br>
                 <input type="password" name="password" id="" class="regis__input">
             </div>
             <div class="regis__box">
-                <label for="" class="regis__title">repeat password</label><br>
+                <label for="" class="regis__title">Lưu mật khẩu</label><br>
                 <input type="password" name="rp_password" id="" class="regis__input">
             </div>
-            <input type="submit" value="Register" name="btn_register" class="regis__sub"><br>
+            <input type="submit" value="Đăng kí" name="btn_register" class="regis__sub"><br>
             <a href="?url=login.php" class="log__a">
                 <p>Đăng nhập ngay</p>
             </a>

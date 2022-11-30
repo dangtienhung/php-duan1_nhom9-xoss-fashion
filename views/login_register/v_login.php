@@ -46,14 +46,14 @@
                 <h3 style="color: red"><?php echo $_SESSION['error_login_user'];?></h3>
             <?php } $_SESSION['error_login_user']= ""; ?>
             <div class="log__box">
-                <label for="" class="log__title">email</label> <br>
+                <label for="" class="log__title">Email</label> <br>
                 <input type="email" name="email" id="" class="log__input">
             </div>
             <div class="log__box">
-                <label for="" class="log__title">password</label><br>
+                <label for="" class="log__title">Mật khẩu</label><br>
                 <input type="password" name="current-password" id="" class="log__input">
             </div>
-            <input type="submit" name="btn_login" value="Sign in" class="log__sub"><br>
+            <input type="submit" name="btn_login" value="Đăng nhập" class="log__sub"><br>
             <a href="?url=register.php" class="log__a">
                 <p>Đăng ký ngay</p>
             </a>
