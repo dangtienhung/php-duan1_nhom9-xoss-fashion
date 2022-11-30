@@ -24,7 +24,7 @@
                                 $ <?php if(number_format($detail_product->saleOff) == 0) {
                                     echo $detail_product->price;
                                 } else if(number_format($detail_product->saleOff) != 0) {
-                                    $new_price = $detail_product->price * ($detail_product->saleOff/100);
+                                    $new_price = $detail_product->price - ($detail_product->price * ($detail_product->saleOff/100));
                                     echo $new_price;
                                 }
                                 ?>.00
@@ -230,7 +230,7 @@
                             $ <?php if(number_format($value->saleOff) == 0 && $detail_product->quantity > 0) {
                                 echo $value->price;
                             } else if(number_format($value->saleOff) != 0 && $detail_product->quantity > 0) {
-                                $new_price_sg = $value->price * ($value->saleOff/100);
+                                $new_price_sg = $value->price - ($value->price * ($value->saleOff/100));
                                 echo $new_price_sg;
                             }
                             ?>.00

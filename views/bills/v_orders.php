@@ -30,6 +30,6 @@
         </table>
     </div>
     <div class="order__total">
-        <h2>Tổng tiền thanh toán: $ <?php echo $orders[0]->total_price?>.00</h2>
+        <h2>Tổng tiền thanh toán của <?php echo $value->total_quantity?> sản phẩm: $ <?php echo $orders[0]->total_price?>.00</h2>
     </div>
 </div>

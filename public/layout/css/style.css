@@ -330,8 +330,9 @@ html {
   background: red;
   color: #fff;
   font-weight: 600;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  font-size: 1.2rem;
+  height: 18px;
   border-radius: 50%;
   position: absolute;
   top: -10px;

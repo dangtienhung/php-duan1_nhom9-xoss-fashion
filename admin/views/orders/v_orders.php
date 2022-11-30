@@ -33,7 +33,7 @@ if (isset($_GET['error'])) {
                 <tr>
                     <th>Thời gian đặt</th>
                     <th>Thông tin người nhận</th>
-                    <th>Tổng sản phẩm đã đặt</th>
+                    <th>Địa chỉ/Sđt</th>
                     <th>Tổng tiền</th>
                     <th>Tính năng</th>
                 </tr>
@@ -44,7 +44,7 @@ if (isset($_GET['error'])) {
                     <td><?= $each->name_customer; ?></td>
                     <td class="container__table-desc-parent">
                         <div class="container__table-desc">
-                            <p><?= $each->total_quantity ?></p>
+                            <p>địa chỉ:<?= $each->address ?> || sđt:<?= $each->phone_number?></p>
                         </div>
                     </td>
                     <td>$ <?= $each->total; ?>.00</td>

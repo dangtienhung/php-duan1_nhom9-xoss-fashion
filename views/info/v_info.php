@@ -134,7 +134,7 @@
                             <tr>
                                 <td>Id</td>
                                 <td>Ngày đặt</td>
-                                <td>Số lượng Sản Phẩm</td>
+                                <td>Địa chỉ/Số điện thoại</td>
                                 <td>Hoạt động</td>
                             </tr>
                         </thead>
@@ -143,10 +143,10 @@
                                 <tr>
                                     <td><?php echo $value->id ?></td>
                                     <td><?php echo $value->order_date ?></td>
-                                    <td><?php echo $value->total_quantity ?></td>
+                                    <td><?php echo 'địa chỉ: '.$value->address.' || sđt: '.$value->phone_number ?></td>
                                     <td>
-                                        <button><a href="?url=delete_order&id_order=<?php echo $value->id?>">Xóa Bill</a></button>
-                                        <button><a href="?url=order.php&id_order=<?php echo $value->id?>">Xem chi tiết</a></button>
+                                        <a href="?url=delete_order&id_order=<?php echo $value->id?>"><button>Xóa Bill</button></a>
+                                        <a href="?url=order.php&id_order=<?php echo $value->id?>"><button>Xem chi tiết</button></a>
                                     </td>
                                 </tr>
                             <?php  endforeach ?>

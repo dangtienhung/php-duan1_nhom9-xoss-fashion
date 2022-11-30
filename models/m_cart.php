@@ -9,14 +9,14 @@ class m_cart extends database{
     }
 
     public function getOrderDetailById($id) {
-        $sql = "select order_date, orders.total as 'total_price', order_detail.total, name_product, picture, price, quantity FROM orders inner join order_detail on orders.id = order_detail.id_order where orders.id = ?"; 
+        $sql = "select order_date, orders.total as 'total_price', order_detail.total, name_product, picture, price, quantity,sum(order_detail.quantity) as 'total_quantity' FROM orders inner join order_detail on orders.id = order_detail.id_order where orders.id = ?"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 
         return $this -> loadAllRows(array($id));
     }
 
     public function getOrderByIdCustomer($id) {
-        $sql = "select orders.id, id_customer, order_date, orders.total, id_order, sum(order_detail.quantity) as 'total_quantity' FROM orders inner join order_detail on orders.id = order_detail.id_order GROUP by id_order having id_customer = ?;"; 
+        $sql = "select orders.id, id_customer, address, phone_number,order_date, orders.total, id_order, sum(order_detail.quantity) as 'total_quantity' FROM orders join customer on orders.id_customer = customer.id join order_detail on orders.id = order_detail.id_order GROUP by id_order having id_customer = ?;"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 
         return $this -> loadAllRows(array($id));
