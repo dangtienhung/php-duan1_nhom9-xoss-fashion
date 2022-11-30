@@ -341,8 +341,8 @@ html {
 
 
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link .cart__item-menu-img {
-  width: 5rem;
-  height: 6rem;
+  width: 6rem;
+  height: 7.5rem;
 }
 .header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-link .cart__item-menu-img img {
   width: 100%;
@@ -363,6 +363,10 @@ html {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+.header__container .header__navbar .header__top-menu-list.cart .header__sub-menu .cart__item-menu-list span {
+  display: block;
+  width: 100%;
 }
 .header__container .header__bottom {
   height: 10.6rem;
