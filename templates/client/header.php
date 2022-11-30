@@ -86,6 +86,7 @@
                                 <li class="header__top-menu-item">
                                     <a href="?url=cart.php" class="header__top-menu-link">
                                         <i class="fa-brands fa-opencart"></i>
+                                        <span class="cart__quantity_view"><?php $carts=isset($_SESSION['carts'])?count($_SESSION['carts']):"0"; echo $carts;?></span>
                                     </a>
                                     <?php if(isset($_SESSION['user_id']) && !empty($_SESSION['carts'])) { ?>
                                         <ul class="header__sub-menu">
