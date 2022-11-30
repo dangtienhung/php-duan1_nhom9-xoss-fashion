@@ -95,4 +95,21 @@ class c_info {
         }
         header("location:?url=info.php&checkbill=");
     }
+    public function cancel_order() {
+        if(isset($_GET['id_order'])) {
+            include('models/m_cart.php');
+            $m_cart = new m_cart();
+
+            $id = $_GET['id_order'];
+            $order_detail = $m_cart -> getOrderDetailById($id);
+            foreach ($order_detail as $key => $value) {
+                $m_cart -> changeQuantity($value->idProduct, '+' ,$value->quantity);
+            }
+            $m_cart -> delete_order($id);
+            setcookie("nofication","Hủy thành công", time() + 2, '/');
+        } else {
+            setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
+        }
+        header("location:?url=info.php&checkbill=");
+    }
 }

@@ -32,4 +32,13 @@ class c_order
             header('location:orders.php');
         }
     }
+    public function change_status() {
+        $m_orders = new m_order();
+        if(isset($_GET['id_order'])) {
+            $id = $_GET['id_order'];
+            $action = $_GET['action'];
+            $m_orders -> switch_status($action, $id);
+            header('location:orders.php');
+        }
+    }
 }

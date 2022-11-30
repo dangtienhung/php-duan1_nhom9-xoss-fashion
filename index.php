@@ -84,6 +84,10 @@
             $info = new c_info();
             $info -> delete_order();
             break;
+        case 'cancel_order':
+            $info = new c_info();
+            $info -> cancel_order();
+            break;
         case 'order.php':
             $order = new c_order();
             $order -> index();

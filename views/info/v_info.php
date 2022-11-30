@@ -134,6 +134,7 @@
                             <tr>
                                 <td>Id</td>
                                 <td>Ngày đặt</td>
+                                <td>Trạng thái</td>
                                 <td>Địa chỉ/Số điện thoại</td>
                                 <td>Hoạt động</td>
                             </tr>
@@ -143,9 +144,16 @@
                                 <tr>
                                     <td><?php echo $value->id ?></td>
                                     <td><?php echo $value->order_date ?></td>
+                                    <td><?php echo $value->status ?></td>
                                     <td><?php echo 'địa chỉ: '.$value->address.' || sđt: '.$value->phone_number ?></td>
                                     <td>
-                                        <a href="?url=delete_order&id_order=<?php echo $value->id?>"><button>Xóa Bill</button></a>
+                                        <?php if($value->status == 'Đã xác nhận đơn hàng') {?>
+
+                                        <?php } else if($value->status == 'Đã hủy đơn hàng') {?>
+                                            <a href="?url=delete_order&id_order=<?php echo $value->id?>"><button>Xóa Bill</button></a>
+                                        <?php  } else { ?>
+                                            <a href="?url=cancel_order&id_order=<?php echo $value->id?>"><button>Hủy Đơn Hàng</button></a>
+                                        <?php } ?>
                                         <a href="?url=order.php&id_order=<?php echo $value->id?>"><button>Xem chi tiết</button></a>
                                     </td>
                                 </tr>

@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($orders as $key => $value): ?>
+                <?php $total_quantity = 0; foreach($orders as $key => $value): ?>
                     <tr>
                         <td><?php echo $key + 1?></td>
                         <td><img src="admin/public/front-end/images/products/<?php echo $value->picture?>" alt=""></td>
@@ -25,11 +25,12 @@
                         <td>$ <?php echo $value->price?>.00</td>
                         <td>$ <?php echo $value->total?>.00</td>
                     </tr>
+                    <?php $total_quantity = $total_quantity + $value->quantity ?>
                 <?php endforeach ?>
             </tbody>
         </table>
     </div>
     <div class="order__total">
-        <h2>Tổng tiền thanh toán của <?php echo $value->total_quantity?> sản phẩm: $ <?php echo $orders[0]->total_price?>.00</h2>
+        <h2>Tổng tiền thanh toán của <?php echo $total_quantity ?> sản phẩm: $ <?php echo $orders[0]->total_price?>.00</h2>
     </div>
 </div>

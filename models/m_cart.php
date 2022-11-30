@@ -9,43 +9,41 @@ class m_cart extends database{
     }
 
     public function getOrderDetailById($id) {
-        $sql = "select order_date, orders.total as 'total_price', order_detail.total, name_product, picture, price, quantity,sum(order_detail.quantity) as 'total_quantity' FROM orders inner join order_detail on orders.id = order_detail.id_order where orders.id = ?"; 
+        $sql = "select order_date, orders.total as 'total_price', idProduct,order_detail.total, product.name as 'name_product', product.picture, order_detail.price, order_detail.quantity FROM orders join order_detail on orders.id = order_detail.id_order join product on order_detail.idProduct = product.id where orders.id = ?;"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 
         return $this -> loadAllRows(array($id));
     }
 
     public function getOrderByIdCustomer($id) {
-        $sql = "select orders.id, id_customer, address, phone_number,order_date, orders.total, id_order, sum(order_detail.quantity) as 'total_quantity' FROM orders join customer on orders.id_customer = customer.id join order_detail on orders.id = order_detail.id_order GROUP by id_order having id_customer = ?;"; 
+        $sql = "select orders.id, id_customer, address, phone_number,order_date, orders.total, id_order, sum(order_detail.quantity) as 'total_quantity', status FROM orders join customer on orders.id_customer = customer.id join order_detail on orders.id = order_detail.id_order join order_status on orders.order_status = order_status.id GROUP by id_order having id_customer = ?;"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 
         return $this -> loadAllRows(array($id));
     }
 
-    public function createOrder($id, $total_cost) {
-        $sql = "insert into orders(id_customer,total) values (?, ?)";
+    public function createOrder($id, $total_cost, $status) {
+        $sql = "insert into orders(id_customer,total,order_status) values (?, ?, ?)";
         $this ->setQuery($sql);
-        return $this ->execute(array($id, $total_cost));
+        return $this ->execute(array($id, $total_cost, $status));
     }
 
-    public function addDataToOrderDetail($id, $name, $picture, $price, $quantity, $total) {
-        $sql = "insert into order_detail(id_order, name_product, picture, price, quantity, total) values (?, ?, ?, ?, ?, ?)";
+    public function addDataToOrderDetail($id_order, $id, $price, $quantity, $total) {
+        $sql = "insert into order_detail(id_order, idProduct, price, quantity, total) values (?, ?, ?, ?, ?)";
         $this ->setQuery($sql);
-        return $this->execute(array($id, $name, $picture, $price, $quantity, $total));
+        return $this->execute(array($id_order, $id, $price, $quantity, $total));
     }
 
-    public function changeQuantity($id, $quantity) {
-        $sql = "update product set quantity = quantity-$quantity where id = $id";
+    public function changeQuantity($id, $action ,$quantity) {
+        $sql = "update product set quantity = quantity $action $quantity where id = $id";
         $this->setQuery($sql);
         return $this->execute(array());
     }
 
     public function delete_order($id) {
-        $sql = "delete from order_detail where id_order = ?";
-        $this->setQuery($sql);
-        $this->execute(array($id));
         $sql = "delete from orders where id = ?";
         $this->setQuery($sql);
         return $this->execute(array($id));
-    } 
+    }
+
 }

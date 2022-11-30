@@ -2784,10 +2784,13 @@ html {
 .info__bill-list table tr td:first-child {
   width: 8%;
 }
+.info__bill-list table tr td:nth-child(2) {
+  width: 20%;
+}
 
 .info__bill-list table tr td{
   padding: 20px 0;
-  width: 30%;
+  width: 25%;
   text-align: center;
 }
 
