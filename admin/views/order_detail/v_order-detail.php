@@ -26,8 +26,7 @@ if (isset($_GET['error'])) {
         <div class="container__main-handler">
             <div class="container__main-link">
                 <a href="orders.php" class="text-white" style="cursor: pointer;">
-                    < Quay Lại
-                </a>
+                    < Quay Lại </a>
             </div>
         </div>
         <div class="container__table">
@@ -43,12 +42,12 @@ if (isset($_GET['error'])) {
                 <!-- render danh sách sản phẩm -->
                 <?php foreach ($order_detail as $key => $each) { ?>
                 <tr>
-                    <td><?= $key+1;?></td>
-                    <td><img src="public/front-end/images/products/<?= $each->picture;?>" alt="" class="img_item"></td>
+                    <td><?= $key + 1; ?></td>
+                    <td><img src="public/front-end/images/products/<?= $each->picture; ?>" alt="" class="img_item"></td>
                     <td><?= $each->name_product; ?></td>
-                    <td class="container__table-desc-parent"><?= $each->name_product; ?></td>
-                    <td>$ <?= $each->price;?>.00</td>
-                    <td>$ <?= $each->total;?>.00</td>
+                    <td class="container__table-desc-parent"><?= $each->quantity; ?></td>
+                    <td>$ <?= $each->price; ?>.00</td>
+                    <td>$ <?= $each->total; ?>.00</td>
                 </tr>
                 <?php } ?>
             </table>
