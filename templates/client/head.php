@@ -8,7 +8,7 @@
     <title>XOSS || Fashion</title>
 
     <!-- faviicon -->
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="public/layout/images/favicon.ico">
 
     <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
