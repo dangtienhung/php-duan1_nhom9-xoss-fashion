@@ -23,7 +23,7 @@
                         <!-- curent name -->
                         <input type="text" name="current_name" value="<?php echo $user->name_customer?>" id="name"
                             hidden>
-                        <input type="text" name="current_address" value="<?php echo $user->name_customer?>" id="address"
+                        <input type="text" name="current_address" value="<?php echo $user->address?>" id="address"
                             hidden>
                     <div class="mb-3 fs-3">
                         <label for="username" class="form-label">Tên nhân viên</label>

@@ -61,9 +61,9 @@ if(input_address) {
             input_address.disabled = false;
             bool = false
         } else {
-            input_name.disabled = true;
+            input_address.disabled = true;
             bool = true
-            input_address.value = current_name.value;
+            input_address.value = current_address.value;
         }
     })
 }
