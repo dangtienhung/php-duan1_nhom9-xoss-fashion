@@ -53,7 +53,7 @@ if (isset($_GET['error'])) {
                         </br>
                         <?php } else if ($each->status == 'Đang chờ xác nhận') { ?>
                         <a
-                            href="order-status.php?id_order=<?= $each->id; ?>&action=2&email=<?= $_SESSION['user_email']; ?>&name=<?= $_SESSION['user_name']; ?>">
+                            href="order-status.php?id_order=<?= $each->id; ?>&action=2&email=<?= $each->email; ?>&name=<?= $each->name_customer; ?>">
                             Xác nhận
                         </a>
                         </br>

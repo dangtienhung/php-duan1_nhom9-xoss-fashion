@@ -9,7 +9,7 @@ class m_cart extends database{
     }
 
     public function getOrderDetailById($id) {
-        $sql = "select order_date, orders.total as 'total_price', idProduct,order_detail.total, product.name as 'name_product', product.picture, order_detail.price, order_detail.quantity FROM orders join order_detail on orders.id = order_detail.id_order join product on order_detail.idProduct = product.id where orders.id = ?;"; 
+        $sql = "select order_date, orders.total as 'total_price', idProduct,order_detail.total,  product_name as 'name_product', product_picture as 'picture', order_detail.price, order_detail.quantity FROM orders join order_detail on orders.id = order_detail.id_order where orders.id = ?;"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 
         return $this -> loadAllRows(array($id));
@@ -28,10 +28,10 @@ class m_cart extends database{
         return $this ->execute(array($id, $total_cost, $status));
     }
 
-    public function addDataToOrderDetail($id_order, $id, $price, $quantity, $total) {
-        $sql = "insert into order_detail(id_order, idProduct, price, quantity, total) values (?, ?, ?, ?, ?)";
+    public function addDataToOrderDetail($id_order, $id, $product_name, $picture,$price, $quantity, $total) {
+        $sql = "insert into order_detail(id_order, idProduct, product_name, product_picture, price, quantity, total) values (?, ?, ?, ?, ?, ?, ?)";
         $this ->setQuery($sql);
-        return $this->execute(array($id_order, $id, $price, $quantity, $total));
+        return $this->execute(array($id_order, $id, $product_name, $picture, $price, $quantity, $total));
     }
 
     public function changeQuantity($id, $action ,$quantity) {

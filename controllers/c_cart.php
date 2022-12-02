@@ -103,7 +103,7 @@ class c_cart
                 $id_order = $order[0]->id;
                 foreach ($_SESSION['carts'] as $value) {
                     $total_item_cost = $value['price'] * $value['quantity'];
-                    $m_cart -> addDataToOrderDetail($id_order, $value['id'],$value['price'], $value['quantity'],$total_item_cost);
+                    $m_cart -> addDataToOrderDetail($id_order, $value['id'], $value['name'], $value['picture'],$value['price'], $value['quantity'],$total_item_cost);
                     $m_cart -> changeQuantity($value["id"], '-' ,$value['quantity']);
                 }
                 setcookie('nofication', 'Đã Tạo Hóa Đơn Thành Công, xem chi tiết trong phần quản lý', time() + 2, '/');
