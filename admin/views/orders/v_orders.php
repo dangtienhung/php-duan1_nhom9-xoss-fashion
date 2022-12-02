@@ -45,19 +45,20 @@ if (isset($_GET['error'])) {
                     </td>
                     <td>$ <?= $each->total; ?>.00</td>
                     <td style="font-weight: bold;">
-                        <h3><?= $each->status?></h3>
-                        <?php if($each->status == 'Đã xác nhận đơn hàng') {?>
+                        <h3><?= $each->status ?></h3>
+                        <?php if ($each->status == 'Đã xác nhận đơn hàng') { ?>
                         <a href="order-status.php?id_order=<?= $each->id; ?>&action=1">
                             Hủy xác nhận
                         </a>
                         </br>
-                        <?php } else if($each->status == 'Đang chờ xác nhận') {?>
-                        <a href="order-status.php?id_order=<?= $each->id; ?>&action=2">
+                        <?php } else if ($each->status == 'Đang chờ xác nhận') { ?>
+                        <a
+                            href="order-status.php?id_order=<?= $each->id; ?>&action=2&email=<?= $each->email; ?>&name=<?= $each->name_customer; ?>">
                             Xác nhận
                         </a>
                         </br>
                         <?php } ?>
-                        <?php if($each->status != 'Đã hủy đơn hàng') {?>
+                        <?php if ($each->status != 'Đã hủy đơn hàng') { ?>
                         <a href="order-status.php?id_order=<?= $each->id; ?>&action=3">
                             Hủy đơn hàng
                         </a>
