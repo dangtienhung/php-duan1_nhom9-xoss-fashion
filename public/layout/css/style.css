@@ -2628,7 +2628,14 @@ html {
   color: var(--blue5-color);
 }
 
+.controll {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
 .log__a {
+  display: inline-block;
   font-size: 1.4rem;
   color: var(--aqua1-color);
 }

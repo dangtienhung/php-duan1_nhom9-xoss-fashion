@@ -42,9 +42,10 @@
 <body>
     <div class="log__container">
         <form action="?url=check_login.php" method="post" class="log__main">
-            <?php if(isset($_SESSION['error_login_user'])) { ?>
-                <h3 style="color: red"><?php echo $_SESSION['error_login_user'];?></h3>
-            <?php } $_SESSION['error_login_user']= ""; ?>
+            <?php if (isset($_SESSION['error_login_user'])) { ?>
+            <h3 style="color: red"><?php echo $_SESSION['error_login_user']; ?></h3>
+            <?php }
+            $_SESSION['error_login_user'] = ""; ?>
             <div class="log__box">
                 <label for="" class="log__title">Email</label> <br>
                 <input type="email" name="email" id="" class="log__input">
@@ -54,9 +55,14 @@
                 <input type="password" name="current-password" id="" class="log__input">
             </div>
             <input type="submit" name="btn_login" value="Đăng nhập" class="log__sub"><br>
-            <a href="?url=register.php" class="log__a">
-                <p>Đăng ký ngay</p>
-            </a>
+            <div class="controll">
+                <a href="?url=register.php" class="log__a">
+                    <p>Đăng ký ngay</p>
+                </a>
+                <a href="?url=forget_password.php" class="log__a">
+                    <p>Quên mật khẩu?</p>
+                </a>
+            </div>
         </form>
     </div>
 </body>
@@ -70,8 +76,8 @@
 
 <!-- boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+</script>
 
 <!-- javascript -->
 <script src="public/layout/javascript/slick-slider.js"></script>
