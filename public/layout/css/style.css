@@ -55,6 +55,10 @@ html::-webkit-scrollbar-track {
   -o-border-radius: 1rem;
 }
 
+body {
+  height: 100vh;
+}
+
 ul,
 li {
   list-style: none;
@@ -2431,9 +2435,10 @@ html {
 
 .log__container {
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 15rem;
-  background: var(--blue3-color);
+  background: url('../images/background.png') no-repeat;
+  background-size: 100% 100%;
 }
 
 .log__main {
@@ -2931,9 +2936,10 @@ html {
 
 .regis__container {
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 5rem;
-  background: var(--blue3-color);
+  background: url('../images/background.png') no-repeat;
+  background-size: 100% 100%;
 }
 
 .regis__main {
@@ -3108,9 +3114,8 @@ html {
 
   .log__container {
     width: 100%;
-    height: auto;
+    height: 100vh !important;
     padding: 15rem 3rem;
-    background: var(--blue3-color);
   }
 
   .log__main {
