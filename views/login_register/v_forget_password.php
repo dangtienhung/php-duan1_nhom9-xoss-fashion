@@ -8,7 +8,7 @@
     <title>XOSS || Fashion</title>
 
     <!-- faviicon -->
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="public/layout/images/favicon.ico">
 
     <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,30 +35,22 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reponsive.css">
+    <link rel="stylesheet" href="public/layout/css/style.css">
+    <link rel="stylesheet" href="public/layout/css/reponsive.css">
 </head>
 
 <body>
     <div class="log__container">
-        <form action="#" method="post" class="log__main">
+        <form action="" method="post" class="log__main">
+            <?php if (isset($_SESSION['error_login_user'])) { ?>
+            <h3 style="color: red"><?php echo $_SESSION['error_login_user']; ?></h3>
+            <?php }
+            $_SESSION['error_login_user'] = ""; ?>
             <div class="log__box">
-                <label for="" class="log__title">user name</label> <br>
-                <input type="text" name="name" id="" class="log__input">
+                <label for="" class="log__title">Email</label> <br>
+                <input type="email" name="email" id="" class="log__input" required>
             </div>
-            <div class="log__box">
-                <label for="" class="log__title">password</label><br>
-                <input type="password" name="pass" id="" class="log__input">
-            </div>
-            <input type="submit" value="Sign in" class="log__sub"><br>
-            <div class="controll">
-                <a href="./register.html" class="log__a">
-                    <p>Register</p>
-                </a>
-                <a href="?url=forget_password.php" class="log__a">
-                    <p>Quên mật khẩu?</p>
-                </a>
-            </div>
+            <input type="submit" name="forget_password" value="Gửi mật khẩu mới" class="log__sub"><br>
         </form>
     </div>
 </body>
@@ -72,11 +64,11 @@
 
 <!-- boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+</script>
 
 <!-- javascript -->
-<script src="javascript/slick-slider.js"></script>
-<script src="javascript/main.js"></script>
+<script src="public/layout/javascript/slick-slider.js"></script>
+<script src="public/layout/javascript/main.js"></script>
 
 </html>
