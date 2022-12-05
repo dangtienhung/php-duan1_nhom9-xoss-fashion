@@ -23,7 +23,7 @@ include 'templates/admin/head.php';
                     </div>
                     <div class="validate-input">
                         <span><i class="fa-solid fa-key"></i></span>
-                        <input autocomplete="off" class="input100" type="text" placeholder="Mật khẩu"
+                        <input autocomplete="off" class="input100" type="password" placeholder="Mật khẩu"
                             name="current-password" required>
                         <span toggle="#password-field" class="bx fa-fw bx-hide field-icon click-eye"></span>
                     </div>
