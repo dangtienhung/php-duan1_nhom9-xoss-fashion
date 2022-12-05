@@ -71,6 +71,9 @@
                                     <ul class="header__sub-menu">
                                         <li><a href="?url=cart.php">Giỏ hàng</a></li>
                                         <li><a href="?url=info.php">Cá nhân</a></li>
+                                        <?php if($_SESSION['user_id'] == 1 || $_SESSION['user_id'] == 2) { ?>
+                                            <li><a href="admin">Quản trị</a></li>
+                                        <?php }?>
                                     </ul>
                                 </li>
                                 <li class="header__top-menu-item">
