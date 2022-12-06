@@ -34,12 +34,12 @@
                                     placeholder="Giảm giá sản phẩm" name="saleOff" required value="<?= $list_item->saleOff ;?>">
                             </div>
                             <div class="mb-3">
-                                <label for="picture" class="form-label fs-3">HÌnh ảnh sản phẩm</label>
+                                <label for="picture" class="form-label fs-3">Thêm ảnh sản phẩm</label>
                                 <input type="file" min="0" class="form-control fs-3" id="picture"
                                      name="new-picture">
                             </div>
                             <div class="mb-3">
-                                <label for="picture" class="form-label fs-3">Giữ lại hình ảnh cũ</label>
+                                <label for="picture" class="form-label fs-3">Hình ảnh sản phẩm</label>
                                 <input type="hidden" name="picture-old" id="picture" value="<?= $list_item->picture?>">
                                 <img src="public/front-end/images/products/<?= $list_item->picture?>"  class="body__image img_item" />
                             </div>
