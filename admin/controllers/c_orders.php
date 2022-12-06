@@ -51,38 +51,38 @@ class c_order
             $action = $_GET['action'];
             $id = $_GET['id_order'];
             // gửi php mailer về máy khách hàng
-            // if ($action == 2) {
-            //     $mail = new PHPMailer(true);
-            //     try {
-            //         //Server settings
-            //         $mail->charSet = "UTF-8";
-            //         $mail->Encoding = 'base64';
-            //         $mail->SMTPDebug = 2;                                 // bật tính năng gửi success or faild thì vẫn show thông tin mail để ta cấu hình
-            //         $mail->isSMTP();                                      // Set mailer to use SMTP
-            //         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-            //         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            //         $mail->Username = 'hungdang02042003@gmail.com';                 // SMTP username
-            //         $mail->Password = 'wraezcmsphxiaouc';                           // SMTP password
-            //         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            //         $mail->Port = 587;                                    // TCP port to connect to
+            if ($action == 2) {
+                $mail = new PHPMailer(true);
+                try {
+                    //Server settings
+                    $mail->charSet = "UTF-8";
+                    $mail->Encoding = 'base64';
+                    $mail->SMTPDebug = 2;                                 // bật tính năng gửi success or faild thì vẫn show thông tin mail để ta cấu hình
+                    $mail->isSMTP();                                      // Set mailer to use SMTP
+                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    $mail->Username = 'hungdang02042003@gmail.com';                 // SMTP username
+                    $mail->Password = 'wraezcmsphxiaouc';                           // SMTP password
+                    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 587;                                    // TCP port to connect to
 
-            //         //Recipients
-            //         $mail->setFrom('hungdang02042003@gmail.com', 'XOSS Shop');
-            //         $mail->addAddress($email_user, $name_user);           // Name is optional
-            //         $mail->addCC('hungdang02042003@gmail.com');
+                    //Recipients
+                    $mail->setFrom('hungdang02042003@gmail.com', 'XOSS Shop');
+                    $mail->addAddress($email_user, $name_user);           // Name is optional
+                    $mail->addCC('hungdang02042003@gmail.com');
 
-            //         //Content
-            //         $mail->isHTML(true);                                  // Set email format to HTML
-            //         $mail->Subject = 'Thong bao dat don hàng thanh cong!';
-            //         $mail->Body    = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur blanditiis suscipit officiis cumque minima velit
-            //         quas necessitatibus, quos natus reprehenderit porro modi delectus, incidunt ex! Esse dignissimos qui rem sit!';
+                    //Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'Thong bao dat don hàng thanh cong!';
+                    $mail->Body    = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur blanditiis suscipit officiis cumque minima velit
+                    quas necessitatibus, quos natus reprehenderit porro modi delectus, incidunt ex! Esse dignissimos qui rem sit!';
 
-            //         $mail->send();
-            //         echo 'Message has been sent';
-            //     } catch (Exception $e) {
-            //         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-            //     }
-            // }
+                    $mail->send();
+                    echo 'Message has been sent';
+                } catch (Exception $e) {
+                    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+                }
+            }
             $m_orders->switch_status($action, $id);
             header('location:orders.php');
         }
