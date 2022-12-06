@@ -3,14 +3,14 @@
     require_once ("database.php");
     class m_product extends database{
         public function getProduct(){
-            $sql = "select * FROM product where id_category not null"; 
+            $sql = "select * FROM product where id_category is not null"; 
             $this ->setQuery($sql);
             // lấy dữ liệu nhiều dùng 
             return $this -> loadAllRows();
         }
 
         public function getProductById($id){
-            $sql = "select * FROM product where id = ? and id_category not null"; 
+            $sql = "select * FROM product where id = ? and id_category is not null"; 
             $this ->setQuery($sql);
             return $this -> loadRow(array($id));
         }
