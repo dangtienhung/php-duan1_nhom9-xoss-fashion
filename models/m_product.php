@@ -40,7 +40,7 @@
             if($id_category != "") {
                 $string = 'id_category  = '.$id_category;
             }
-            $sql = "SELECT * FROM `product` where $id_category  = $id_category And name like '%$search%' $order_by $action limit $number_in_on_page
+            $sql = "SELECT * FROM `product` where $string And name like '%$search%' $order_by $action limit $number_in_on_page
             offset $clear;";
             $this->setQuery($sql);
             return $this->loadAllRows();
