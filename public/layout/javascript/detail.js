@@ -43,7 +43,3 @@ if(input_quantity) {
         }
     })
 }
-
-
-
-

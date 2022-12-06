@@ -56,6 +56,7 @@
 
                                 <select name="id_category" class="form-select fs-3"
                                     aria-label="Default select example" id="product_categories">
+                                    <option value="">Để trong kho</option>
                                     <?php foreach ($category_type as $each) { ?>
                                         <option value="<?php echo $each->id; ?>">
                                             <?php echo $each->title_category; ?>

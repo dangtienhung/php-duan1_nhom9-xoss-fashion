@@ -37,6 +37,9 @@ class m_product extends database {
     }
     //thêm sản phẩm 
     public function m_ceate_product($name,$price,$saleOff,$picture,$description, $quantity, $view_number,$id_category) {
+        if($id_category == "") {
+            $id_category = NULL;
+        } 
         $sql = "insert into product(name,price,saleOff,picture,description, quantity, view_number,id_category)
         values(?,?,?,?,?,?,?,?)";
         $this->setQuery($sql);
@@ -44,6 +47,9 @@ class m_product extends database {
     }
     // sửa sản phẩm
     public function upload_product($name,$price,$saleOff,$picture,$description,$view_number, $quantity, $id_category,$id){
+        if($id_category == "") {
+            $id_category = NULL;
+        } 
         $sql = "update product 
                 set 
                 name = ?,

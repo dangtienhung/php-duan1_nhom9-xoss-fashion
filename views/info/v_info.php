@@ -144,12 +144,20 @@
                                 <tr>
                                     <td><?php echo $value->id ?></td>
                                     <td><?php echo $value->order_date ?></td>
-                                    <td><?php echo $value->status ?></td>
+                                    <td>
+                                        <?php if($value->order_status == 1) { 
+                                            echo 'Đang chờ xác nhận';
+                                        } else if($value->order_status == 2) {
+                                            echo 'Đơn hàng đã được xác nhận';
+                                        } else {
+                                            echo 'Đơn hàng đã bị hủy';
+                                        }?>
+                                    </td>
                                     <td><?php echo 'địa chỉ: '.$value->address.' || sđt: '.$value->phone_number ?></td>
                                     <td>
-                                        <?php if($value->status == 'Đã xác nhận đơn hàng') {?>
+                                        <?php if($value->order_status == 2) {?>
 
-                                        <?php } else if($value->status == 'Đã hủy đơn hàng') {?>
+                                        <?php } else if($value->order_status == 3) {?>
                                             <a href="?url=delete_order&id_order=<?php echo $value->id?>"><button>Xóa Bill</button></a>
                                         <?php  } else { ?>
                                             <a href="?url=cancel_order&id_order=<?php echo $value->id?>"><button>Hủy Đơn Hàng</button></a>
