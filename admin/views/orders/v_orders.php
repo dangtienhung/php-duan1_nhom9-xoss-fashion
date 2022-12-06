@@ -40,6 +40,7 @@ if (isset($_GET['error'])) {
                     <td><?= $each->name_customer; ?></td>
                     <td class="container__table-desc-parent">
                         <div class="container__table-desc">
+                            <p>email: <?= $each->email; ?></p>
                             <p>địa chỉ:<?= $each->address ?> || sđt:<?= $each->phone_number ?></p>
                         </div>
                     </td>

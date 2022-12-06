@@ -35,4 +35,25 @@ class m_order extends database
         $this->setQuery($sql);
         return $this->execute(array($status, $id));
     }
+
+    // lấy ra số lượng đơn hàng
+    public function get_total_order($email)
+    {
+        $sql = "select count(*) from customer
+        JOIN orders ON customer.id = orders.id_customer 
+        WHERE customer.email = ? 
+                AND role = 3 
+                AND orders.order_status = 2;";
+        $this->setQuery($sql);
+        return $this->loadRecord(array($email));
+    }
+    // lấy ra sản phẩm chi tiết
+    public function get_order_detail($id)
+    {
+        $sql = "select * from orders 
+                join order_detail on orders.id = order_detail.id_order
+                where orders.id = ?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($id));
+    }
 }

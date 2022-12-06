@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 include "controllers/PHPMailer/src/PHPMailer.php";
 include "controllers/PHPMailer/src/Exception.php";
 include "controllers/PHPMailer/src/OAuth.php";
@@ -52,12 +52,14 @@ class c_order
             $name_user = $_GET['name'];
             // gửi php mailer về máy khách hàng
             if ($action == 2) {
+                $total_order = $m_orders->get_total_order($email_user);
+                $list_order_detail = $m_orders->get_order_detail($id);
                 $mail = new PHPMailer(true);
                 try {
                     //Server settings
-                    $mail->charSet = "UTF-8";
+                    $mail->CharSet = "UTF-8";
                     $mail->Encoding = 'base64';
-                    $mail->SMTPDebug = 2;                                 // bật tính năng gửi success or faild thì vẫn show thông tin mail để ta cấu hình
+                    $mail->SMTPDebug = 0;                                 // bật tính năng gửi success or faild thì vẫn show thông tin mail để ta cấu hình
                     $mail->isSMTP();                                      // Set mailer to use SMTP
                     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -73,9 +75,33 @@ class c_order
 
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
-                    $mail->Subject = 'Thong bao dat don hàng thanh cong!';
-                    $mail->Body    = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur blanditiis suscipit officiis cumque minima velit
-                    quas necessitatibus, quos natus reprehenderit porro modi delectus, incidunt ex! Esse dignissimos qui rem sit!';
+                    $mail->Subject = 'Thông báo đặt hàng thành công!';
+                    $body = '';
+                    $body .= '<p>Xin chào, ' . $name_user . '!</p>';
+                    $body .= '<hr/>';
+                    $body .= '<h2>THÔNG TIN ĐƠN HÀNG - DÀNH CHO NGƯỜI MUA</h2>';
+                    $body .= '<table>';
+                    $body .= '<thead>
+                                <tr>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Giá sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Ngày đặt hàng</th>
+                                </tr>
+                            </thead>';
+                    foreach ($list_order_detail as $each) {
+                        $date = date_create($each->order_date);
+                        $date = date('d/m/Y');
+                        $body .= "<tr>
+                                            <td center>" . $each->product_name . "</td>
+                                            <td center>" . $each->price . ".00</td>
+                                            <td center>" . $each->quantity . "</td>
+                                            <td center>" . $date . "</td>
+                                        </tr>";
+                    }
+                    $body .= '</table>';
+                    $body .= '<p>Cảm ơn bạn đã đặt hàng tại XOSS Shop!</p>';
+                    $mail->Body    = $body;
 
                     $mail->send();
                     echo 'Message has been sent';
