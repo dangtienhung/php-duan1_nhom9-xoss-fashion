@@ -65,6 +65,12 @@
                 </a>
             </li>
             <li>
+                <a href="product-storage.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-list"></i>
+                    Quản lý kho chứa
+                </a>
+            </li>
+            <li>
                 <a href="product-categories.php" class="sidebar__menu-link">
                     <i class="fa-solid fa-list"></i>
                     Quản lý danh mục sản phẩm
@@ -144,6 +150,12 @@
                 <a href="home.php" class="sidebar__menu-link">
                     <i class="fa-brands fa-microsoft"></i>
                     Bảng điều khiển
+                </a>
+            </li>
+            <li>
+                <a href="product-storage.php" class="sidebar__menu-link">
+                    <i class="fa-solid fa-list"></i>
+                    Quản lý kho chứa
                 </a>
             </li>
             <li>

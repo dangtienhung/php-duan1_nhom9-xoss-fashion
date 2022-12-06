@@ -46,10 +46,10 @@ class c_order
     {
         $m_orders = new m_order();
         if (isset($_GET['id_order'])) {
-            $id = $_GET['id_order'];
-            $action = $_GET['action'];
-            $email_user = $_GET['email'];
             $name_user = $_GET['name'];
+            $email_user = $_GET['email'];
+            $action = $_GET['action'];
+            $id = $_GET['id_order'];
             // gửi php mailer về máy khách hàng
             if ($action == 2) {
                 $mail = new PHPMailer(true);
