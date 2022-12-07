@@ -14,6 +14,9 @@ class c_detail
         $m_detail_product -> inCreaseView();
         // Lấy ra chi tiết sản phẩm       
         $detail_product = $m_detail_product -> getDetailProduct();
+        if(empty($detail_product)) {
+            header('location: ?url=home');
+        }
         // Láy ra sản phẩm liên quan
         $id_category = $detail_product->id_category;
         $suggested_products = $m_detail_product -> SuggestedProduct($id_category);

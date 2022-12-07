@@ -16,7 +16,7 @@ class m_cart extends database{
     }
 
     public function getOrderByIdCustomer($id) {
-        $sql = "select orders.id, id_customer, address, phone_number,order_date, orders.total, id_order, sum(order_detail.quantity) as 'total_quantity', status FROM orders join customer on orders.id_customer = customer.id join order_detail on orders.id = order_detail.id_order join order_status on orders.order_status = order_status.id GROUP by id_order having id_customer = ?;"; 
+        $sql = "select orders.id, id_customer, order_status,address, phone_number,order_date, orders.total, id_order, sum(order_detail.quantity) as 'total_quantity' FROM orders join customer on orders.id_customer = customer.id join order_detail on orders.id = order_detail.id_order GROUP by id_order having id_customer = ?;"; 
         $this ->setQuery($sql);
         // lấy dữ liệu 
         return $this -> loadAllRows(array($id));

@@ -75,7 +75,6 @@ class c_login
             echo (implode($pass)); //turn the array into a string
             $forget_password = implode($pass);
             $user = $m_login->forget_password($email);
-
             $email_user = $user->email; // lẩy ra email của người dùng
             $name_user = $user->name_customer; // lấy ra tên của người dùng
 
@@ -84,9 +83,9 @@ class c_login
                 $mail = new PHPMailer(true);
                 try {
                     //Server settings
-                    $mail->charSet = "UTF-8";
+                    $mail->CharSet = "UTF-8";
                     $mail->Encoding = 'base64';
-                    $mail->SMTPDebug = 2;                                 // bật tính năng gửi success or faild thì vẫn show thông tin mail để ta cấu hình
+                    $mail->SMTPDebug = 0;                                 // bật tính năng gửi success or faild thì vẫn show thông tin mail để ta cấu hình
                     $mail->isSMTP();                                      // Set mailer to use SMTP
                     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -102,8 +101,19 @@ class c_login
 
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
-                    $mail->Subject = 'Thong bao thay doi mat khau moi!';
-                    $mail->Body    = 'Mat khau moi cua ban la: ' . $forget_password;
+                    $mail->Subject = 'Bạn muốn đặt lại mật khẩu?';
+
+                    $body = '';
+                    $body .= '<p>Xin chào,</p>' . $name_user;
+                    $body .= '<p>Bạn đã yêu cầu đặt lại mật khẩu của tài khoản XOSS Shop?</p>';
+                    $body .= '<p>Mật khẩu mới của bạn là: ' . $forget_password . '</p>';
+                    // $body .= '<p>Nếu bạn đã yêu cầu đặt lại mật khẩu, hãy ấn vào <a href="change_passowrd.php"><h3 style="color: green;">tại đây</h3></a> để tạo mật khẩu mới để vào tài khoản XOSS Shop của bạn.</p>';
+                    // $body .= '<p>Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.</p>';
+                    // $body .= 'Nếu bạn gặp phải bất cứ vấn đề nào khi đăng nhập vào tài khoản XOSS Shop, vui lòng gửi mail đến địa chỉ: hungdang02042003@gmail.com</pre>';
+                    $body .= '<p>Trân trọng.</p>';
+
+                    // $mail->Body    = 'Mat khau moi cua ban la: ' . $forget_password;
+                    $mail->Body = $body;
 
                     $mail->send();
                     echo 'Message has been sent';
@@ -115,16 +125,5 @@ class c_login
             header('location:?url=login.php');
         }
         include('views/login_register/v_forget_password.php');
-        //     $m_login = new m_login();
-        //     $admin = $m_login->read_check_email($email);
-        //     if (!empty($admin)) {
-        //         $this->send_mail($email);
-        //         $_SESSION['success'] = "Mật khẩu đã được gửi đến email của bạn";
-        //         header('location: index.php');
-        //     } else {
-        //         $_SESSION['error'] = "Email không tồn tại";
-        //         header('location: index.php');
-        //     }
-        // }
     }
 }

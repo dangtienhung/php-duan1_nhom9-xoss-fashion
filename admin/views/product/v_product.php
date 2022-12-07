@@ -56,28 +56,30 @@
 
                 <!-- render-products -->
                 <?php foreach ($list_all_product as $key => $each) : ?>
-                <tr>
-                    <td><?= $each->name; ?></td>
-                    <td><?= $each->price; ?></td>
-                    <td><?= $each->saleOff; ?></td>
-                    <td>
-                        <img src="public/front-end/images/products/<?= $each->picture ?>" alt="" class="img_item">
-                    </td>
-                    <td class="container__table-desc-parent">
-                        <div class="container__table-desc">
-                            <p><?= $each->description; ?></p>
-                        </div>
-                    </td>
-                    <td><?= $each->date_added; ?></td>
-                    <td>
-                        <a href="upload-product.php?id=<?= $each->id; ?>">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </a>
-                        <a href="delete-product.php?id=<?= $each->id; ?>">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </a>
-                    </td>
-                </tr>
+                    <?php if($each->id_category != null) {?>
+                        <tr>
+                            <td><?= $each->name; ?></td>
+                            <td><?= $each->price; ?></td>
+                            <td><?= $each->saleOff; ?></td>
+                            <td>
+                                <img src="public/front-end/images/products/<?= $each->picture ?>" alt="" class="img_item">
+                            </td>
+                            <td class="container__table-desc-parent">
+                                <div class="container__table-desc">
+                                    <p><?= $each->description; ?></p>
+                                </div>
+                            </td>
+                            <td><?= $each->date_added; ?></td>
+                            <td>
+                                <a href="upload-product.php?id=<?= $each->id; ?>">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a href="delete-product.php?id=<?= $each->id; ?>">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php }?>
                 <?php endforeach; ?>
             </table>
         </div>
