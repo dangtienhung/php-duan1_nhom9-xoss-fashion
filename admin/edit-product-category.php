@@ -11,8 +11,8 @@ if (isset($_SESSION['admin_id'])) {
         $index = new c_product_categories();
         $index->update_product_category();
     } else {
-        header('location: index.php');
+         echo "<script>window.location =' index.php'</script>";
     }
 } else {
-    header('location: notfound.php');
+     echo "<script>window.location =' notfound.php'</script>";
 }

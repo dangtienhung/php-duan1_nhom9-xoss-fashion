@@ -7,7 +7,7 @@ class c_cart
     public function index()
     {
         if(!isset($_SESSION['user_id'])) {
-            header('location:?url=login.php');
+            echo "<script>window.location ='?url=login.php'</script>";
         }
 
         $view = 'views/cart/v_cart.php';
@@ -19,7 +19,7 @@ class c_cart
         $m_product = new m_product();
 
         if(!isset($_SESSION['user_id'])) {
-            header('location:?url=login.php');
+             echo "<script>window.location ='?url=login.php'</script>";
         } else {
             if(isset($_GET['id_product'])) {
                 //Lấy ra sản phẩm
@@ -39,21 +39,21 @@ class c_cart
                     $_SESSION['carts'][$id]['quantity'] = $quantity;
                     $_SESSION['carts'][$id]['max_quantity'] = $product->quantity;
                     setcookie('nofication', 'Thêm thành công', time() + 2, '/');
-                    header('location:?url=cart.php');
+                     echo "<script>window.location ='?url=cart.php'</script>";
                 } else {
                     $check = $_SESSION['carts'][$id]['quantity'] + $quantity;
                     if($check <= $product->quantity) {
                         $_SESSION['carts'][$id]['quantity'] = $_SESSION['carts'][$id]['quantity'] + $quantity;
                         setcookie('nofication', 'Thêm thành công', time() + 2, '/');
-                        header('location:?url=cart.php');
+                         echo "<script>window.location ='?url=cart.php'</script>";
                     } else {
                         setcookie('nofication', 'số lượng vượt quá giới hạn', time() + 2, '/');
-                        header('location:?url=product.php');
+                         echo "<script>window.location ='?url=product.php'</script>";
                     }
                 } 
             } else {
                 setcookie('nofication', 'Thêm không thành công', time() + 2, '/');
-                header('location:?url=cart.php');
+                 echo "<script>window.location ='?url=cart.php'</script>";
             }
         }
     }
@@ -64,10 +64,10 @@ class c_cart
             unset($_SESSION['carts'][$id]);
         } else {
             setcookie('nofication', 'Xóa không thành công', time() + 2, '/');
-            header('location:?url=cart.php');
+             echo "<script>window.location ='?url=cart.php'</script>";
         }
         setcookie('nofication', 'Xóa thành công', time() + 2, '/');
-        header('location:?url=cart.php');
+         echo "<script>window.location ='?url=cart.php'</script>";
     }
 
     public function handle_change_quantity() {
@@ -86,7 +86,7 @@ class c_cart
                 unset($_SESSION['carts'][$id]);
             }
         }
-        header('location:?url=cart.php');
+         echo "<script>window.location ='?url=cart.php'</script>";
     }
 
     public function create_order() {
@@ -108,14 +108,14 @@ class c_cart
                 }
                 setcookie('nofication', 'Đã Tạo Hóa Đơn Thành Công, xem chi tiết trong phần quản lý', time() + 2, '/');
                 unset($_SESSION['carts']);
-                header('location:?url=info.php&checkbill=');
+                 echo "<script>window.location ='?url=info.php&checkbill='</script>";
             } else {
                 setcookie('nofication', 'Chưa có sản phẩm', time() + 2, '/');
-                header('location:?url=cart.php');
+                 echo "<script>window.location ='?url=cart.php'</script>";
             }
         } else {
             setcookie('nofication', 'Tài khoản admin không dùng để mua sản phẩm, xin vui lòng tạo tài khoản người dùng', time() + 2, '/');
-            header('location:?url=cart.php');
+             echo "<script>window.location ='?url=cart.php'</script>";
         }
     }
 

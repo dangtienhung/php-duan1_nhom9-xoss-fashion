@@ -38,9 +38,9 @@ class c_comments
         }
         $delete_cmt = $c_comments->get_one_comments($id);
         if (empty($delete_cmt)) {
-            header('location: comments.php?success=xóa sản phẩm thành công!');
+             echo "<script>window.location =' comments.php?success=xóa sản phẩm thành công!'</script>";
         } else {
-            header('location: comments.php?error=Xóa không thành công!');
+             echo "<script>window.location =' comments.php?error=Xóa không thành công!'</script>";
         }
     }
 }

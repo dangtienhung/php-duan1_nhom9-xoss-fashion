@@ -26,15 +26,15 @@ class c_login
                 $password = $_POST['current-password'];
                 $this->save_login_session($email, $password);
                 if (isset($_SESSION['user_id'])) {
-                    header('location:?url=home');
+                     echo "<script>window.location ='?url=home'</script>";
                 } else {
                     $_SESSION['error_login_user'] = "Sai thông tin đăng nhập";
-                    header('location:?url=login.php');
+                     echo "<script>window.location ='?url=login.php'</script>";
                     echo 'Đăng nhập thất bại';
                 }
             } else {
                 $_SESSION['error_login_user'] = "Chưa nhập đủ dữ liệu";
-                header('location:?url=login.php');
+                 echo "<script>window.location ='?url=login.php'</script>";
                 echo 'Đăng nhập thất bại';
             }
         }
@@ -49,14 +49,14 @@ class c_login
             $_SESSION['user_email'] = $user->email;
             $_SESSION['user_picture'] = $user->picture;
             $_SESSION['user_role'] = $user->role;
-            // header('location: index.php');
+            //  echo "<script>window.location =' index.php'</script>";
         }
     }
 
     public function logOut()
     {
         session_destroy();
-        header('location:?url=login.php');
+         echo "<script>window.location ='?url=login.php'</script>";
     }
     // quên mật khẩu người dùng
     public function forget_password()
@@ -122,7 +122,7 @@ class c_login
                 }
             }
             $m_login->update_password($email, $forget_password);
-            header('location:?url=login.php');
+             echo "<script>window.location ='?url=login.php'</script>";
         }
         include('views/login_register/v_forget_password.php');
     }

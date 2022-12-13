@@ -29,7 +29,7 @@ class c_order
                 $view = 'views/order_detail/v_order-detail.php';
                 include('templates/admin/layout.php');
             } else {
-                header('location:orders.php');
+                 echo "<script>window.location ='orders.php'</script>";
             }
         }
     }
@@ -39,7 +39,7 @@ class c_order
         if (isset($_GET['id_order'])) {
             $id = $_GET['id_order'];
             $m_orders->delete_order($id);
-            header('location:orders.php');
+             echo "<script>window.location ='orders.php'</script>";
         }
     }
     public function change_status()
@@ -110,7 +110,7 @@ class c_order
                 }
             }
             $m_orders->switch_status($action, $id);
-            header('location:orders.php');
+             echo "<script>window.location ='orders.php'</script>";
         }
     }
 }

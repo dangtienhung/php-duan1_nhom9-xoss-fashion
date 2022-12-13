@@ -41,7 +41,7 @@ class c_staff
                 $path_file = $folder . $file_name;
                 move_uploaded_file($image['tmp_name'], $path_file);
             }
-            header('location: staff.php');
+             echo "<script>window.location =' staff.php'</script>";
         }
     }
     // xóa nhân viên
@@ -52,9 +52,9 @@ class c_staff
             $id = $_GET['id'];
             $result = $m_staff->delete_one_staff($id);
             if ($result) {
-                header('location: staff.php?success=Xóa thành công!');
+                 echo "<script>window.location =' staff.php?success=Xóa thành công!'</script>";
             } else {
-                header('location: staff.php?error=Xóa thất bại!');
+                 echo "<script>window.location =' staff.php?error=Xóa thất bại!'</script>";
             }
         }
     }
@@ -90,7 +90,7 @@ class c_staff
                 $path_file = $folder . $file_name;
                 move_uploaded_file($image_new['tmp_name'], $path_file);
             }
-            header('location: staff.php');
+             echo "<script>window.location =' staff.php'</script>";
         }
     }
 }

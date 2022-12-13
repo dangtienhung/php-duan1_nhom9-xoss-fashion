@@ -14,11 +14,11 @@ class c_order {
                 include('templates/client/layout.php');
             }
             else {
-                header('location:?url=order.php&checkbill=');
+                 echo "<script>window.location ='?url=order.php&checkbill='</script>";
             }
         } else {
             setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
-            header("location:?url=info.php&checkbill=");
+            echo "<script>window.location ='?url=info.php&checkbill='</script>";
         }
     }    
 }

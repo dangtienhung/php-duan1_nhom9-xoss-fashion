@@ -14,7 +14,7 @@ class c_info {
             $m_cart = new m_cart();
             $orders = $m_cart -> getOrderByIdCustomer($_SESSION["user_id"]);
         } else {
-            header("location:?url=login.php");
+            echo "<script>window.location =':?url=login.php'</script>";
         }
         $view='views/info/v_info.php';
         include('templates/client/layout.php');
@@ -52,7 +52,7 @@ class c_info {
             $m_customer = new m_customer();
             $m_customer -> save_change_info($name, $email, $phone_number, $avatar, $_SESSION["user_id"]);
             move_uploaded_file($_FILES["avatar"]["tmp_name"],"admin/public/front-end/images/customer/".$_FILES["avatar"]["name"]);
-            header("location:?url=info.php");
+            echo "<script>window.location =':?url=info.php'</script>";
         }
     }
 
@@ -78,7 +78,7 @@ class c_info {
                 setcookie("nofication","Chưa nhập đủ thông tin", time() + 2, '/');
             }
         }
-        header("location:?url=info.php");
+        echo "<script>window.location =':?url=info.php'</script>";
     }
 
     public function delete_order() {
@@ -93,7 +93,7 @@ class c_info {
         } else {
             setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
         }
-        header("location:?url=info.php&checkbill=");
+        echo "<script>window.location =':?url=info.php&checkbill='</script>";
     }
     public function cancel_order() {
         if(isset($_GET['id_order'])) {
@@ -110,6 +110,6 @@ class c_info {
         } else {
             setcookie("nofication","Đã Xảy Ra Lỗi, thử lại sau", time() + 2, '/');
         }
-        header("location:?url=info.php&checkbill=");
+        echo "<script>window.location =':?url=info.php&checkbill='</script>";
     }
 }

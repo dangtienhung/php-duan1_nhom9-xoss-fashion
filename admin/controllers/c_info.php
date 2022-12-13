@@ -64,7 +64,7 @@ class c_info
             }
             $m_customer = new m_customer();
             $m_customer -> save_change_info($name, $email, $phone_number, $address, $_SESSION["admin_id"]);
-            header("location: info.php");
+            echo "<script>window.location =': info.php'</script>";
         }
     }
 public function password(){
@@ -102,6 +102,6 @@ public function password(){
                 setcookie("nofication","Chưa nhập đủ thông tin", time() + 3, '/');
             }
         }
-        header("location: info.php");
+        echo "<script>window.location =': info.php'</script>";
     }
 }

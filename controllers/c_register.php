@@ -21,7 +21,7 @@ class c_register
                 foreach ($customer as $account) {
                     if ($account->email == $_POST["email"] || $account->name_customer == $_POST["name"]) {
                         $_SESSION['error_register_user'] = "Tên hoặc email đã được sử dụng";
-                        header('location:?url=register.php');
+                         echo "<script>window.location ='?url=register.php'</script>";
                         echo 'Đăng ký thất bại';
                         break;
                     }
@@ -35,15 +35,14 @@ class c_register
                     $password = $_POST["password"];
                     $role = $_POST["role"];
                     $this->save_customer($user_name, $email, $address, $phone_number, $password, $role);
-                    header("location:?url=home");
-                } else {
+                    echo "<script>window.location =':?url=home'</script>";
                     $_SESSION['error_register_user'] = "Mật khẩu không trùng khớp";
-                    header('location:?url=register.php');
+                     echo "<script>window.location ='?url=register.php'</script>";
                     echo 'Đăng ký thất bại';
                 }
             } else {
                 $_SESSION['error_register_user'] = "Chưa nhập đủ dữ liệu";
-                header('location:?url=register.php');
+                 echo "<script>window.location ='?url=register.php'</script>";
                 echo 'Đăng ký thất bại';
             }
         }

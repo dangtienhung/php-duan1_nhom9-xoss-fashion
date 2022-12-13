@@ -5,7 +5,7 @@ class c_detail
     public function index()
     {
         if(!isset($_GET['id_product'])) {
-            header("location:?url=home");
+            echo "<script>window.location =':?url=home'</script>";
         }
         
         include('models/m_detail_product.php');
@@ -15,7 +15,7 @@ class c_detail
         // Lấy ra chi tiết sản phẩm       
         $detail_product = $m_detail_product -> getDetailProduct();
         if(empty($detail_product)) {
-            header('location: ?url=home');
+             echo "<script>window.location =' ?url=home'</script>";
         }
         // Láy ra sản phẩm liên quan
         $id_category = $detail_product->id_category;
@@ -50,7 +50,7 @@ class c_detail
 
             $m_comment -> insertComment($id_person,$id_product,$content);
 
-            header("location:?url=detail.php&id_product=$id_product");
+            echo "<script>window.location =':?url=detail.php&id_product=$id_product'</script>";
         }
     }
 }

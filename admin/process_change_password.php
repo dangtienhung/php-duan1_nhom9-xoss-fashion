@@ -9,8 +9,8 @@ if (isset($_SESSION['admin_id'])) {
         $info = new c_info();
         $info -> change_password();
     } else {
-        header('location: index.php');
+         echo "<script>window.location =' index.php'</script>";
     }
 } else {
-    header('location: notfound.php');
+     echo "<script>window.location =' notfound.php'</script>";
 }

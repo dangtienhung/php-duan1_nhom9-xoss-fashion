@@ -10,8 +10,8 @@ if (isset($_SESSION['admin_id'])) {
         $index = new c_order();
         $index-> delete_order();
     } else {
-        header('location: index.php');
+         echo "<script>window.location =' index.php'</script>";
     }
 } else {
-    header('location: notfound.php');
+     echo "<script>window.location =' notfound.php'</script>";
 }

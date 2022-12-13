@@ -41,10 +41,10 @@ class c_product_categories
             $category_type = $_POST['id_product_type'];
             $result = $product_category->add_product_category($name_product_category, $desc_product_category, $category_type);
             if ($result) {
-                header('location: product-categories.php?success=Thêm mới danh mục sản phẩm thành công!');
+                 echo "<script>window.location =' product-categories.php?success=Thêm mới danh mục sản phẩm thành công!'</script>";
             } else {
                 echo 'Thêm mới thất bại';
-                header('location: product-categories.php?error=Thêm mới danh mục sản phẩm thất bại!');
+                 echo "<script>window.location =' product-categories.php?error=Thêm mới danh mục sản phẩm thất bại!'</script>";
             }
         }
     }
@@ -71,10 +71,10 @@ class c_product_categories
             echo '</pre>';
             // die();
             if ($result) {
-                header('location: product-categories.php?success=Cập nhật danh mục sản phẩm thành công!');
+                 echo "<script>window.location =' product-categories.php?success=Cập nhật danh mục sản phẩm thành công!'</script>";
             } else {
                 echo 'Cập nhật thất bại';
-                header('location: product-categories.php?error=Cập nhật danh mục sản phẩm thất bại!');
+                 echo "<script>window.location =' product-categories.php?error=Cập nhật danh mục sản phẩm thất bại!'</script>";
             }
         }
     }
@@ -87,9 +87,9 @@ class c_product_categories
             $id = $_GET['id'];
             $result = $product_category->delete_product_category($id);
             if ($result) {
-                header('location: product-categories.php?success=Xóa danh mục sản phẩm thành công!');
+                 echo "<script>window.location =' product-categories.php?success=Xóa danh mục sản phẩm thành công!'</script>";
             } else {
-                header('location: product-categories.php?error=Xóa danh mục sản phẩm thất bại!');
+                 echo "<script>window.location =' product-categories.php?error=Xóa danh mục sản phẩm thất bại!'</script>";
             }
         }
     }

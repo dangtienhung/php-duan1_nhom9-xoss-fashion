@@ -9,8 +9,8 @@ include('controllers/c_customers.php');
             $customer = new c_customers();
             $customer->handle_edit_customer();
         } else {
-            header('location: index.php');
+             echo "<script>window.location =' index.php'</script>";
         }
     } else {
-        header('location: notfound.php');
+         echo "<script>window.location =' notfound.php'</script>";
     }

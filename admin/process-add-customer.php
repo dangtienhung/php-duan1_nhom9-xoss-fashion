@@ -9,8 +9,8 @@ if (isset($_SESSION['admin_id'])) {
         $customer = new c_customers();
         $customer->create_customer();
     } else {
-        header('location: index.php');
+         echo "<script>window.location =' index.php'</script>";
     }
 } else {
-    header('location: notfound.php');
+     echo "<script>window.location =' notfound.php'</script>";
 }

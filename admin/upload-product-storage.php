@@ -8,9 +8,9 @@
             $upload = new c_product_storage();
             $upload->upload_product();
         } else {
-            header('location: index.php');
+             echo "<script>window.location =' index.php'</script>";
         }
     } else {
-        header('location: notfound.php');
+         echo "<script>window.location =' notfound.php'</script>";
     }
 ?>

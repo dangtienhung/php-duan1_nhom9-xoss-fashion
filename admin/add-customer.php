@@ -10,8 +10,8 @@ include 'controllers/c_customers.php';
             $customer->create_customer_view();
         
         } else {
-            header('location: customer.php');
+             echo "<script>window.location =' customer.php'</script>";
         }
     } else {
-        header('location: notfound.php');
+         echo "<script>window.location =' notfound.php'</script>";
     }

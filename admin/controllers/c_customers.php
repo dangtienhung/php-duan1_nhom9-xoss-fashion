@@ -33,10 +33,10 @@ class c_customers
             $result = $delete_customer->delete_customer($id);
             if ($result) {
                 echo "<script>alert('thành công')</script>";
-                header('location: customer.php');
+                 echo "<script>window.location =' customer.php'</script>";
             } else {
                 echo "<script>alert('thất bại')</script>";
-                header('location: customers.php');
+                 echo "<script>window.location =' customers.php'</script>";
             }
         }
     }
@@ -75,9 +75,9 @@ class c_customers
                     $path_file = $folder . $file_name;
                     move_uploaded_file($picture['tmp_name'], $path_file);
                 }
-                header('location: customer.php?success=Thêm mới danh mục người dùng thành công!');
+                 echo "<script>window.location =' customer.php?success=Thêm mới danh mục người dùng thành công!'</script>";
             } else {
-                header('location: customer.php?error=Thêm mới danh mục người dùng không thành công!');
+                 echo "<script>window.location =' customer.php?error=Thêm mới danh mục người dùng không thành công!'</script>";
             }
         }
     }
@@ -128,7 +128,7 @@ class c_customers
                 $_SESSION['user_email'] = $email;
             }
             $result = $customer->edit_customer($id, $name_customer, $email, $passWord, $new_picture, $role, $address, $phone_number);
-            // header('location: customer.php');
+            //  echo "<script>window.location =' customer.php'</script>";
         }
     }
 }

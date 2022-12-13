@@ -12,10 +12,10 @@ class c_login
             $password = $_POST['current-password'];
             $this->save_login_session($email, $password);
             if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] != 3) {
-                header('location: home.php');
+                 echo "<script>window.location =' home.php'</script>";
             } else {
                 $_SESSION['error_login'] = "Sai thông tin đăng nhập";
-                header('location: index.php');
+                 echo "<script>window.location =' index.php'</script>";
             }
         }
     }
@@ -29,7 +29,7 @@ class c_login
             $_SESSION['admin_email'] = $admin->email;
             $_SESSION['admin_picture'] = $admin->picture;
             $_SESSION['admin_role'] = $admin->role;
-            // header('location: index.php');
+            //  echo "<script>window.location =' index.php'</script>";
         }
     }
     // đăng xuất
@@ -41,6 +41,6 @@ class c_login
         unset($_SESSION['admin_picture']);
         unset($_SESSION['admin_role']);
         unset($_SESSION['error_login']);
-        header('location: index.php');
+         echo "<script>window.location =' index.php'</script>";
     }
 }

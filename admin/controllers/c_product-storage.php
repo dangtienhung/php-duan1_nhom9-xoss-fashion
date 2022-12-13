@@ -58,7 +58,7 @@ class c_product_storage
                 move_uploaded_file($image['tmp_name'], $path_file);
             }
             $create = $create_product->m_ceate_product($name, $price, $saleOff, $file_name, $description,  $quantity, $view_number, $id_category);
-            header('location: product-storage.php');
+             echo "<script>window.location =' product-storage.php'</script>";
         }
         $view = ('views/product_storage/v_add-product-storage.php');
         include('templates/admin/layout.php');
@@ -100,7 +100,7 @@ class c_product_storage
             }
             
             $upload = $upload_product->upload_product($name, $price, $saleOff, $file_name, $description, $view_number, $quantity, $id_category, $id);
-            header('location: product-storage.php');
+             echo "<script>window.location =' product-storage.php'</script>";
         }
         $view = ('views/product_storage/v_upload-product-storage.php');
         include('templates/admin/layout.php');
@@ -115,10 +115,10 @@ class c_product_storage
             $result = $delete_product->delete_product($id);
             if ($result) {
                 echo "<script>alert('thành công')</script>";
-                header('location: product-storage.php');
+                 echo "<script>window.location =' product-storage.php'</script>";
             } else {
                 echo "<script>alert('thất bại')</script>";
-                header('location: product-storage.php');
+                 echo "<script>window.location =' product-storage.php'</script>";
             }
         }
     }

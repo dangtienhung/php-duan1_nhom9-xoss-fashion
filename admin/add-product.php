@@ -9,8 +9,8 @@ if (isset($_SESSION['admin_id'])) {
         $c_product = new c_product();
         $c_product->c_ceate_product();
     } else {
-        header('location: product.php');
+         echo "<script>window.location =' product.php'</script>";
     }
 } else {
-    header('location: notfound.php');
+     echo "<script>window.location =' notfound.php'</script>";
 }
