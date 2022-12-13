@@ -244,11 +244,11 @@
                                     ?>.00
                         </span>
                         <!-- Old Price -->
-                        <span class="detail__item-price old">(
-                            <?php if (number_format($value->saleOff) != 0 && $detail_product->quantity > 0) {
-                                    echo $value->price;
-                                }  ?>
+                        <?php if (number_format($value->saleOff) != 0 && $detail_product->quantity > 0) { ?>
+                            <span class="detail__item-price old">(
+                                <?php echo $value->price; ?>
                             )</span>
+                        <?php }  ?>
                         <?php if ($value->quantity == 0) { ?>
                         <h5>Đã hết hàng</h5>
                         <?php } ?>

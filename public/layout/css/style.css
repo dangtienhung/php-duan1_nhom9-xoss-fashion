@@ -853,6 +853,9 @@ html {
   color: #c0392b;
   font-weight: 500;
   font-size: 1.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item__product-body h5 {
@@ -1076,6 +1079,9 @@ html {
   line-height: 12px;
   text-transform: uppercase;
   margin: 20px 0 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .products__sin_price span {
@@ -2028,6 +2034,9 @@ html {
   text-transform: uppercase;
   margin: 20px 0 15px;
   font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .detail__item-title:hover {

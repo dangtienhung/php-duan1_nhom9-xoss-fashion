@@ -59,16 +59,18 @@
                                 <i class="fa-regular fa-square-plus"></i>
                             </a>
                             <!-- Action -->
-                            <?php if ($value->quantity > 0) { ?>
-                            <div class="products__item-action">
-                                <a href="#"><button class="products__item-action-btn btn-icon">
-                                        <i class="fa-solid fa-arrows-rotate"></i>
-                                    </button></a>Giỏ hàng
-                                </button></a>
-                                <a href="#"><button class="products__item-action-btn btn-icon">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </button></a>
-                            </div>
+                            <?php if($value->quantity > 0) {?>
+                                <div class="products__item-action">
+                                    <a href="#"><button class="products__item-action-btn btn-icon">
+                                            <i class="fa-solid fa-arrows-rotate"></i>
+                                        </button></a>
+                                    <a href="?url=add_to_cart&id_product=<?php echo $value->id?>"><button class="products__item-action-btn btn-text">
+                                            Thêm vào giỏ
+                                        </button></a>
+                                    <a href="#"><button class="products__item-action-btn btn-icon">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </button></a>
+                                </div>
                             <?php } ?>
                             <div class="products__sin_details fix  item__product-body">
                                 <a class="products__sin_title"
@@ -108,17 +110,17 @@
                         <ul class="pagination pb-3 d-flex justify-content-center">
                             <?php for ($i = 1; $i <= $number_page; $i++) { ?>
                             <li class="<?php if (isset($_GET["page"]) && $_GET['page'] == $i) {
-                                                echo 'active';
-                                            } ?>">
+                                echo 'active';
+                            } ?>">
                                 <a class="page-link fs-3 px-3 text-danger mx-1"
                                     href="?url=product.php<?php if (isset($_GET["id_category"])) {
-                                                                                                                echo '&id_category=' . $_GET["id_category"];
-                                                                                                            } ?>&page=<?php echo $i; ?><?php if (isset($_GET['search'])) {
-                                                                                                                                            echo '&search=' . $search;
-                                                                                                                                        } ?><?php if (isset($_GET["order"]) && isset($_GET["action"])) {
-                                                                                                                                                echo '&order=' . $_GET['order'] . '&action=' . $_GET['action'];
-                                                                                                                                            } ?>">
-                                    <?php echo $i ?>
+                                    echo '&id_category=' . $_GET["id_category"];
+                                } ?>&page=<?php echo $i; ?><?php if (isset($_GET['search'])) {
+                                    echo '&search=' . $search;
+                                } ?><?php if (isset($_GET["order"]) && isset($_GET["action"])) {
+                                        echo '&order=' . $_GET['order'] . '&action=' . $_GET['action'];
+                                } ?>">
+                                <?php echo $i ?>
                                 </a>
                             </li>
                             <?php } ?>
