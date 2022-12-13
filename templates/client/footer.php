@@ -40,7 +40,7 @@
                     <img src="public/layout/images/logo-2.png" alt="" class="footer__info-img">
                     <ul class="footer__info-list">
                         <li class="footer__info-info">
-                            <span class="footer__info-title info">address:
+                            <span class="footer__info-title info">Địa chỉ:
                             </span>
                             <span class="footer__info-desc">Trường Cao đẳng FPT Polytechnic, Tòa nhà FPT
                                 Polytechnic,
@@ -48,7 +48,7 @@
                                 Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà Nội, Việt Nam</span>
                         </li>
                         <li class="footer__info-info">
-                            <span class="footer__info-title info">Telephone:
+                            <span class="footer__info-title info">Sđt:
                             </span>
                             <span class="footer__info-desc">+8446937769</span>
                         </li>
@@ -60,25 +60,23 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-6 footer__info-item">
-                    <h2 class="footer__info-title">services</h2>
+                    <h2 class="footer__info-title">Dịch vụ</h2>
                     <ul class="footer__info-list">
                         <li class="footer__info-info">
-                            <p class="footer__info-desc">About us</p>
-                            <p class="footer__info-desc">Return Policy</p>
-                            <p class="footer__info-desc">Our Blog</p>
-                            <p class="footer__info-desc">Contact us</p>
-                            <p class="footer__info-desc">Terms & Condition</p>
+                            <p class="footer__info-desc">Liên hệ</p>
+                            <p class="footer__info-desc">Chính sách bảo mật</p>
+                            <p class="footer__info-desc">Điều khoản & điều kiện</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-6 footer__info-item">
-                    <h2 class="footer__info-title">account</h2>
+                    <h2 class="footer__info-title">Tài khoản</h2>
                     <ul class="footer__info-list">
                         <li class="footer__info-info">
-                            <p class="footer__info-desc">Your Account</p>
-                            <p class="footer__info-desc">Checkout</p>
-                            <p class="footer__info-desc">Login</p>
-                            <p class="footer__info-desc">Register</p>
+                            <p class="footer__info-desc">Tài khoản của bạn</p>
+                            <p class="footer__info-desc">Giỏ hàng</p>
+                            <p class="footer__info-desc">Đăng nhập</p>
+                            <p class="footer__info-desc">Đăng ký</p>
                         </li>
                     </ul>
                 </div>

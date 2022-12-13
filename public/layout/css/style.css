@@ -58,6 +58,7 @@ html::-webkit-scrollbar-track {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 ul,
