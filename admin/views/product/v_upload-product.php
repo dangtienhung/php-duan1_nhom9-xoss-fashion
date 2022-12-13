@@ -34,7 +34,7 @@
                                     placeholder="Giảm giá sản phẩm" name="saleOff" required value="<?= $list_item->saleOff ;?>">
                             </div>
                             <div class="mb-3">
-                                <label for="picture" class="form-label fs-3">Thêm ảnh sản phẩm</label>
+                                <label for="picture" class="form-label fs-3">Thêm sản phẩm</label>
                                 <input type="file" min="0" class="form-control fs-3" id="picture"
                                      name="new-picture">
                             </div>
