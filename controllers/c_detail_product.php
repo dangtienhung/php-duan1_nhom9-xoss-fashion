@@ -5,7 +5,7 @@ class c_detail
     public function index()
     {
         if(!isset($_GET['id_product'])) {
-            echo "<script>window.location =':?url=home'</script>";
+            echo "<script>window.location ='?url=home'</script>";
         }
         
         include('models/m_detail_product.php');

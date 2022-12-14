@@ -35,7 +35,7 @@ class c_register
                     $password = $_POST["password"];
                     $role = $_POST["role"];
                     $this->save_customer($user_name, $email, $address, $phone_number, $password, $role);
-                    echo "<script>window.location =':?url=home'</script>";
+                    echo "<script>window.location ='?url=home'</script>";
                     $_SESSION['error_register_user'] = "Mật khẩu không trùng khớp";
                      echo "<script>window.location ='?url=register.php'</script>";
                     echo 'Đăng ký thất bại';
