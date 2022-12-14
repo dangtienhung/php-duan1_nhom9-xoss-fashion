@@ -50,7 +50,7 @@ class c_detail
 
             $m_comment -> insertComment($id_person,$id_product,$content);
 
-            echo "<script>window.location =':?url=detail.php&id_product=$id_product'</script>";
+            echo "<script>window.location ='?url=detail.php&id_product=$id_product'</script>";
         }
     }
 }
