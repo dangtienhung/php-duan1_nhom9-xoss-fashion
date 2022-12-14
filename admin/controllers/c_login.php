@@ -12,10 +12,10 @@ class c_login
             $password = $_POST['current-password'];
             $this->save_login_session($email, $password);
             if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] != 3) {
-                 echo "<script>window.location =' home.php'</script>";
+                 echo "<script>window.location ='home.php'</script>";
             } else {
                 $_SESSION['error_login'] = "Sai thông tin đăng nhập";
-                 echo "<script>window.location =' index.php'</script>";
+                 echo "<script>window.location ='index.php'</script>";
             }
         }
     }
