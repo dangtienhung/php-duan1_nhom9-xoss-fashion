@@ -15,6 +15,8 @@ class c_home
         $count_comment = $m_home->count_comment();
         $count_orders = $m_home->count_order();
         $count_staff = $m_home->count_staff();
+        $total_moneys = $m_home->sum_money();
+        $doanh_thu_hang_thang = $m_home->doanh_thu_hang_thang();
         $view = 'views/home/v_home.php';
         include('templates/admin/layout.php');
     }

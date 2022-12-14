@@ -12,6 +12,16 @@
     <div class="row mt-3">
         <div class="col-md-12 col-lg-6">
             <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="analysis">
+                        <i class="icon--product fa-solid fa-dollar-sign"></i>
+                        <div class="analysis__info">
+                            <h4>Lợi nhuận</h4>
+                            <p><b>$<?php echo $total_moneys; ?>,00</b></p>
+                            <p class="analysis__info-sum">Doanh thu hàng tháng.</p>
+                        </div>
+                    </div>
+                </div>
                 <!-- item1 -->
                 <div class="col-md-6 mb-4">
                     <div class="analysis">
@@ -104,6 +114,22 @@
             </div>
         </div>
     </div>
+
+    <!-- doanh thu hàng tháng -->
+    <div class="row mt-3 mb-3">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content__chart">
+                        <h3 class="content__chart-title">Phân tích dữ liệu</h3>
+                        <div class="content__chart-graph">
+                            <canvas id="doanhthu"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <script>
@@ -145,5 +171,30 @@ if (myChartElement) {
             }]
         }
     });
+}
+</script>
+<script>
+const doanhthu = document.getElementById('doanhthu')
+if (doanhthu) {
+    const result = doanhthu.getContext('2d');
+    // const labels = Utils.months({
+    //     count: 7
+    // });
+    const bieudodoanthu = new Chart(result, {
+        type: 'line',
+        responsive: true,
+        data: {
+            labels: ['tháng 12', 'tháng 11', 'tháng 10', 'tháng 9', 'tháng 8', 'tháng 7', 'tháng 6',
+                'tháng 5', 'tháng 4', 'tháng 3', 'tháng 2', 'tháng 1'
+            ],
+            datasets: [{
+                label: 'Doanh thu hàng tháng',
+                data: [155],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        }
+    })
 }
 </script>
