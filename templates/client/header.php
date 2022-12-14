@@ -160,7 +160,7 @@
 
                             <!-- menu mobile tablet -->
                             <div class="col-sm-2 header__menu-responsive">
-                                <div class="header__menu-responsive-btn">
+                                <div class="header__menu-responsive-btn">                            
                                     <i class="icon fa-solid fa-bars"></i>
                                 </div>
                             </div>
@@ -185,15 +185,35 @@
                         </a>
                     </div>
                 </div>
-                <!-- <div class="col-sm-12">
-                    <div class="header__menu-responsive-item">
-                        <a class="header__menu-responsive-link" href="#">contact</a>
-                    </div>
-                </div> -->
                 <div class="col-sm-12">
-                    <div class="header__menu-responsive-item-cart">
+                    <div class="header__menu-responsive-item">
                         <a class="header__menu-responsive-link" href="?url=cart.php">Giỏ hàng</a>
                     </div>
                 </div>
+                <?php if(isset($_SESSION['user_id'])) {?>
+                    <div class="col-sm-12">
+                        <div class="header__menu-responsive-item">
+                            <a class="header__menu-responsive-link" href="?url=info.php">
+                                Cá nhân
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="header__menu-responsive-item">
+                            <a class="header__menu-responsive-link" href="?url=logout.php">Đăng xuất</a>
+                        </div>
+                    </div>
+                <?php } else {?>
+                    <div class="col-sm-12">
+                        <div class="header__menu-responsive-item">
+                            <a class="header__menu-responsive-link" href="?url=logout.php">Đăng ký</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="header__menu-responsive-item">
+                            <a class="header__menu-responsive-link" href="?url=logout.php">Đăng nhập</a>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>

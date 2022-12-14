@@ -520,7 +520,7 @@ html {
 }
 
 .header__container .header__bottom .header__menu-bottom .header__menu-responsive .header__menu-responsive-list {
-  position: absolute;
+  position: sticky;
   top: calc(100% + 4.4rem);
   right: 0;
   left: 0;
@@ -3181,8 +3181,8 @@ html {
     background-color: #303030;
     color: #fff;
     z-index: 999;
-    position: fixed;
-    top: 15.4rem;
+    position: sticky;
+    top: 10.6rem;
     left: 0;
     right: 0;
     box-shadow: 0.2rem 0.2rem 0.4rem #303030;
@@ -3317,9 +3317,6 @@ html {
     display: none !important;
   }
 
-  .header__bottom .header__search {
-    display: none;
-  }
 
   .header__bottom .header__menu-bottom {
     justify-content: space-between !important;
@@ -3334,6 +3331,7 @@ html {
   }
 
   .header__menu-responsive-list {
+    position: sticky;
     top: 10.6rem;
   }
 
